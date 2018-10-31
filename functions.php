@@ -20,3 +20,25 @@ add_action('wp_enqueue_scripts', 'chld_thm_cfg_parent_css', 10);
 require_once get_stylesheet_directory() . '/inc/nav.php';
 
 require_once get_stylesheet_directory() . '/inc/enqueue.php';
+
+require_once get_stylesheet_directory() . '/inc/shortcodes/form-estimate-now-shortcodes.php';
+
+require_once get_stylesheet_directory() . '/inc/ajax/form-estimate-now-ajax.php';
+
+require_once get_stylesheet_directory() . '/inc/builder/service.php';
+
+add_action('phpmailer_init', 'smtp_email_config', 10, 1);
+function smtp_email_config(PHPMailer $phpmailer)
+{
+    $phpmailer->isSMTP();
+    $phpmailer->Host = 'gator4061.hostgator.com';
+    $phpmailer->SMTPAuth = true;
+    $phpmailer->Port = 465;
+    $phpmailer->SMTPSecure = 'ssl';
+    $phpmailer->Username = '_mainaccount@cservaustin.com';
+    $phpmailer->Password = 'Cserv2014!';
+    $phpmailer->From = '_mainaccount@cservaustin.com';
+    $phpmailer->FromName = 'Cserv-team';
+    // $phpmailer->CharSet = "utf-8";
+    // $phpmailer->SMTPDebug = 0;
+}

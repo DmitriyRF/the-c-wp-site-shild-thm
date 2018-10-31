@@ -1,4 +1,9 @@
+@import "variables";
+@import "mixins";
+
 @import "_partials/header";
 @import "_partials/footer";
+@import "_partials/shortcodes";
 
 @import "_partials/home";
+@import "_partials/backgrounds";

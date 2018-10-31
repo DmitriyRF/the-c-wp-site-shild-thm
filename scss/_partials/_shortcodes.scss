@@ -1,0 +1,140 @@
+.shortcodes-form-estimate-wrapper {
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+  @media (min-width: $main-mobile-breakpoint) {
+    max-width: 1080px;
+  }
+  .form-container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    .form-row {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      margin-right: -15px;
+      margin-left: -15px;
+      .input-group {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-top: 22px;
+        &.col-50 {
+          @media (min-width: $main-mobile-breakpoint) {
+            -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
+            max-width: 50%;
+          }
+        }
+        label {
+          display: block;
+          height: 100%;
+        }
+        .form-estimate-input {
+          width: 100%;
+          background-color: #464646;
+          color: white;
+          padding: 23px;
+          font-size: 23px;
+          @include main-font-family();
+        }
+        .form-estimate-file {
+          width: 1px;
+          height: 1px;
+          position: absolute;
+          display: block;
+          margin-left: -1px;
+          overflow: hidden;
+        }
+        .file-attacment-label {
+          color: #104074;
+          font-size: 20px;
+          text-transform: uppercase;
+          text-align: center;
+          display: inline-block;
+          width: 100%;
+          font-weight: 600;
+          line-height: 1.1;
+          padding-right: 15px;
+          cursor: pointer;
+          i {
+            padding-right: 15px;
+            font-size: 1.5em;
+          }
+          @media (min-width: $main-mobile-breakpoint) {
+            text-align: left;
+            font-size: 24px;
+            display: flex;
+            height: 100%;
+            align-items: center;
+            padding-left: 30px;
+          }
+        }
+        .form-estimate-submit {
+          text-align: center;
+          @media (min-width: $main-mobile-breakpoint) {
+            text-align: right;
+          }
+          input[type="submit"] {
+            display: inline-block;
+            width: 100%;
+            max-width: 350px;
+            background-color: #eb7719;
+            font-size: 24px;
+            @include main-font-family();
+            font-weight: 600;
+            line-height: 25px;
+            padding: 25px;
+            color: white;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+          }
+        }
+      }
+      .textarea-group {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-top: 22px;
+        label {
+          display: block;
+        }
+        .form-estimate-textarea {
+          width: 100%;
+          background-color: #464646;
+          color: white;
+          padding: 23px;
+          font-size: 23px;
+          @include main-font-family();
+          max-width: 100%;
+          min-width: 100%;
+        }
+      }
+    }
+  }
+  ::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: white;
+  }
+  ::-moz-placeholder {
+    /* Firefox 19+ */
+    color: white;
+  }
+  :-ms-input-placeholder {
+    /* IE 10+ */
+    color: white;
+  }
+  :-moz-placeholder {
+    /* Firefox 18- */
+    color: white;
+  }
+}

@@ -1,0 +1,104 @@
+#home-page-main-sliders {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: rgba($main-color-blue, 0.8);
+  background-size: cover;
+  background: -moz-linear-gradient(
+    top,
+    rgba(57, 100, 119, 1) 80%,
+    rgba(230, 228, 224, 1) 99%
+  );
+  background: -webkit-linear-gradient(
+    top,
+    rgba(57, 100, 119, 1) 80%,
+    rgba(230, 228, 224, 1) 99%
+  );
+  background: linear-gradient(
+    to bottom,
+    rgba(57, 100, 119, 1) 80%,
+    rgba(230, 228, 224, 1) 99%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#396477', endColorstr='#e6e4e0',GradientType=0 );
+
+  @media (min-width: $main-mobile-breakpoint) {
+    background-image: url("../bg/home/home-page-main-sliders-background-cservaustin-com.jpg");
+    background-size: cover;
+    background-color: transparent;
+  }
+}
+
+#home-page-rating {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom center;
+  background-color: transparent;
+  background-image: url("../bg/home/home-page-rating-mobile-background-cservaustin-com.jpg");
+
+  @media (min-width: $main-mobile-breakpoint) {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom center;
+    background-color: transparent;
+    background-image: url("../bg/home/home-page-rating-desktop-background-cservaustin-com.jpg");
+  }
+}
+
+#home-page-advantages {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom center;
+  background-color: transparent;
+  background-image: url("../bg/home/home-page-advantages-mobile-background-cservaustin-com.jpg");
+
+  @media (min-width: $main-mobile-breakpoint) {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center right;
+    background-color: transparent;
+    background-image: url("../bg/home/home-page-advantages-desktop-background-cservaustin-com.jpg");
+  }
+}
+#parent-page-services {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: transparent;
+  background-image: url("../bg/parent/parent-page-services-mobile-background-cservaustin-com.jpg");
+
+  @media (min-width: $main-mobile-breakpoint) {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: transparent;
+    background-image: url("../bg/parent/parent-page-services-desktop-background-cservaustin-com.jpg");
+  }
+}
+
+#parent-page-form {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom center;
+  background-color: transparent;
+  background-image: url("../bg/home/home-page-advantages-mobile-background-cservaustin-com.jpg");
+
+  @media (min-width: $main-mobile-breakpoint) {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center right;
+    background-color: transparent;
+    background-image: url("../bg/parent/parent-page-form-desktop-background-cservaustin-com.jpg");
+  }
+}
+
+// #{
+// background-repeat: no-repeat;
+// background-size: cover;
+// background-position: center;
+// background-color: transparent;
+//   @media (min-width: $main-mobile-breakpoint) {
+// background-repeat: no-repeat;
+// background-color: transparent;
+// background-size: cover;
+// background-position: center;
+//   }
+// }
