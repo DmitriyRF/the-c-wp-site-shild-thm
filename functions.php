@@ -31,13 +31,13 @@ add_action('phpmailer_init', 'smtp_email_config', 10, 1);
 function smtp_email_config(PHPMailer $phpmailer)
 {
     $phpmailer->isSMTP();
-    $phpmailer->Host = 'gator4061.hostgator.com';
+    $phpmailer->Host = 'smtp.office365.com';
     $phpmailer->SMTPAuth = true;
     $phpmailer->Port = 465;
     $phpmailer->SMTPSecure = 'ssl';
     $phpmailer->Username = '_mainaccount@cservaustin.com';
-    $phpmailer->Password = 'Cserv2014!';
-    $phpmailer->From = '_mainaccount@cservaustin.com';
+    $phpmailer->Password = 'Mktg123!';
+    $phpmailer->From = 'quotes@cservaustin.com';
     $phpmailer->FromName = 'Cserv-team';
     // $phpmailer->CharSet = "utf-8";
     // $phpmailer->SMTPDebug = 0;

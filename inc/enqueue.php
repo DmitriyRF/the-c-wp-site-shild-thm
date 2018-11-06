@@ -13,12 +13,12 @@ function cservaustin_enqueue_front_scripts()
     //wp_enqueue_script( $handle, $src, $deps, $ver, $in_footer );
     wp_enqueue_script('main-script', get_stylesheet_directory_uri() . '/js/main-c-serv-file.js', array('jquery'), null, true);
 
-    wp_enqueue_script('ajax-form-script', get_stylesheet_directory_uri() . '/js/form-c-serv-ajax.js', array('jquery'), null, true);
+    wp_enqueue_script('ajax-form-script', get_stylesheet_directory_uri() . '/js/form-c-serv-ajax.js', array('jquery'), null, false);
     wp_localize_script('ajax-form-script', 'localize_data', array(
         'ajax_url' => admin_url('admin-ajax.php'),
         'action' => 'estimate_now_form',
     ));
 
-    wp_enqueue_script('recaptcha-script', 'https://www.google.com/recaptcha/api.js', array(), null, true);
+    wp_enqueue_script('recaptcha-script', 'https://www.google.com/recaptcha/api.js', array(), null, false);
 }
 add_action('wp_enqueue_scripts', 'cservaustin_enqueue_front_scripts');

@@ -13,22 +13,6 @@ function cservaustin__shortcodes_form_estimate($atts, $content)
     ?>
 
 <div class="shortcodes-form-estimate-wrapper">
-  <script>
-    /*
-  function validate(event) {
-    event.preventDefault();
-    if (!document.getElementById('field').value) {
-      alert("You must add text to the required field");
-    } else {
-      grecaptcha.execute();
-    }
-  }
-
-  function onload() {
-    var element = document.getElementById('submit');
-    element.onclick = validate;
-  }*/
-</script>
   <form id="js-form-estimate" class="form-container">
     <div class="form-row">
       <div class="input-group">
@@ -72,8 +56,13 @@ function cservaustin__shortcodes_form_estimate($atts, $content)
         </label>
       </div>
     </div>
-    <div id='recaptcha' class="g-recaptcha" data-sitekey="6LcmHnYUAAAAAKt9p-U8OPLtX1hemqPUoCWgvL21" data-callback="onSubmit"
-      data-size="invisible"></div>
+    <div id='recaptcha' class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" data-size="invisible"></div>
+    <div id="wrapper-ajax-loader">
+      <div class="cserv-ajax-ripple">
+        <div></div>
+        <div></div>
+      </div>
+    </div>
   </form>
 </div>
 

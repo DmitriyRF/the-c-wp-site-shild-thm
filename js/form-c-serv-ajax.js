@@ -3,6 +3,7 @@
     $("#submit-estimate").click(form_ajax_request_response);
     //Change label when files chosen
     $("#estimateFile").change(form_change_fileInput_label);
+    grecaptcha.execute();
   });
 
   function form_change_fileInput_label() {
@@ -27,6 +28,9 @@
 
     ajaxFormData.append("action", localize_data.action);
 
+    $("#wrapper-ajax-loader").css("display", "block");
+    $("#js-form-estimate").css("opacity", "0.7");
+
     $.ajax({
       url: localize_data.ajax_url,
       type: "post",
@@ -41,6 +45,9 @@
       .fail(function(jqXHR) {
         console.log(jqXHR);
       })
-      .always(function(e) {});
+      .always(function(e) {
+        $("#wrapper-ajax-loader").css("display", "none");
+        $("#js-form-estimate").css("opacity", "1");
+      });
   }
 })(jQuery);
