@@ -33,12 +33,21 @@ function smtp_email_config(PHPMailer $phpmailer)
     $phpmailer->isSMTP();
     $phpmailer->Host = 'smtp.office365.com';
     $phpmailer->SMTPAuth = true;
-    $phpmailer->Port = 465;
-    $phpmailer->SMTPSecure = 'ssl';
-    $phpmailer->Username = '_mainaccount@cservaustin.com';
-    $phpmailer->Password = 'Mktg123!';
-    $phpmailer->From = 'quotes@cservaustin.com';
+    $phpmailer->Port = 587;
+    $phpmailer->SMTPSecure = 'TLS';
+    // $phpmailer->SMTPDebug = 2;
+    $phpmailer->Username = 'webquotereq@cservaustin.com';
+    $phpmailer->Password = '2018Cserv$';
+    $phpmailer->From = 'webquotereq@cservaustin.com';
     $phpmailer->FromName = 'Cserv-team';
-    // $phpmailer->CharSet = "utf-8";
-    // $phpmailer->SMTPDebug = 0;
+    $phpmailer->CharSet = "utf-8";
+}
+
+// show wp_mail() errors
+add_action('wp_mail_failed', 'onMailError', 10, 1);
+function onMailError($wp_error)
+{
+    echo "<pre>";
+    print_r($wp_error);
+    echo "</pre>";
 }

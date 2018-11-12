@@ -22,3 +22,15 @@ function cservaustin_enqueue_front_scripts()
     wp_enqueue_script('recaptcha-script', 'https://www.google.com/recaptcha/api.js', array(), null, false);
 }
 add_action('wp_enqueue_scripts', 'cservaustin_enqueue_front_scripts');
+
+function cservaustin_enqueue_divi_builder_scripts()
+{
+    wp_enqueue_script("cservaustin-frontend-bundle", get_stylesheet_directory_uri() . '/js/builder/frontend-bundle.min.js', array('jquery', 'et-builder-modules-script'), null, true);
+
+    if (et_core_is_fb_enabled()) {
+
+        wp_enqueue_script("cservaustin-builder-bundle", get_stylesheet_directory_uri() . '/js/builder/builder-bundle.min.js', array('cservaustin-frontend-bundle', 'react', 'react-dom'), null, true);
+    }
+}
+
+add_action('wp_enqueue_scripts', 'cservaustin_enqueue_divi_builder_scripts', 20);

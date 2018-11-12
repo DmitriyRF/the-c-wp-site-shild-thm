@@ -139,6 +139,10 @@
     /* Firefox 18- */
     color: white;
   }
+
+  .g-recaptcha {
+    opacity: 0;
+  }
 }
 #wrapper-ajax-loader {
   display: none;
