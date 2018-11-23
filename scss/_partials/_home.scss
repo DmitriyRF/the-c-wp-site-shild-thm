@@ -4,7 +4,7 @@
 $slider-full-opacity: 0.9;
 $slider-opacity: 0.65;
 #home-main-slide {
-  @media (min-width: $main-mobile-breakpoint) {
+  @media (min-width: $main-tablet-breakpoint) {
     box-shadow: 0px 40px 60px -20px #222222;
   }
   &::before {
@@ -19,7 +19,7 @@ $slider-opacity: 0.65;
     background-color: rgba(#104074, $slider-opacity);
     transition: all 0.3s ease-in;
     min-height: 400px;
-    @media (min-width: $main-mobile-breakpoint) {
+    @media (min-width: $main-tablet-breakpoint) {
       min-height: 460px;
     }
   }
@@ -31,14 +31,14 @@ $slider-opacity: 0.65;
 }
 
 .home-secondary-slide {
-  @media (min-width: $main-mobile-breakpoint) {
+  @media (min-width: $main-tablet-breakpoint) {
     box-shadow: 0px 40px 60px -20px #222222;
   }
   .et_pb_text_inner {
     padding: 20px 40px;
     transition: all 0.3s ease-in;
     min-height: 300px;
-    @media (min-width: $main-mobile-breakpoint) {
+    @media (min-width: $main-tablet-breakpoint) {
       min-height: 225px;
     }
   }
@@ -129,7 +129,7 @@ $slider-opacity: 0.65;
     position: absolute;
     bottom: 30px;
     left: 40px;
-    @media (min-width: $main-mobile-breakpoint) {
+    @media (min-width: $main-tablet-breakpoint) {
       opacity: 0;
     }
     span {
@@ -141,7 +141,7 @@ $slider-opacity: 0.65;
       @include main-font-family();
     }
   }
-  @media (min-width: $main-mobile-breakpoint) {
+  @media (min-width: $main-tablet-breakpoint) {
     &:hover {
       .home-slider-learn-more {
         opacity: 1;

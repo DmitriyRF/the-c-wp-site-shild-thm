@@ -20,7 +20,7 @@
   );
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#396477', endColorstr='#e6e4e0',GradientType=0 );
 
-  @media (min-width: $main-mobile-breakpoint) {
+  @media (min-width: $main-tablet-breakpoint) {
     background-image: url("../bg/home/home-page-main-sliders-background-cservaustin-com.jpg");
     background-size: cover;
     background-color: transparent;
@@ -34,7 +34,7 @@
   background-color: transparent;
   background-image: url("../bg/home/home-page-rating-mobile-background-cservaustin-com.jpg");
 
-  @media (min-width: $main-mobile-breakpoint) {
+  @media (min-width: $main-tablet-breakpoint) {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom center;
@@ -50,7 +50,7 @@
   background-color: transparent;
   background-image: url("../bg/home/home-page-advantages-mobile-background-cservaustin-com.jpg");
 
-  @media (min-width: $main-mobile-breakpoint) {
+  @media (min-width: $main-tablet-breakpoint) {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center right;
@@ -65,7 +65,7 @@
   background-color: transparent;
   background-image: url("../bg/parent/parent-page-services-mobile-background-cservaustin-com.jpg");
 
-  @media (min-width: $main-mobile-breakpoint) {
+  @media (min-width: $main-tablet-breakpoint) {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -81,7 +81,7 @@
   background-color: transparent;
   background-image: url("../bg/home/home-page-advantages-mobile-background-cservaustin-com.jpg");
 
-  @media (min-width: $main-mobile-breakpoint) {
+  @media (min-width: $main-tablet-breakpoint) {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center right;
@@ -90,12 +90,83 @@
   }
 }
 
+#several-page-get-free-installation-quote {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: transparent;
+  background-image: url("../bg/several/Get-Free-Installation-Quote-cservaustin-mobile.jpg");
+
+  @media (min-width: $main-all_mobile-breakpoint) {
+    background-image: url("../bg/several/Get-Free-Installation-Quote-cservaustin.jpg");
+  }
+}
+
+#children-services-page-furniture-installation-1 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: transparent;
+  background-blend-mode: soft-light;
+  background-image: url("../bg/children/Office-Furniture-Installation-cservaustin-mobile.jpg");
+
+  @media (min-width: $main-tablet-breakpoint) {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: transparent;
+    background-image: url("../bg/children/Office-Furniture-Installation-cservaustin.jpg");
+  }
+}
+
+#children-services-page-furniture-installation-2 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: transparent;
+  background-image: url("../bg/children/Office-Furniture-Installation-Packages-cservaustin.jpg");
+
+  @media (max-width: $main-tablet-breakpoint) {
+    background-image: url("../bg/children/Office-Furniture-Installation-Packages-cservaustin-tablet.jpg");
+  }
+  @media (max-width: $main-mobile-breakpoint) {
+    background-image: url("../bg/children/Office-Furniture-Installation-Packages-cservaustin-mobile.jpg");
+  }
+}
+
+#children-services-page-furniture-installation-3 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+  background-color: transparent;
+  background-image: url("../bg/children/Office-Furniture-Why-Work-with-Us-cservaustin-mobile.jpg");
+
+  @media (min-width: $main-all_mobile-breakpoint) {
+    background-position: left center;
+    background-image: url("../bg/children/Office-Furniture-Why-Work-with-Us-cservaustin.jpg");
+  }
+}
+
+#children-services-page-furniture-installation-4 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+  background-color: transparent;
+  background-image: url("../bg/children/Office-Furniture-Who-Work-with-Us-cservaustin-mobile.jpg");
+
+  @media (min-width: $main-all_mobile-breakpoint) {
+    background-position: left center;
+    background-image: url("../bg/children/Office-Furniture-Who-Work-with-Us-cservaustin.jpg");
+  }
+}
+
+
 // #{
 // background-repeat: no-repeat;
 // background-size: cover;
 // background-position: center;
 // background-color: transparent;
-//   @media (min-width: $main-mobile-breakpoint) {
+//   @media (min-width: $main-tablet-breakpoint) {
 // background-repeat: no-repeat;
 // background-color: transparent;
 // background-size: cover;
