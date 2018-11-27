@@ -9,13 +9,13 @@
         }
       }
       .text_buttom_down {
-        padding-bottom: 125px!important;
+        padding-bottom: 125px !important;
         height: 100%;
         position: relative;
         .et_pb_text_inner {
           position: unset;
         }
-        .btn-in-text{
+        .btn-in-text {
           display: inline-block;
           position: absolute;
           padding: 11px 0px;
@@ -29,44 +29,44 @@
         }
       }
 
-      .accordion_work_with_us
-      {
-        .et_pb_toggle_close.et_pb_toggle{
+      .accordion_work_with_us {
+        .et_pb_toggle_close.et_pb_toggle {
           border-top: 10px solid #ffffff;
           padding: 0;
-          margin-bottom: 0px; 
-          .et_pb_toggle_title{
+          margin-bottom: 0px;
+          .et_pb_toggle_title {
             padding: 30px 0 30px 50px;
-            &::before{
+            &::before {
               content: "5";
               left: 0;
               right: auto;
               position: absolute;
               text-shadow: 0 0;
               font-family: "ETmodules" !important;
-              top: 50%;              
+              top: 50%;
               font-size: 48px;
               display: block;
             }
           }
           .et_pb_toggle_content {
             padding: 10px 0 40px 0;
-            a{
+            a {
               text-transform: uppercase;
               font-size: 16px;
               text-decoration: underline;
-              font-family: 'Myriad Pro BOLD',Helvetica,Arial,Lucida,sans-serif;
+              font-family: "Myriad Pro BOLD", Helvetica, Arial, Lucida,
+                sans-serif;
               color: #ffffff;
             }
           }
         }
-        .et_pb_toggle_open.et_pb_toggle{
+        .et_pb_toggle_open.et_pb_toggle {
           border-top: 10px solid #ffffff;
           padding: 0;
-          margin-bottom: 0px; 
-          .et_pb_toggle_title{
+          margin-bottom: 0px;
+          .et_pb_toggle_title {
             padding: 30px 0 30px 50px;
-            &::before{
+            &::before {
               content: "3";
               left: 0;
               right: auto;
@@ -80,37 +80,29 @@
           }
           .et_pb_toggle_content {
             padding: 10px 0 40px 0;
-            a{
+            a {
               text-transform: uppercase;
               font-size: 16px;
               text-decoration: underline;
-              font-family: 'Myriad Pro BOLD',Helvetica,Arial,Lucida,sans-serif;
+              font-family: "Myriad Pro BOLD", Helvetica, Arial, Lucida,
+                sans-serif;
               color: #ffffff;
             }
           }
         }
       }
+
+      .child-furniture-install-type {
+        max-width: 340px;
+        margin: auto;
+      }
     }
   }
 }
 
-.et_pb_row{
-  @media (max-width: 600px){
-    &.mobile_95 {
-      width: 95%;
-    }
-    &.mobile_90 {
-      width: 90%;
-    }
-    &.mobile_85 {
-      width: 85%;
-    }
-  }
-}
-
-
-
-#slider_who_work_mobile.owl-carousel{
+#slider_arrow_dot_style_orange.owl-carousel,
+#type_for_future_install.owl-carousel,
+#slider_who_work_mobile.owl-carousel {
   .owl-nav {
     .owl-next {
       background-position: center !important;

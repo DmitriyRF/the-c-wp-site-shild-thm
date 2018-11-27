@@ -1,0 +1,58 @@
+@media all and (max-width: 980px) {
+  /*** wrap row in a flex box ***/
+  .custom_row {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap; /* Safari 6.1+ */
+    flex-wrap: wrap;
+
+    .et_pb_column {
+      margin-bottom: 0;
+    }
+
+    .et_pb_module.max_w_400px {
+      max-width: 400px !important;
+    }
+  }
+
+  .first-on-mobile {
+    -webkit-order: 1;
+    order: 1;
+  }
+
+  .second-on-mobile {
+    -webkit-order: 2;
+    order: 2;
+  }
+
+  .third-on-mobile {
+    -webkit-order: 3;
+    order: 3;
+  }
+
+  .fourth-on-mobile {
+    -webkit-order: 4;
+    order: 4;
+  }
+  /*** add margin to last column ***/
+  .custom_row:last-child .et_pb_column:last-child {
+    margin-bottom: 0px;
+  }
+}
+
+.et_pb_row {
+  @media (max-width: 600px) {
+    &.mobile_95 {
+      width: 95%;
+    }
+    &.mobile_90 {
+      width: 90%;
+    }
+    &.mobile_85 {
+      width: 85%;
+    }
+  }
+}

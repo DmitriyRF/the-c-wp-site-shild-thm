@@ -1,5 +1,6 @@
 @import "variables";
 @import "mixins";
+@import "fonts";
 
 @import "_partials/header";
 @import "_partials/footer";
@@ -9,3 +10,6 @@
 @import "_partials/services";
 @import "_partials/services_children";
 @import "_partials/backgrounds";
+@import "_partials/components";
+
+@import "_forms/all_forms";

@@ -177,7 +177,7 @@
                   padding: 10px 30px;
                   width: 100%;
                   &:hover {
-                    color: black;
+                    color: black !important;
 
                     opacity: 1;
                   }
@@ -271,11 +271,31 @@
         }
       }
     }
+    #top-menu {
+      .sub-menu {
+        li.current-menu-item {
+          & > a {
+            color: #ffffff !important;
+            background-color: #c05805;
+          }
+        }
+      }
+    }
     &.et-fixed-header {
       .logo_container {
         & > a {
           @media (min-width: 981px) {
             overflow: hidden;
+          }
+        }
+      }
+      #top-menu {
+        .sub-menu {
+          li.current-menu-item {
+            & > a {
+              color: #ffffff !important;
+              background-color: #c05805;
+            }
           }
         }
       }

@@ -51,3 +51,17 @@ function onMailError($wp_error)
     print_r($wp_error);
     echo "</pre>";
 }
+
+function cserv_add_wp_body_classes($classes)
+{
+    if (is_page_template()) {
+
+        if (strpos(get_page_template(), '/forms-quote/') !== false) {
+            $classes[] = 'et_pb_quote_form_layout';
+        }
+
+    }
+    return $classes;
+
+}
+add_filter('body_class', 'cserv_add_wp_body_classes');

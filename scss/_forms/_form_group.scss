@@ -1,0 +1,108 @@
+.form {
+  .et_pb_row {
+    width: 90%;
+    padding: 0 20px;
+    @media (min-width: $main-mobile-breakpoint) {
+      width: 80%;
+      max-width: 540px;
+      padding: 0 30px;
+    }
+    @media (min-width: $main-all_mobile-breakpoint) {
+      max-width: 720px;
+      padding: 0 50px;
+    }
+    @media (min-width: $main-tablet-breakpoint) {
+      max-width: 960px;
+      padding: 0 70px;
+    }
+    @media (min-width: $main-decktop-breakpoint) {
+      max-width: 1140px;
+      padding: 0 90px;
+    }
+    @media (min-width: $main-full_decktop-breakpoint) {
+      max-width: 1280px;
+      padding: 0 110px;
+    }
+  }
+  .et_pb_column {
+    margin-bottom: 0;
+  }
+
+  .form-main-header {
+    font-size: 42px;
+    font-family: "Myriad Pro BOLD", Helvetica, Arial, Lucida, sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 0;
+    margin: 0;
+    color: $main-color-blue !important;
+    padding: 50px 0;
+    @media (min-width: $main-all_mobile-breakpoint) {
+      font-size: 46px;
+      padding: 75px 0 55px;
+    }
+    @media (min-width: $main-decktop-breakpoint) {
+      font-size: 50px;
+      padding: 100px 0 60px;
+    }
+  }
+
+  .hidden {
+    display: inline-block;
+    width: 1px;
+    height: 1px;
+    margin: -1px 0 0;
+    overflow: hidden;
+    position: absolute;
+  }
+
+  .et_pb_contact {
+    padding: 10px 0;
+    .contact_field {
+      .input {
+        width: 100%;
+        padding: 20px 30px;
+        border: 0;
+        border-radius: 0;
+        color: $form-light-text;
+        background-color: $form-dark-background;
+        -webkit-appearance: none;
+        font-size: 18px;
+        line-height: 1;
+        min-height: 80px;
+        font-family: $ff-poppins;
+        font-weight: 300;
+        @media (min-width: $main-all_mobile-breakpoint) {
+          font-size: 19px;
+        }
+        @media (min-width: $main-decktop-breakpoint) {
+          font-size: 21px;
+        }
+        &::-webkit-input-placeholder {
+          color: $form-light-text;
+        }
+        &::-moz-placeholder {
+          color: $form-light-text;
+        }
+        &:-ms-input-placeholder {
+          color: $form-light-text;
+        }
+        &:-moz-placeholder {
+          color: $form-light-text;
+        }
+      }
+    }
+  }
+}
+
+// $form-light-text: #ffffff;
+
+// $form-light-background: #efefef;
+
+// $form-light-border: #d1d1d1;
+
+// $form-dark-text: #626262;
+
+// $form-dark-background: #3b3b3b;
+
+// $form-group-header: #777777;
