@@ -108,14 +108,14 @@
   background-position: center;
   background-color: transparent;
   background-blend-mode: soft-light;
-  background-image: url("../bg/children/Office-Furniture-Installation-cservaustin-mobile.jpg");
+  background-image: url("../bg/children/services/Furniture-Installation/Office-Furniture-Installation-cservaustin-mobile.jpg");
 
   @media (min-width: $main-tablet-breakpoint) {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     background-color: transparent;
-    background-image: url("../bg/children/Office-Furniture-Installation-cservaustin.jpg");
+    background-image: url("../bg/children/services/Furniture-Installation/Office-Furniture-Installation-cservaustin.jpg");
   }
 }
 
@@ -124,13 +124,13 @@
   background-size: cover;
   background-position: center;
   background-color: transparent;
-  background-image: url("../bg/children/Office-Furniture-Installation-Packages-cservaustin.jpg");
+  background-image: url("../bg/children/services/Furniture-Installation/Office-Furniture-Installation-Packages-cservaustin.jpg");
 
   @media (max-width: $main-tablet-breakpoint) {
-    background-image: url("../bg/children/Office-Furniture-Installation-Packages-cservaustin-tablet.jpg");
-  }
+    background-image: url("../bg/children/services/Furniture-Installation/Office-Furniture-Installation-Packages-cservaustin-tablet.jpg");
+  } 
   @media (max-width: $main-mobile-breakpoint) {
-    background-image: url("../bg/children/Office-Furniture-Installation-Packages-cservaustin-mobile.jpg");
+    background-image: url("../bg/children/services/Furniture-Installation/Office-Furniture-Installation-Packages-cservaustin-mobile.jpg");
   }
 }
 
@@ -139,11 +139,11 @@
   background-size: cover;
   background-position: center top;
   background-color: transparent;
-  background-image: url("../bg/children/Office-Furniture-Why-Work-with-Us-cservaustin-mobile.jpg");
+  background-image: url("../bg/children/services/Furniture-Installation/Office-Furniture-Why-Work-with-Us-cservaustin-mobile.jpg");
 
   @media (min-width: $main-all_mobile-breakpoint) {
     background-position: left center;
-    background-image: url("../bg/children/Office-Furniture-Why-Work-with-Us-cservaustin.jpg");
+    background-image: url("../bg/children/services/Furniture-Installation/Office-Furniture-Why-Work-with-Us-cservaustin.jpg");
   }
 }
 
@@ -152,11 +152,11 @@
   background-size: cover;
   background-position: center top;
   background-color: transparent;
-  background-image: url("../bg/children/Office-Furniture-Who-Work-with-Us-cservaustin-mobile.jpg");
+  background-image: url("../bg/children/services/Furniture-Installation/Office-Furniture-Who-Work-with-Us-cservaustin-mobile.jpg");
 
   @media (min-width: $main-all_mobile-breakpoint) {
     background-position: left center;
-    background-image: url("../bg/children/Office-Furniture-Who-Work-with-Us-cservaustin.jpg");
+    background-image: url("../bg/children/services/Furniture-Installation/Office-Furniture-Who-Work-with-Us-cservaustin.jpg");
   }
 }
 
@@ -210,6 +210,194 @@
     background-image: url("../bg/children/services/Business-Moving/C-Serv-Painless-Moving-Services-Commercial-Moving-Services-cservaustin.jpg");
   }
 }
+
+#children-services-page-business-moving-3 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center bottom;
+  background-color: transparent;
+  background-blend-mode: soft-light;
+  background-image: url("../bg/children/services/Business-Moving/Turnkey-Moving-Services-Commercial-Moving-Services-cservaustin-mobile.jpg");
+
+  @media (min-width: $main-tablet-breakpoint) {
+    background-image: url("../bg/children/services/Business-Moving/Turnkey-Moving-Services-Commercial-Moving-Services-cservaustin.jpg");
+  }
+}
+
+#children-services-page-logistic-storage-1 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: soft-light;
+  background-image: url("../bg/children/services/Logistic-Storage/Commercial-Storage-and-Furniture-Logistics-cservaustin-mobile.jpg");
+
+  @media (min-width: $main-tablet-breakpoint) {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: url("../bg/children/services/Logistic-Storage/Commercial-Storage-and-Furniture-Logistics-cservaustin.jpg");
+  }
+}
+
+#children-services-page-logistic-storage-2 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+  background-color: transparent;
+  background-image: url("../bg/children/services/Logistic-Storage/Storage-Services-Commercial-Storage-and-Furniture-Logistics-cservaustin-mobile.jpg");
+
+  @media (min-width: $main-tablet-breakpoint) {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: transparent;
+    background-image: url("../bg/children/services/Logistic-Storage/Storage-Services-Commercial-Storage-and-Furniture-Logistics-cservaustin.jpg");
+  }
+}
+
+#children-services-page-furniture-steam-cleaning-1 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+  background-color: transparent;
+  background-blend-mode: soft-light;
+  background-image: url("../bg/children/services/Furniture-Steam-Cleaning/Office-Furniture-Steam-Cleaning-cservaustin-mobile.jpg");
+
+  @media (min-width: $main-tablet-breakpoint) {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    background-image: url("../bg/children/services/Furniture-Steam-Cleaning/Office-Furniture-Steam-Cleaning-cservaustin.jpg");
+  }
+}
+
+#children-services-page-furniture-steam-cleaning-2 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+  background-color: transparent;
+  background-image: url("../bg/children/services/Furniture-Steam-Cleaning/Steam-Cleaning-Services-Office-Furniture-Steam-Cleaning-cservaustin-mobile.jpg");
+
+  @media (min-width: $main-tablet-breakpoint) {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    background-image: url("../bg/children/services/Furniture-Steam-Cleaning/Steam-Cleaning-Services-Office-Furniture-Steam-Cleaning-cservaustin.jpg");
+  }
+}
+
+#children-services-page-recycle-furniture-1 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center bottom;
+  background-color: transparent;
+  background-blend-mode: soft-light;
+  background-image: url("../bg/children/services/Recycle-Furniture/Office-Furniture-Removal-cservaustin-mobile.jpg");
+
+  @media (min-width: $main-tablet-breakpoint) {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center bottom;
+    background-image: url("../bg/children/services/Recycle-Furniture/Office-Furniture-Removal-cservaustin.jpg");
+  }
+}
+
+#children-services-page-layout-planning-design-1 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: transparent;
+  background-blend-mode: soft-light;
+  background-image: url("../bg/children/services/Layout-Planning-and-Design/Office-Space-Planning-and-Design-cservaustin-mobile.jpg");
+
+  @media (min-width: $main-tablet-breakpoint) {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: url("../bg/children/services/Layout-Planning-and-Design/Office-Space-Planning-and-Design-cservaustin.jpg");
+  }
+}
+
+#children-services-page-layout-planning-design-2 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: transparent;
+  background-blend-mode: soft-light;
+  background-image: url("../bg/children/services/Layout-Planning-and-Design/C-Serv-Space-Planning-Service-Office-Space-Planning-and-Design-cservaustin-mobile.jpg");
+
+  @media (min-width: $main-tablet-breakpoint) {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: url("../bg/children/services/Layout-Planning-and-Design/C-Serv-Space-Planning-Service-Office-Space-Planning-and-Design-cservaustin.jpg");
+  }
+}
+
+#children-services-page-furniture-project-management-1 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: transparent;
+  background-blend-mode: soft-light;
+  background-image: url("../bg/children/services/Furniture-Project-Management/Furniture-Project-Management-cservaustin-mobile.jpg");
+
+  @media (min-width: $main-tablet-breakpoint) {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: url("../bg/children/services/Furniture-Project-Management/Furniture-Project-Management-cservaustin.jpg");
+  }
+}
+
+#children-services-page-furniture-project-management-2 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: transparent;
+  background-blend-mode: soft-light;
+  background-image: url("../bg/children/services/Furniture-Project-Management/C-Serv-s-Turnkey-Project-Management-Benefits-cservaustin-mobile.jpg");
+
+  @media (min-width: $main-tablet-breakpoint) {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: url("../bg/children/services/Furniture-Project-Management/C-Serv-s-Turnkey-Project-Management-Benefits-cservaustin.jpg");
+  }
+}
+
+#children-services-page-furniture-project-management-3 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: transparent;
+  background-blend-mode: soft-light;
+  background-image: url("../bg/children/services/Furniture-Project-Management/C-SERV-Dedicated-Furniture-Project-Management-Service-cservaustin-mobile.jpg");
+
+  @media (min-width: $main-tablet-breakpoint) {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: url("../bg/children/services/Furniture-Project-Management/C-SERV-Dedicated-Furniture-Project-Management-Service-cservaustin.jpg");
+  }
+}
+
+#children-services-page-furniture-project-management-4 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+  background-color: transparent;
+  background-blend-mode: soft-light;
+  background-image: url("../bg/children/services/Furniture-Project-Management/Call-Out-for-Painless-Workplace-Transformation-Services-cservaustin-mobile.jpg");
+
+  @media (min-width: $main-tablet-breakpoint) {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: url("../bg/children/services/Furniture-Project-Management/Call-Out-for-Painless-Workplace-Transformation-Services-cservaustin.jpg");
+  }
+}
+
 
 #form_page_2_1_1 {
   background-repeat: no-repeat;
