@@ -10,7 +10,7 @@ function et_custom_logo($logo_container)
 
     $logo_container .= '<!-- menu insert Start -->
         <div class="top-header-second-menu">
-            <a href="#" class="second-nav-block">
+            <!--a href="#" class="second-nav-block">
                 <div class="nav-icon-block">
                     <span class="nav-icon-calendar"></span>
                 </div>
@@ -18,7 +18,7 @@ function et_custom_logo($logo_container)
                     <span class="nav-cta">Schedule an</span>
                     <span class="nav-cta-desc">Appontment</span>
                 </div>
-            </a>
+            </a-->
             <a href="#" class="second-nav-block">
                 <div class="nav-icon-block">
                     <span class="nav-icon-phone"></span>

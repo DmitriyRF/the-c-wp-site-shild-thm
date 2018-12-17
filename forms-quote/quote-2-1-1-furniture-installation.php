@@ -111,6 +111,55 @@
               </div><!-- .et_pb_row_2 -->
               <div class="et_pb_row et_pb_row_3">
 
+                <div class="et_pb_column et_pb_column_4_4 et-last-child">
+
+                  <div class="et_pb_module et_pb_text et_pb_text_1  et_pb_text_align_center">
+
+                    <div class="et_pb_text_inner">
+
+                      <h3 class="form-header-center">Type of installation service needed</h3>
+
+                    </div>
+
+                  </div> <!-- .et_pb_text -->
+
+                </div> <!-- .et_pb_column -->
+
+                <div class="et_pb_column et_pb_column_1_2">
+
+                  <div class="et_pb_radio_check_tooltips">
+                    <label class="radio_check-label">
+                      <input class="radio_check-input" type="radio" name="installation_service_type" value="TURNKEY" >
+                      <div class="radio_check_tooltip_wrapper">
+                        <button class="checkmark"></button>
+                        <span class="radio_check-label_text">C-SERV TURNKEY INSTALLATION SERVICE</span>
+                        <button type="button" class="radio_check-tooltips">
+                          <span>?</span>
+                          <p class="radio_check-tooltips_text" ></p>
+                        </button><!-- .radio_check-tooltips -->
+                      </div>
+                    </label>
+                  </div><!-- .et_pb_radio_check_tooltips -->
+                </div>
+
+                <div class="et_pb_column et_pb_column_1_2 et-last-child">
+
+                  <div class="et_pb_radio_check_tooltips">
+                    <label class="radio_check-label">
+                      <input class="radio_check-input" type="radio" name="installation_service_type" value="STANDARD" >
+                      <div class="radio_check_tooltip_wrapper">
+                        <button class="radio_check_checkmark"></button>
+                        <span class="radio_check-label_text">C-SERV STANDARD INSTALLATION SERVICE</span>
+                        <button type="button" class="radio_check-tooltips">
+                          <span>?</span>
+                          <p class="radio_check-tooltips_text" ></p>
+                        </button><!-- .radio_check-tooltips -->
+                      </div>
+                    </label>
+                  </div><!-- .et_pb_radio_check_tooltips -->
+
+                </div>
+
               </div><!-- .et_pb_row_3 -->
 
             </form><!-- .cserv_form_2_1_1 -->

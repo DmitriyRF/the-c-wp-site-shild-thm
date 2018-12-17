@@ -9,18 +9,18 @@
   }
   .second-nav-block {
     display: inline-block;
-    height: 30px;
+    height: 35px;
     overflow: hidden;
     margin-left: 30px;
 
     .nav-icon-block {
-      height: 30px;
+      height: 35px;
       float: left;
       width: 30px;
       margin-right: 5px;
     }
     .nav-text-block {
-      height: 30px;
+      height: 35px;
       width: 100%;
       max-width: 120px;
       float: left;
@@ -28,6 +28,7 @@
         width: 100%;
         font-size: 12px;
         line-height: 14px;
+        padding-bottom: 4px;
         color: #eb7719;
         font-weight: bold;
         float: left;
@@ -45,6 +46,7 @@
   }
   .nav-social-inline {
     display: inline-block;
+    margin-top: 2px;
   }
 }
 .et-fixed-header {
@@ -113,7 +115,7 @@
   width: 30px;
   height: 30px;
   font-size: 30px;
-  line-height: 30px;
+  line-height: 35px;
   display: inline-block;
   font-style: normal;
   font-variant: normal;
@@ -176,10 +178,10 @@
                   line-height: 1.2;
                   padding: 10px 30px;
                   width: 100%;
+                  transition: background 0.2s;
                   &:hover {
-                    color: black !important;
-
                     opacity: 1;
+                    background-color: #d35f00;
                   }
                 }
               }

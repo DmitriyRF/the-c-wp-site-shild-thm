@@ -30,7 +30,7 @@
 
   .form-main-header {
     font-size: 42px;
-    font-family: "Myriad Pro BOLD", Helvetica, Arial, Lucida, sans-serif;
+    font-family: $ff-myriad;
     text-transform: uppercase;
     font-weight: 700;
     padding: 0;
@@ -45,6 +45,40 @@
       font-size: 50px;
       padding: 100px 0 60px;
     }
+  }
+
+  .form-header-center{
+
+    text-transform: uppercase;
+    font-size: 20px;
+    text-align: center;
+    padding: 10px 0;
+    color: $form-group-header;
+    font-weight: 700;
+
+    @media (min-width: $main-all_mobile-breakpoint) {
+      font-size: 21px;
+    }
+    @media (min-width: $main-decktop-breakpoint) {
+      font-size: 22px;
+    }
+  }
+
+  .form-header-left{
+
+    text-transform: uppercase;
+    font-size: 20px;
+    text-align: left;
+    padding: 10px 0;
+    color: $form-group-header;
+    font-weight: 700;
+
+    @media (min-width: $main-all_mobile-breakpoint) {
+      font-size: 21px;
+    }
+    @media (min-width: $main-decktop-breakpoint) {
+      font-size: 22px;
+    }    
   }
 
   .hidden {
@@ -93,6 +127,57 @@
       }
     }
   }
+
+  .et_pb_radio_check_tooltips{
+    padding: 10px 0;
+    .radio_check-label{
+      display: block;
+      background-color: transparent;
+
+      .radio_check-input{
+        width: 1px;
+        height: 1px;
+        margin-left: -1px;
+        overflow: hidden;
+        display: inline-block;
+      }
+      .radio_check_tooltip_wrapper{
+        border: 1px solid $form-light-border;
+        height: 80px;
+        box-sizing: border-box;
+        color: $main-color-orange;
+        font-family: $ff-myriad;
+        font-weight: 600;
+
+        .radio_check_checkmark{
+
+        }
+        .radio_check-label_text{
+
+        }
+        .radio_check-tooltips{
+          span{
+            
+          }
+          .radio_check-tooltips_text{
+  
+          }
+        }
+      }
+    }
+    &.blue{
+      color: $form-group-blue;
+    }
+  }
+
+  .et_pb_radio_check{
+
+  }
+
+  .et_pb_radio_check_field{
+
+  }
+
 }
 
 // $form-light-text: #ffffff;

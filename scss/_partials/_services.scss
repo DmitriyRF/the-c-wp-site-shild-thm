@@ -23,6 +23,21 @@
               background-color: #c6c6c6;
               transition: background-color 0.3s;
               overflow: hidden;
+              @media (min-width: $main-mobile-breakpoint) {
+                height: 280px;
+              }
+              @media (min-width: $main-all_mobile-breakpoint) {
+                height: 250px;
+              }
+              @media (min-width: $main-tablet-breakpoint) {
+                height: 350px;
+              }
+              @media (min-width: $main-decktop-breakpoint) {
+                height: 300px;
+              }
+              @media (min-width: $main-full_decktop-breakpoint) {
+                height: 250px;
+              }
               .line-color {
                 transition: background-color 0.3s;
                 display: block;
@@ -45,6 +60,15 @@
                     font-weight: 500;
                     font-family: $ff-poppins;
                     padding: 20px 0px 0;
+                    @media (min-width: $main-tablet-breakpoint) {
+                      padding: 50px 5px 0;                
+                    }
+                    @media (min-width: $main-decktop-breakpoint) {
+                      padding: 35px 5px 0;
+                    }
+                    @media (min-width: $main-full_decktop-breakpoint) {
+                      padding: 20px 5px 0;
+                    }
                   }
                 }
                 .et_pb_service_icon {
