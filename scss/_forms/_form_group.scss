@@ -47,12 +47,11 @@
     }
   }
 
-  .form-header-center{
-
+  .form-header-center {
     text-transform: uppercase;
     font-size: 20px;
     text-align: center;
-    padding: 10px 0;
+    padding: 50px 0 15px;
     color: $form-group-header;
     font-weight: 700;
 
@@ -64,8 +63,7 @@
     }
   }
 
-  .form-header-left{
-
+  .form-header-left {
     text-transform: uppercase;
     font-size: 20px;
     text-align: left;
@@ -78,7 +76,7 @@
     }
     @media (min-width: $main-decktop-breakpoint) {
       font-size: 22px;
-    }    
+    }
   }
 
   .hidden {
@@ -128,56 +126,121 @@
     }
   }
 
-  .et_pb_radio_check_tooltips{
+  .et_pb_radio_check_tooltips {
     padding: 10px 0;
-    .radio_check-label{
+    .radio_check-label {
       display: block;
       background-color: transparent;
 
-      .radio_check-input{
+      .radio_check-input {
+        position: absolute;
         width: 1px;
         height: 1px;
         margin-left: -1px;
         overflow: hidden;
-        display: inline-block;
-      }
-      .radio_check_tooltip_wrapper{
-        border: 1px solid $form-light-border;
-        height: 80px;
-        box-sizing: border-box;
-        color: $main-color-orange;
-        font-family: $ff-myriad;
-        font-weight: 600;
+        display: block;
 
-        .radio_check_checkmark{
-
-        }
-        .radio_check-label_text{
-
-        }
-        .radio_check-tooltips{
-          span{
-            
+        & + .radio_check_tooltip_wrapper {
+          min-height: 80px;
+          border: 2px solid $form-light-border;
+          padding: 5px;
+          box-sizing: border-box;
+          color: $main-color-blue;
+          font-family: $ff-myriad;
+          display: flex;
+          align-items: center;
+          @media (min-width: $main-all_mobile-breakpoint) {
+            padding: 10px;
           }
-          .radio_check-tooltips_text{
-  
+          @media (min-width: $main-decktop-breakpoint) {
+            padding: 15px;
+          }
+
+          .centralize_content {
+            display: flex;
+            flex-flow: nowrap;
+            align-items: flex-start;
+            justify-content: space-between;
+            width: 100%;
+
+            .radio_check_checkmark {
+              display: block;
+              flex-shrink: 0;
+              width: 33px;
+              height: 33px;
+              padding: 3px;
+              border-radius: 50%;
+              border: 5px solid $main-color-blue;
+              background-color: $form-grey-radio;
+              box-shadow: 0 0 0px 3px inset white;
+              box-sizing: border-box;
+            }
+            .radio_check-label_text {
+              font-size: 14px;
+              padding: 0 20px;
+              @media (min-width: $main-all_mobile-breakpoint) {
+                font-size: 18px;
+              }
+              @media (min-width: $main-decktop-breakpoint) {
+                font-size: 22px;
+              }
+            }
+            .radio_check-tooltips {
+              position: relative;
+              display: flex;
+              flex-shrink: 0;
+              justify-content: center;
+              align-items: center;
+              width: 42px;
+              height: 42px;
+              border: 2px solid $form-light-border;
+              border-radius: 50%;
+              background: transparent;
+              box-sizing: border-box;
+              span {
+                font-size: 24px;
+                line-height: 24px;
+                font-weight: 600;
+                font-family: $ff-poppins;
+                color: $form-grey-text;
+              }
+              .radio_check-tooltips_text {
+                position: absolute;
+              }
+            }
+          }
+        }
+        &:checked + .radio_check_tooltip_wrapper {
+          border: 5px solid $form-light-border;
+          color: $main-color-orange;
+          background-color: $form-light-background;
+          font-weight: 600;
+          padding: 12px;
+
+          .radio_check_checkmark {
+            border-color: $main-color-orange;
+            background-color: $main-color-orange;
+          }
+          .radio_check-tooltips {
+            border: 5px solid $form-light-border;
+            span {
+            }
+            .radio_check-tooltips_text {
+            }
           }
         }
       }
     }
-    &.blue{
+    &.blue {
       color: $form-group-blue;
     }
   }
 
-  .et_pb_radio_check{
-
+  .et_pb_radio_check {
   }
 
-  .et_pb_radio_check_field{
-
+  .et_pb_radio_check_field {
   }
-
 }
 
 // $form-light-text: #ffffff;

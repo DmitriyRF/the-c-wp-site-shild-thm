@@ -5,25 +5,29 @@
   top: 20px;
   transition: top 0.3s ease-in-out;
   @media (min-width: 981px) {
-    display: block;
+    display: inline-flex;
+    flex-wrap: nowrap;
   }
   .second-nav-block {
-    display: inline-block;
-    height: 35px;
+    display: inline-flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    height: 40px;
     overflow: hidden;
-    margin-left: 30px;
+    margin-left: 10px;
 
     .nav-icon-block {
       height: 35px;
-      float: left;
       width: 30px;
       margin-right: 5px;
     }
     .nav-text-block {
-      height: 35px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 37px;
       width: 100%;
       max-width: 120px;
-      float: left;
       .nav-cta {
         width: 100%;
         font-size: 12px;
@@ -47,6 +51,7 @@
   .nav-social-inline {
     display: inline-block;
     margin-top: 2px;
+    margin-left: 10px;
   }
 }
 .et-fixed-header {
@@ -62,8 +67,7 @@
   background-color: #eb7719;
   border-radius: 50%;
   text-align: center;
-  transition: font-size 0.4s, width 0.4s, height 0.4s, line-height 0.4s,
-    padding 0.4s ease-in-out;
+  transition: font-size 0.4s, width 0.4s, height 0.4s, line-height 0.4s, padding 0.4s ease-in-out;
   font-family: "Font Awesome 5 Brands";
   font-size: 20px;
   color: white;
@@ -79,8 +83,7 @@
     font-weight: normal;
     text-transform: none;
     -webkit-font-smoothing: antialiased;
-    transition: font-size 0.4s, width 0.4s, height 0.4s, line-height 0.4s,
-      padding 0.4s ease-in-out;
+    transition: font-size 0.4s, width 0.4s, height 0.4s, line-height 0.4s, padding 0.4s ease-in-out;
   }
   &.nav-icon-google-plus::after {
     content: "\f0d5";

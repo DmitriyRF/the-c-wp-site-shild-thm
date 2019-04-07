@@ -53,7 +53,7 @@
                 </div> <!-- .et_pb_column -->
 
               </div><!-- .et_pb_row_1 -->
-
+              
               <div class="et_pb_row et_pb_row_2">
 
                 <div class="et_pb_column et_pb_column_1_2">
@@ -109,8 +109,8 @@
                 </div>
 
               </div><!-- .et_pb_row_2 -->
-              <div class="et_pb_row et_pb_row_3">
 
+              <div class="et_pb_row et_pb_row_3">
                 <div class="et_pb_column et_pb_column_4_4 et-last-child">
 
                   <div class="et_pb_module et_pb_text et_pb_text_1  et_pb_text_align_center">
@@ -124,6 +124,9 @@
                   </div> <!-- .et_pb_text -->
 
                 </div> <!-- .et_pb_column -->
+              </div><!-- .et_pb_row_3 -->
+
+              <div class="et_pb_row et_pb_row_4 et_pb_equal_columns">
 
                 <div class="et_pb_column et_pb_column_1_2">
 
@@ -131,12 +134,14 @@
                     <label class="radio_check-label">
                       <input class="radio_check-input" type="radio" name="installation_service_type" value="TURNKEY" >
                       <div class="radio_check_tooltip_wrapper">
-                        <button class="checkmark"></button>
-                        <span class="radio_check-label_text">C-SERV TURNKEY INSTALLATION SERVICE</span>
-                        <button type="button" class="radio_check-tooltips">
-                          <span>?</span>
-                          <p class="radio_check-tooltips_text" ></p>
-                        </button><!-- .radio_check-tooltips -->
+                        <div class="centralize_content">
+                          <button class="radio_check_checkmark"></button>
+                          <span class="radio_check-label_text">C-SERV TURNKEY INSTALLATION SERVICE</span>
+                          <button type="button" class="radio_check-tooltips">
+                            <span>?</span>
+                            <p class="radio_check-tooltips_text" ></p>
+                          </button><!-- .radio_check-tooltips -->
+                        </div>
                       </div>
                     </label>
                   </div><!-- .et_pb_radio_check_tooltips -->
@@ -148,19 +153,21 @@
                     <label class="radio_check-label">
                       <input class="radio_check-input" type="radio" name="installation_service_type" value="STANDARD" >
                       <div class="radio_check_tooltip_wrapper">
-                        <button class="radio_check_checkmark"></button>
-                        <span class="radio_check-label_text">C-SERV STANDARD INSTALLATION SERVICE</span>
-                        <button type="button" class="radio_check-tooltips">
-                          <span>?</span>
-                          <p class="radio_check-tooltips_text" ></p>
-                        </button><!-- .radio_check-tooltips -->
+                        <div class="centralize_content">
+                          <button class="radio_check_checkmark"></button>
+                          <span class="radio_check-label_text">C-SERV STANDARD INSTALLATION SERVICE</span>
+                          <button type="button" class="radio_check-tooltips">
+                            <span>?</span>
+                            <p class="radio_check-tooltips_text" ></p>
+                          </button><!-- .radio_check-tooltips -->
+                        </div>
                       </div>
                     </label>
                   </div><!-- .et_pb_radio_check_tooltips -->
 
                 </div>
 
-              </div><!-- .et_pb_row_3 -->
+              </div><!-- .et_pb_row_4 -->
 
             </form><!-- .cserv_form_2_1_1 -->
 

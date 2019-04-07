@@ -1,3 +1,35 @@
+/* latin */
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 300;
+  src: local("Poppins Light"), local("Poppins-Light"), url(https://fonts.gstatic.com/s/poppins/v5/pxiByp8kv8JHgFVrLDz8Z1xlFQ.woff2) format("woff2");
+  unicode-range: U0-0FF, U131, U152-153, U2BB-2BC, U2C 6, U2DA, U2DC, U2000-206F, U2074, U20AC, U2122, U2191, U2193, U2212, U2215, UFEFF, UFFFD;
+}
+/* latin */
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Poppins Regular"), local("Poppins-Regular"), url(https://fonts.gstatic.com/s/poppins/v5/pxiEyp8kv8JHgFVrJJfecg.woff2) format("woff2");
+  unicode-range: U0-0FF, U131, U152-153, U2BB-2BC, U2C 6, U2DA, U2DC, U2000-206F, U2074, U20AC, U2122, U2191, U2193, U2212, U2215, UFEFF, UFFFD;
+}
+/* latin */
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  src: local("Poppins SemiBold"), local("Poppins-SemiBold"), url(https://fonts.gstatic.com/s/poppins/v5/pxiByp8kv8JHgFVrLEj6Z1xlFQ.woff2) format("woff2");
+  unicode-range: U0-0FF, U131, U152-153, U2BB-2BC, U2C 6, U2DA, U2DC, U2000-206F, U2074, U20AC, U2122, U2191, U2193, U2212, U2215, UFEFF, UFFFD;
+}
+/* latin */
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  src: local("Poppins Bold"), local("Poppins-Bold"), url(https://fonts.gstatic.com/s/poppins/v5/pxiByp8kv8JHgFVrLCz7Z1xlFQ.woff2) format("woff2");
+  unicode-range: U0-0FF, U131, U152-153, U2BB-2BC, U2C 6, U2DA, U2DC, U2000-206F, U2074, U20AC, U2122, U2191, U2193, U2212, U2215, UFEFF, UFFFD;
+}
 .top-header-second-menu {
   display: none;
   position: absolute;
@@ -7,31 +39,36 @@
 }
 @media (min-width: 981px) {
   .top-header-second-menu {
-    display: block;
+    display: inline-flex;
+    flex-wrap: nowrap;
   }
 }
 .top-header-second-menu .second-nav-block {
-  display: inline-block;
-  height: 30px;
+  display: inline-flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  height: 40px;
   overflow: hidden;
-  margin-left: 30px;
+  margin-left: 10px;
 }
 .top-header-second-menu .second-nav-block .nav-icon-block {
-  height: 30px;
-  float: left;
+  height: 35px;
   width: 30px;
   margin-right: 5px;
 }
 .top-header-second-menu .second-nav-block .nav-text-block {
-  height: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 37px;
   width: 100%;
   max-width: 120px;
-  float: left;
 }
 .top-header-second-menu .second-nav-block .nav-text-block .nav-cta {
   width: 100%;
   font-size: 12px;
   line-height: 14px;
+  padding-bottom: 4px;
   color: #eb7719;
   font-weight: bold;
   float: left;
@@ -47,6 +84,8 @@
 }
 .top-header-second-menu .nav-social-inline {
   display: inline-block;
+  margin-top: 2px;
+  margin-left: 10px;
 }
 .et-fixed-header .top-header-second-menu {
   top: -40px;
@@ -106,7 +145,7 @@
   width: 30px;
   height: 30px;
   font-size: 30px;
-  line-height: 30px;
+  line-height: 35px;
   display: inline-block;
   font-style: normal;
   font-variant: normal;
@@ -159,10 +198,11 @@
     line-height: 1.2;
     padding: 10px 30px;
     width: 100%;
+    transition: background 0.2s;
   }
   .et_header_style_left #et-top-navigation > #top-menu-nav > #top-menu > .menu-item .sub-menu > .menu-item a:hover, .et_header_style_split #et-top-navigation > #top-menu-nav > #top-menu > .menu-item .sub-menu > .menu-item a:hover {
-    color: black;
     opacity: 1;
+    background-color: #d35f00;
   }
 }
 #main-header #et-top-navigation #et_mobile_nav_menu .et_mobile_menu {
@@ -226,10 +266,18 @@
     font-size: 9px;
   }
 }
+#page-container #main-header #top-menu .sub-menu li.current-menu-item > a {
+  color: #fff !important;
+  background-color: #c05805;
+}
 @media (min-width: 981px) {
   #page-container #main-header.et-fixed-header .logo_container > a {
     overflow: hidden;
   }
+}
+#page-container #main-header.et-fixed-header #top-menu .sub-menu li.current-menu-item > a {
+  color: #fff !important;
+  background-color: #c05805;
 }
 @media (max-width: 980px) {
   #page-container #main-header > .et_menu_container {
@@ -587,6 +635,9 @@
   /* Firefox 18- */
   color: white;
 }
+.shortcodes-form-estimate-wrapper .g-recaptcha {
+  opacity: 0;
+}
 #wrapper-ajax-loader {
   display: none;
   position: absolute;
@@ -643,14 +694,25 @@
   background-color: rgba(16, 64, 116, 0.9);
 }
 #home-main-slide .et_pb_text_inner {
-  padding: 20px 40px;
+  padding: 20px 10px 20px 10px;
   background-color: rgba(16, 64, 116, 0.65);
   transition: all 0.3s ease-in;
   min-height: 400px;
 }
+@media (min-width: 768px) {
+  #home-main-slide .et_pb_text_inner {
+    padding: 20px 10px 20px 40px;
+  }
+}
 @media (min-width: 981px) {
   #home-main-slide .et_pb_text_inner {
     min-height: 460px;
+    padding: 20px 10px 20px 10px;
+  }
+}
+@media (min-width: 1440px) {
+  #home-main-slide .et_pb_text_inner {
+    padding: 20px 10px 20px 40px;
   }
 }
 #home-main-slide:hover .et_pb_text_inner {
@@ -662,13 +724,24 @@
   }
 }
 .home-secondary-slide .et_pb_text_inner {
-  padding: 20px 40px;
+  padding: 20px 10px 20px 10px;
   transition: all 0.3s ease-in;
   min-height: 300px;
+}
+@media (min-width: 768px) {
+  .home-secondary-slide .et_pb_text_inner {
+    padding: 20px 10px 20px 40px;
+  }
 }
 @media (min-width: 981px) {
   .home-secondary-slide .et_pb_text_inner {
     min-height: 225px;
+    padding: 20px 10px 20px 10px;
+  }
+}
+@media (min-width: 1440px) {
+  .home-secondary-slide .et_pb_text_inner {
+    padding: 20px 10px 20px 40px;
   }
 }
 .home-secondary-slide#home-color-slide-blue .et_pb_text_inner {
@@ -840,6 +913,284 @@
   color: #fff;
   line-height: 1.1em;
 }
+#home-page-main-sliders .et_pb_module.et_pb_text h3 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@media (max-width: 980px) {
+  #main-content .et_pb_row.service-row .et_pb_column {
+    margin-bottom: 0;
+  }
+}
+#main-content .et_pb_row.service-row .et_pb_column .cserv_service {
+  margin: 0;
+}
+#main-content .et_pb_row.service-row .et_pb_column .cserv_service .et_pb_module_inner .et_pb_service_content_wrapper {
+  padding-bottom: 40px;
+}
+@media (min-width: 981px) {
+  #main-content .et_pb_row.service-row .et_pb_column .cserv_service .et_pb_module_inner .et_pb_service_content_wrapper {
+    background-image: url("../bg/parent/service-module-shadow.png");
+    background-position: bottom center;
+    background-size: 120% 80px;
+  }
+}
+#main-content .et_pb_row.service-row .et_pb_column .cserv_service .et_pb_module_inner .et_pb_service_content_wrapper .et_pb_service_link_to {
+  display: block;
+  height: 100%;
+  max-width: 305px;
+  margin: auto;
+  height: 250px;
+  background-color: #c6c6c6;
+  transition: background-color 0.3s;
+  overflow: hidden;
+}
+@media (min-width: 481px) {
+  #main-content .et_pb_row.service-row .et_pb_column .cserv_service .et_pb_module_inner .et_pb_service_content_wrapper .et_pb_service_link_to {
+    height: 280px;
+  }
+}
+@media (min-width: 768px) {
+  #main-content .et_pb_row.service-row .et_pb_column .cserv_service .et_pb_module_inner .et_pb_service_content_wrapper .et_pb_service_link_to {
+    height: 250px;
+  }
+}
+@media (min-width: 981px) {
+  #main-content .et_pb_row.service-row .et_pb_column .cserv_service .et_pb_module_inner .et_pb_service_content_wrapper .et_pb_service_link_to {
+    height: 350px;
+  }
+}
+@media (min-width: 1200px) {
+  #main-content .et_pb_row.service-row .et_pb_column .cserv_service .et_pb_module_inner .et_pb_service_content_wrapper .et_pb_service_link_to {
+    height: 300px;
+  }
+}
+@media (min-width: 1440px) {
+  #main-content .et_pb_row.service-row .et_pb_column .cserv_service .et_pb_module_inner .et_pb_service_content_wrapper .et_pb_service_link_to {
+    height: 250px;
+  }
+}
+#main-content .et_pb_row.service-row .et_pb_column .cserv_service .et_pb_module_inner .et_pb_service_content_wrapper .et_pb_service_link_to .line-color {
+  transition: background-color 0.3s;
+  display: block;
+  width: 100%;
+  height: 10px;
+  margin: 0;
+  padding: 0;
+  background-color: #e2e2e2;
+}
+#main-content .et_pb_row.service-row .et_pb_column .cserv_service .et_pb_module_inner .et_pb_service_content_wrapper .et_pb_service_link_to .et_pb_service_content {
+  display: block;
+  text-align: center;
+  position: relative;
+  height: 100%;
+}
+#main-content .et_pb_row.service-row .et_pb_column .cserv_service .et_pb_module_inner .et_pb_service_content_wrapper .et_pb_service_link_to .et_pb_service_content .et_pb_service_header .et_pb_module_header {
+  font-size: 22px;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  padding: 20px 0px 0;
+}
+@media (min-width: 981px) {
+  #main-content .et_pb_row.service-row .et_pb_column .cserv_service .et_pb_module_inner .et_pb_service_content_wrapper .et_pb_service_link_to .et_pb_service_content .et_pb_service_header .et_pb_module_header {
+    padding: 50px 5px 0;
+  }
+}
+@media (min-width: 1200px) {
+  #main-content .et_pb_row.service-row .et_pb_column .cserv_service .et_pb_module_inner .et_pb_service_content_wrapper .et_pb_service_link_to .et_pb_service_content .et_pb_service_header .et_pb_module_header {
+    padding: 35px 5px 0;
+  }
+}
+@media (min-width: 1440px) {
+  #main-content .et_pb_row.service-row .et_pb_column .cserv_service .et_pb_module_inner .et_pb_service_content_wrapper .et_pb_service_link_to .et_pb_service_content .et_pb_service_header .et_pb_module_header {
+    padding: 20px 5px 0;
+  }
+}
+#main-content .et_pb_row.service-row .et_pb_column .cserv_service .et_pb_module_inner .et_pb_service_content_wrapper .et_pb_service_link_to .et_pb_service_content .et_pb_service_icon {
+  display: inline-block;
+  max-width: 150px;
+}
+#main-content .et_pb_row.service-row .et_pb_column .cserv_service .et_pb_module_inner .et_pb_service_content_wrapper .et_pb_service_link_to .et_pb_service_content .et_pb_service_icon img {
+  max-width: 150px;
+  width: 100%;
+  height: auto;
+}
+#main-content .et_pb_row.service-row .et_pb_column .cserv_service .et_pb_module_inner .et_pb_service_content_wrapper .et_pb_service_link_to .et_pb_service_content .et_pb_service_cta_mobile {
+  position: absolute;
+  bottom: 15px;
+  width: 100%;
+  color: #eb7719;
+  text-transform: uppercase;
+  text-align: center;
+}
+@media (min-width: 981px) {
+  #main-content .et_pb_row.service-row .et_pb_column .cserv_service .et_pb_module_inner .et_pb_service_content_wrapper .et_pb_service_link_to .et_pb_service_content .et_pb_service_cta_mobile {
+    display: none;
+  }
+}
+#main-content .et_pb_row.service-row .et_pb_column .cserv_service .et_pb_module_inner .et_pb_service_content_wrapper .et_pb_service_link_to .et_pb_service_content_hover {
+  display: none;
+  text-align: center;
+}
+#main-content .et_pb_row.service-row .et_pb_column .cserv_service .et_pb_module_inner .et_pb_service_content_wrapper .et_pb_service_link_to .et_pb_service_content_hover .et_pb_service_icon_hover {
+  max-width: 90px;
+  margin: auto;
+  text-align: center;
+}
+#main-content .et_pb_row.service-row .et_pb_column .cserv_service .et_pb_module_inner .et_pb_service_content_wrapper .et_pb_service_link_to .et_pb_service_content_hover .et_pb_service_icon_hover img {
+  max-width: 100%;
+  height: auto;
+}
+#main-content .et_pb_row.service-row .et_pb_column .cserv_service .et_pb_module_inner .et_pb_service_content_wrapper .et_pb_service_link_to .et_pb_service_content_hover .et_pb_service_description_hover {
+  color: white;
+  font-size: 14px;
+  line-height: 1.4;
+  padding: 0 25px 10px;
+}
+#main-content .et_pb_row.service-row .et_pb_column .cserv_service .et_pb_module_inner .et_pb_service_content_wrapper .et_pb_service_link_to .et_pb_service_content_hover .et_pb_service_cta_hover {
+  color: white;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+@media (min-width: 981px) {
+  #main-content .et_pb_row.service-row .et_pb_column .cserv_service .et_pb_module_inner .et_pb_service_content_wrapper .et_pb_service_link_to:hover {
+    background-color: #eb7719 !important;
+  }
+  #main-content .et_pb_row.service-row .et_pb_column .cserv_service .et_pb_module_inner .et_pb_service_content_wrapper .et_pb_service_link_to:hover .line-color {
+    background-color: #ff9036 !important;
+  }
+  #main-content .et_pb_row.service-row .et_pb_column .cserv_service .et_pb_module_inner .et_pb_service_content_wrapper .et_pb_service_link_to:hover .et_pb_service_content {
+    display: none;
+  }
+  #main-content .et_pb_row.service-row .et_pb_column .cserv_service .et_pb_module_inner .et_pb_service_content_wrapper .et_pb_service_link_to:hover .et_pb_service_content_hover {
+    display: block;
+  }
+}
+#main-content .et_pb_row.service-row .et_pb_column:nth-child(even) .cserv_service .et_pb_module_inner .et_pb_service_content_wrapper .et_pb_service_link_to {
+  background-color: #e2e2e2;
+}
+#main-content .et_pb_row.service-row .et_pb_column:nth-child(even) .cserv_service .et_pb_module_inner .et_pb_service_content_wrapper .et_pb_service_link_to .line-color {
+  background-color: #c6c6c6;
+}
+@media (min-width: 981px) {
+  .et_divi_theme.et-db #page-container #et-boc .child-bordered-columns .et_pb_column:not(:last-child) {
+    border-right: 1px solid #c5c5c5;
+  }
+}
+.et_divi_theme.et-db #page-container #et-boc .text_buttom_down {
+  padding-bottom: 125px !important;
+  height: 100%;
+  position: relative;
+}
+.et_divi_theme.et-db #page-container #et-boc .text_buttom_down .et_pb_text_inner {
+  position: unset;
+}
+.et_divi_theme.et-db #page-container #et-boc .text_buttom_down .btn-in-text {
+  display: inline-block;
+  position: absolute;
+  padding: 11px 0px;
+  margin-top: 20px;
+  width: 100%;
+  background-color: #fff;
+  max-width: 270px;
+  bottom: 55px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.et_divi_theme.et-db #page-container #et-boc .accordion_work_with_us .et_pb_toggle_close.et_pb_toggle {
+  border-top: 10px solid #fff;
+  padding: 0;
+  margin-bottom: 0px;
+}
+.et_divi_theme.et-db #page-container #et-boc .accordion_work_with_us .et_pb_toggle_close.et_pb_toggle .et_pb_toggle_title {
+  padding: 30px 0 30px 50px;
+}
+.et_divi_theme.et-db #page-container #et-boc .accordion_work_with_us .et_pb_toggle_close.et_pb_toggle .et_pb_toggle_title::before {
+  content: "5";
+  left: 0;
+  right: auto;
+  position: absolute;
+  text-shadow: 0 0;
+  font-family: "ETmodules" !important;
+  top: 50%;
+  font-size: 48px;
+  display: block;
+}
+.et_divi_theme.et-db #page-container #et-boc .accordion_work_with_us .et_pb_toggle_close.et_pb_toggle .et_pb_toggle_content {
+  padding: 10px 0 40px 0;
+}
+.et_divi_theme.et-db #page-container #et-boc .accordion_work_with_us .et_pb_toggle_close.et_pb_toggle .et_pb_toggle_content a {
+  text-transform: uppercase;
+  font-size: 16px;
+  text-decoration: underline;
+  font-family: "Myriad Pro BOLD", Helvetica, Arial, Lucida, sans-serif;
+  color: #fff;
+}
+.et_divi_theme.et-db #page-container #et-boc .accordion_work_with_us .et_pb_toggle_open.et_pb_toggle {
+  border-top: 10px solid #fff;
+  padding: 0;
+  margin-bottom: 0px;
+}
+.et_divi_theme.et-db #page-container #et-boc .accordion_work_with_us .et_pb_toggle_open.et_pb_toggle .et_pb_toggle_title {
+  padding: 30px 0 30px 50px;
+}
+.et_divi_theme.et-db #page-container #et-boc .accordion_work_with_us .et_pb_toggle_open.et_pb_toggle .et_pb_toggle_title::before {
+  content: "3";
+  left: 0;
+  right: auto;
+  text-shadow: 0 0;
+  font-family: "ETmodules" !important;
+  top: 50%;
+  position: absolute;
+  display: block;
+  font-size: 48px;
+}
+.et_divi_theme.et-db #page-container #et-boc .accordion_work_with_us .et_pb_toggle_open.et_pb_toggle .et_pb_toggle_content {
+  padding: 10px 0 40px 0;
+}
+.et_divi_theme.et-db #page-container #et-boc .accordion_work_with_us .et_pb_toggle_open.et_pb_toggle .et_pb_toggle_content a {
+  text-transform: uppercase;
+  font-size: 16px;
+  text-decoration: underline;
+  font-family: "Myriad Pro BOLD", Helvetica, Arial, Lucida, sans-serif;
+  color: #fff;
+}
+.et_divi_theme.et-db #page-container #et-boc .child-furniture-install-type {
+  max-width: 340px;
+  margin: auto;
+}
+#slider_arrow_dot_style_orange.owl-carousel .owl-nav .owl-next, #type_for_future_install.owl-carousel .owl-nav .owl-next, #slider_who_work_mobile.owl-carousel .owl-nav .owl-next {
+  background-position: center !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-color: transparent !important;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAA6CAYAAADVwos0AAADS0lEQVRYhb3ZTYiVVRzH8c80OuQFmxaNG2fX0MaGNtHUKrz4AlpTvoBmRUtzUYsomq2b2gSJbxcUK4LIUsqXsDQiIhIsxWjcuR0Iikh7GSoTWvzvA9N4L885957rb3O5z/M/h+/znPN/Of9n6PzOFTpoGIfxHVqdDEprSYdrS/EutuM5/Ib3Bg1yx6L/IzjWhqjuv43p2wnSwCk8schmKY6ieTtAluMM1nexW4aPMDVIkLtxDo/W2I7iNCYHBXIUDyfaj4k3NzEIkJfxc8aYcXza/i0KcgVrMmEmxJsZKwkCP2AdfskYOyn2zGhJEPgea/Frxvgp4U2NkiBwuQ1zLWOOJt4XwbAYCFwSy3Q9Y55pvCVyVDEQItmtz4R5GvswVBIELmCDSHqp2oXXSoPA+TbMHxlzzuDV0iDwTRvmz4x5X8fzpUHga2zEfKL9EPZjR2kQ+AqPZcAMi1rm8dIg8CWezIAZEUl1dWkQ+Byb8FeifQMf46HSIET9sgl/J9qP4hPcXxoEPsNm/JNoPybKh3tLgxClwJYMmHHxACtLgxCvfFsGzIR4M/eUBoETeAo3Eu0nxQMsLw1C1CU78G+i/ZR4gDtLg8BxkYVvJto38QGWlAaBD/FMBsw0jgwChPTIW+nbQYA0RVhPrdZaOFAa5AGxaZcl2p/CC5TdrBMiD6UeL2Yt2EulQKqImXrgmhPF1u/VhRIgoyLUd8whHTQvPGVu4cV+QRoiXKd2CG6KCHx58Y1+QKqi55GMMS+JDXqLegUZEgeqpDKwrRb2drvZK8geEcpTdVrbTUuCzODFDPtZPKsm5OeC7BJnllRVblp7dM0B2SrOtqmaF3XtXJ1hDkhTNH1T80flphcT7ZNApsRxIKf/8YoubtoryH1ix9+VMWcLb+ZA1IGM4wt5Dbszatw0F2RMJLGcFuasqFlTK7NakIZYjlUZ8yS7aSrICE7K67nPC9dOctMUkGG8I5q/qarc9EI/EItB9rUnzdGMTDetA9ktwneOWnijBMRCkJ+k9zvgrB7dtA7kgChwriaMmRWH7p7ctA6E6MU/KE5q3fSjPt00BYRo7m7DTrcuVVY27Rek0iH/X6pibtpNnb77VqqW6qD4nlPETbvpP9OLoh7sY2CTAAAAAElFTkSuQmCC) !important;
+}
+#slider_arrow_dot_style_orange.owl-carousel .owl-nav .owl-prev, #type_for_future_install.owl-carousel .owl-nav .owl-prev, #slider_who_work_mobile.owl-carousel .owl-nav .owl-prev {
+  background-position: center !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-color: transparent !important;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAA6CAYAAADVwos0AAADY0lEQVRYhb3ZzWucVRTH8U8yNtCIiYtGF82ucZe4aq2uhGItVmnQgi+NuhEpXZQuStG/wG0RiwURu9OiUjWVWkRUFC31/QUX4koIghTFKtaqHejizGPHaSZz7swzc2A2z3PunS/3Pr9zzzl37OO9NxiR7cMWPI5m58trRgSxhCMYx3o8in/bHcZHALELx9r+60G8golRgmzDcazreL6IZUyOAmQrXhNbsZrtwClcN0yQBbyJqR5+t+NtXD8MkDm8hQ1J/1txvG6QWZzGxoIx53CwTpAZsRKbCiHuwHd1gUzjJOYLxvyC7fiGej7WSZwQKsnary2Ir6sHg4JM4CURL7L2G+7El+0PBwFp4AURObN2XqzE550v+gUZwzPiDCmB2IHPVnvZL8hT4jTN2u+4C2e7OfQD8mTrl7U/sBNn1nIqBdknViNrf+JufNTLsQRkSXwXY0n/C2IlPsw4Z0F2CYU0CiDuwQdJ/xTINhErJno5tkEs4r0sRAbkFhE1J3v4VfYX7sU7JRC9QOZFTjGdnOtv3Cfyi2LrBrJJnKQzyXn+EStxuh+IbiAbWxPOFkDsFuB9WyfIhtaEcwUQ94stHMjaQaZaEy4UQDyENwaFaAdZLzLubE5xSQS4E3VAVCDrRO2RzSma2INX64KoQJ6XzymaeFhUarXaOD4tHHOhbogK5AiOJv0bylPDNAjsF7Voxqpk+eZhgDTxCL5NjpsW50k23qRBiHRuJ1aSY6uCKhuB0yBaEIvyH+ScqOizB2MaBL4QEfOq9lIXWxArk00V0iDEh3uwYJ7blCVPaRB4Wl7WXEknszltGoSQ9cmC+ZZweBggpbKGA8rqnhQIUSqWyJrySjBdTqyIVDAr66o23l03CFE8l8i6gRclz6XSknMZhwr8JyQTrn6K8MPKZD0llHdT3SCErE8V+M/gXWucS/2CVOliiaxnrVErDdK66kfW82KbrjqXBm3mrQiJlqSPW/G6IdxOfKJM1kRD75i2NkddDd9lPFE4Zo8IeqDx2OZra2JxBjeK67KsbRGL8X7dlwL7lXUELuJn6r+vaYqrsoysfxAJ1bPDAOGKrH9aw+dlbMZX1YNh3WCtiO5Rp6wvYi8eEFXDfzbMO72z/i/raiueW825TtWsZt+LBt85Uab82M3xMiPpo4mV+p07AAAAAElFTkSuQmCC) !important;
+}
+#slider_arrow_dot_style_orange.owl-carousel .owl-dots .owl-dot span, #type_for_future_install.owl-carousel .owl-dots .owl-dot span, #slider_who_work_mobile.owl-carousel .owl-dots .owl-dot span {
+  display: inline-block !important;
+  border: 2px solid #9f9f9f !important;
+  background-color: rgba(0, 0, 0, 0) !important;
+  width: 12px !important;
+  height: 12px !important;
+  border-radius: 50% !important;
+  margin: 0px 3px !important;
+  transition: all 0.3s ease-in-out !important;
+  -webkit-transition: all 0.3s ease-in-out !important;
+  -moz-transition: all 0.3s ease-in-out !important;
+  -o-transition: all 0.3s ease-in-out !important;
+}
+#slider_arrow_dot_style_orange.owl-carousel .owl-dots .owl-dot.active span, #type_for_future_install.owl-carousel .owl-dots .owl-dot.active span, #slider_who_work_mobile.owl-carousel .owl-dots .owl-dot.active span {
+  background-color: #c66716 !important;
+}
 #home-page-main-sliders {
   background-position: center;
   background-repeat: no-repeat;
@@ -920,5 +1271,817 @@
     background-color: transparent;
     background-image: url("../bg/parent/parent-page-form-desktop-background-cservaustin-com.jpg");
   }
+}
+#several-page-get-free-installation-quote {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: transparent;
+  background-image: url("../bg/several/Get-Free-Installation-Quote-cservaustin-mobile.jpg");
+}
+@media (min-width: 768px) {
+  #several-page-get-free-installation-quote {
+    background-image: url("../bg/several/Get-Free-Installation-Quote-cservaustin.jpg");
+  }
+}
+#children-services-page-furniture-installation-1 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: transparent;
+  background-blend-mode: soft-light;
+  background-image: url("../bg/children/services/Furniture-Installation/Office-Furniture-Installation-cservaustin-mobile.jpg");
+}
+@media (min-width: 981px) {
+  #children-services-page-furniture-installation-1 {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: transparent;
+    background-image: url("../bg/children/services/Furniture-Installation/Office-Furniture-Installation-cservaustin.jpg");
+  }
+}
+#children-services-page-furniture-installation-2 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: transparent;
+  background-image: url("../bg/children/services/Furniture-Installation/Office-Furniture-Installation-Packages-cservaustin.jpg");
+}
+@media (max-width: 981px) {
+  #children-services-page-furniture-installation-2 {
+    background-image: url("../bg/children/services/Furniture-Installation/Office-Furniture-Installation-Packages-cservaustin-tablet.jpg");
+  }
+}
+@media (max-width: 481px) {
+  #children-services-page-furniture-installation-2 {
+    background-image: url("../bg/children/services/Furniture-Installation/Office-Furniture-Installation-Packages-cservaustin-mobile.jpg");
+  }
+}
+#children-services-page-furniture-installation-3 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+  background-color: transparent;
+  background-image: url("../bg/children/services/Furniture-Installation/Office-Furniture-Why-Work-with-Us-cservaustin-mobile.jpg");
+}
+@media (min-width: 768px) {
+  #children-services-page-furniture-installation-3 {
+    background-position: left center;
+    background-image: url("../bg/children/services/Furniture-Installation/Office-Furniture-Why-Work-with-Us-cservaustin.jpg");
+  }
+}
+#children-services-page-furniture-installation-4 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+  background-color: transparent;
+  background-image: url("../bg/children/services/Furniture-Installation/Office-Furniture-Who-Work-with-Us-cservaustin-mobile.jpg");
+}
+@media (min-width: 768px) {
+  #children-services-page-furniture-installation-4 {
+    background-position: left center;
+    background-image: url("../bg/children/services/Furniture-Installation/Office-Furniture-Who-Work-with-Us-cservaustin.jpg");
+  }
+}
+#children-services-page-office-reconfiguration-1 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: transparent;
+  background-blend-mode: soft-light;
+  background-image: url("../bg/children/services/Office-Reconfiguration/Office-Reconfiguration-cservaustin-mobile.jpg");
+}
+@media (min-width: 981px) {
+  #children-services-page-office-reconfiguration-1 {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: transparent;
+    background-image: url("../bg/children/services/Office-Reconfiguration/Office-Reconfiguration-cservaustin.jpg");
+  }
+}
+#children-services-page-business-moving-1 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: transparent;
+  background-blend-mode: soft-light;
+  background-image: url("../bg/children/services/Business-Moving/Commercial-Moving-Services-cservaustin-mobile.jpg");
+}
+@media (min-width: 981px) {
+  #children-services-page-business-moving-1 {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: transparent;
+    background-image: url("../bg/children/services/Business-Moving/Commercial-Moving-Services-cservaustin.jpg");
+  }
+}
+#children-services-page-business-moving-2 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+  background-color: transparent;
+  background-blend-mode: soft-light;
+  background-image: url("../bg/children/services/Business-Moving/C-Serv-Painless-Moving-Services-Commercial-Moving-Services-cservaustin-mobile.jpg");
+}
+@media (min-width: 981px) {
+  #children-services-page-business-moving-2 {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: transparent;
+    background-image: url("../bg/children/services/Business-Moving/C-Serv-Painless-Moving-Services-Commercial-Moving-Services-cservaustin.jpg");
+  }
+}
+#children-services-page-business-moving-3 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center bottom;
+  background-color: transparent;
+  background-blend-mode: soft-light;
+  background-image: url("../bg/children/services/Business-Moving/Turnkey-Moving-Services-Commercial-Moving-Services-cservaustin-mobile.jpg");
+}
+@media (min-width: 981px) {
+  #children-services-page-business-moving-3 {
+    background-image: url("../bg/children/services/Business-Moving/Turnkey-Moving-Services-Commercial-Moving-Services-cservaustin.jpg");
+  }
+}
+#children-services-page-logistic-storage-1 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: soft-light;
+  background-image: url("../bg/children/services/Logistic-Storage/Commercial-Storage-and-Furniture-Logistics-cservaustin-mobile.jpg");
+}
+@media (min-width: 981px) {
+  #children-services-page-logistic-storage-1 {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: url("../bg/children/services/Logistic-Storage/Commercial-Storage-and-Furniture-Logistics-cservaustin.jpg");
+  }
+}
+#children-services-page-logistic-storage-2 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+  background-color: transparent;
+  background-image: url("../bg/children/services/Logistic-Storage/Storage-Services-Commercial-Storage-and-Furniture-Logistics-cservaustin-mobile.jpg");
+}
+@media (min-width: 981px) {
+  #children-services-page-logistic-storage-2 {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: transparent;
+    background-image: url("../bg/children/services/Logistic-Storage/Storage-Services-Commercial-Storage-and-Furniture-Logistics-cservaustin.jpg");
+  }
+}
+#children-services-page-furniture-steam-cleaning-1 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+  background-color: transparent;
+  background-blend-mode: soft-light;
+  background-image: url("../bg/children/services/Furniture-Steam-Cleaning/Office-Furniture-Steam-Cleaning-cservaustin-mobile.jpg");
+}
+@media (min-width: 981px) {
+  #children-services-page-furniture-steam-cleaning-1 {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    background-image: url("../bg/children/services/Furniture-Steam-Cleaning/Office-Furniture-Steam-Cleaning-cservaustin.jpg");
+  }
+}
+#children-services-page-furniture-steam-cleaning-2 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+  background-color: transparent;
+  background-image: url("../bg/children/services/Furniture-Steam-Cleaning/Steam-Cleaning-Services-Office-Furniture-Steam-Cleaning-cservaustin-mobile.jpg");
+}
+@media (min-width: 981px) {
+  #children-services-page-furniture-steam-cleaning-2 {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    background-image: url("../bg/children/services/Furniture-Steam-Cleaning/Steam-Cleaning-Services-Office-Furniture-Steam-Cleaning-cservaustin.jpg");
+  }
+}
+#children-services-page-recycle-furniture-1 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center bottom;
+  background-color: transparent;
+  background-blend-mode: soft-light;
+  background-image: url("../bg/children/services/Recycle-Furniture/Office-Furniture-Removal-cservaustin-mobile.jpg");
+}
+@media (min-width: 981px) {
+  #children-services-page-recycle-furniture-1 {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center bottom;
+    background-image: url("../bg/children/services/Recycle-Furniture/Office-Furniture-Removal-cservaustin.jpg");
+  }
+}
+#children-services-page-layout-planning-design-1 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: transparent;
+  background-blend-mode: soft-light;
+  background-image: url("../bg/children/services/Layout-Planning-and-Design/Office-Space-Planning-and-Design-cservaustin-mobile.jpg");
+}
+@media (min-width: 981px) {
+  #children-services-page-layout-planning-design-1 {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: url("../bg/children/services/Layout-Planning-and-Design/Office-Space-Planning-and-Design-cservaustin.jpg");
+  }
+}
+#children-services-page-layout-planning-design-2 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: transparent;
+  background-blend-mode: soft-light;
+  background-image: url("../bg/children/services/Layout-Planning-and-Design/C-Serv-Space-Planning-Service-Office-Space-Planning-and-Design-cservaustin-mobile.jpg");
+}
+@media (min-width: 981px) {
+  #children-services-page-layout-planning-design-2 {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: url("../bg/children/services/Layout-Planning-and-Design/C-Serv-Space-Planning-Service-Office-Space-Planning-and-Design-cservaustin.jpg");
+  }
+}
+#children-services-page-furniture-project-management-1 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: transparent;
+  background-blend-mode: soft-light;
+  background-image: url("../bg/children/services/Furniture-Project-Management/Furniture-Project-Management-cservaustin-mobile.jpg");
+}
+@media (min-width: 981px) {
+  #children-services-page-furniture-project-management-1 {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: url("../bg/children/services/Furniture-Project-Management/Furniture-Project-Management-cservaustin.jpg");
+  }
+}
+#children-services-page-furniture-project-management-2 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: transparent;
+  background-blend-mode: soft-light;
+  background-image: url("../bg/children/services/Furniture-Project-Management/C-Serv-s-Turnkey-Project-Management-Benefits-cservaustin-mobile.jpg");
+}
+@media (min-width: 981px) {
+  #children-services-page-furniture-project-management-2 {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: url("../bg/children/services/Furniture-Project-Management/C-Serv-s-Turnkey-Project-Management-Benefits-cservaustin.jpg");
+  }
+}
+#children-services-page-furniture-project-management-3 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: transparent;
+  background-blend-mode: soft-light;
+  background-image: url("../bg/children/services/Furniture-Project-Management/C-SERV-Dedicated-Furniture-Project-Management-Service-cservaustin-mobile.jpg");
+}
+@media (min-width: 981px) {
+  #children-services-page-furniture-project-management-3 {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: url("../bg/children/services/Furniture-Project-Management/C-SERV-Dedicated-Furniture-Project-Management-Service-cservaustin.jpg");
+  }
+}
+#children-services-page-furniture-project-management-4 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+  background-color: transparent;
+  background-blend-mode: soft-light;
+  background-image: url("../bg/children/services/Furniture-Project-Management/Call-Out-for-Painless-Workplace-Transformation-Services-cservaustin-mobile.jpg");
+}
+@media (min-width: 981px) {
+  #children-services-page-furniture-project-management-4 {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: url("../bg/children/services/Furniture-Project-Management/Call-Out-for-Painless-Workplace-Transformation-Services-cservaustin.jpg");
+  }
+}
+#children-services-page-dealership-services-1 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: transparent;
+  background-blend-mode: soft-light;
+  background-image: url("../bg/children/applications/Dealership-Services/Services-for-Furniture-Dealerships-cservaustin-mobile.jpg");
+}
+@media (min-width: 981px) {
+  #children-services-page-dealership-services-1 {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: url("../bg/children/applications/Dealership-Services/Services-for-Furniture-Dealerships-cservaustin.jpg");
+  }
+}
+#children-services-page-dealership-services-2 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: transparent;
+  background-blend-mode: soft-light;
+  background-image: url("../bg/children/applications/Dealership-Services/Furniture-Dealership-Centric-Services-for-Furniture-Dealerships-cservaustin-mobile.jpg");
+}
+@media (min-width: 981px) {
+  #children-services-page-dealership-services-2 {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: url("../bg/children/applications/Dealership-Services/Furniture-Dealership-Centric-Services-for-Furniture-Dealerships-cservaustin.jpg");
+  }
+}
+#children-services-page-dealership-services-3 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: transparent;
+  background-blend-mode: soft-light;
+  background-image: url("../bg/children/applications/Dealership-Services/Moving-Services-for-Contract-Furniture-Dealers--Services-for-Furniture-Dealerships-cservaustin-mobile.jpg");
+}
+@media (min-width: 981px) {
+  #children-services-page-dealership-services-3 {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: url("../bg/children/applications/Dealership-Services/Moving-Services-for-Contract-Furniture-Dealers--Services-for-Furniture-Dealerships-cservaustin.jpg");
+  }
+}
+#children-services-page-corporate-services-1 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: transparent;
+  background-blend-mode: soft-light;
+  background-image: url("../bg/children/applications/Corporate-Services/Corporate-Services-cservaustin-mobile.jpg");
+}
+@media (min-width: 981px) {
+  #children-services-page-corporate-services-1 {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: url("../bg/children/applications/Corporate-Services/Corporate-Services-cservaustin.jpg");
+  }
+}
+#children-services-page-corporate-services-2 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: transparent;
+  background-blend-mode: soft-light;
+  background-image: url("../bg/children/applications/Corporate-Services/Corporate-Furniture-Services-Corporate-Services-cservaustin-mobile.jpg");
+}
+@media (min-width: 981px) {
+  #children-services-page-corporate-services-2 {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: url("../bg/children/applications/Corporate-Services/Corporate-Furniture-Services-Corporate-Services-cservaustin.jpg");
+  }
+}
+#children-services-page-lab-furniture-services-1 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: transparent;
+  background-blend-mode: soft-light;
+  background-image: url("../bg/children/applications/Lab-Furniture-Services/Lab-Furniture-Services-cservaustin-mobile.jpg");
+}
+@media (min-width: 981px) {
+  #children-services-page-lab-furniture-services-1 {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: url("../bg/children/applications/Lab-Furniture-Services/Lab-Furniture-Services-cservaustin.jpg");
+  }
+}
+#children-services-page-education-furniture-services-1 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: transparent;
+  background-blend-mode: soft-light;
+  background-image: url("../bg/children/applications/Education-Furniture-Services/Education-Furniture-Services-cservaustin-mobile.jpg");
+}
+@media (min-width: 981px) {
+  #children-services-page-education-furniture-services-1 {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: url("../bg/children/applications/Education-Furniture-Services/Education-Furniture-Services-cservaustin.jpg");
+  }
+}
+#children-services-page-education-furniture-services-2 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: transparent;
+  background-blend-mode: soft-light;
+  background-image: url("../bg/children/applications/Education-Furniture-Services/Facility-Moving-Education-Furniture-Services-cservaustin-mobile.jpg");
+}
+@media (min-width: 981px) {
+  #children-services-page-education-furniture-services-2 {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: url("../bg/children/applications/Education-Furniture-Services/Facility-Moving-Education-Furniture-Services-cservaustin.jpg");
+  }
+}
+#children-services-page-education-furniture-services-3 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: transparent;
+  background-blend-mode: soft-light;
+  background-image: url("../bg/children/applications/Education-Furniture-Services/Education-Facility-Installation-Facility-Moving-Education-Furniture-Services-cservaustin-mobile.jpg");
+}
+@media (min-width: 981px) {
+  #children-services-page-education-furniture-services-3 {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: url("../bg/children/applications/Education-Furniture-Services/Education-Facility-Installation-Facility-Moving-Education-Furniture-Services-cservaustin.jpg");
+  }
+}
+#children-services-page-government-military-services-1 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: transparent;
+  background-blend-mode: soft-light;
+  background-image: url("../bg/children/applications/Government-Contract-Services/Government-Contract-Furniture-Services-cservaustin-mobile.jpg");
+}
+@media (min-width: 981px) {
+  #children-services-page-government-military-services-1 {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: url("../bg/children/applications/Government-Contract-Services/Government-Contract-Furniture-Services-cservaustin.jpg");
+  }
+}
+#children-services-page-government-military-services-2 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: transparent;
+  background-blend-mode: soft-light;
+  background-image: url("../bg/children/applications/Government-Contract-Services/Furniture-Services-for-Government-Contract-Services-cservaustin-mobile.jpg");
+}
+@media (min-width: 981px) {
+  #children-services-page-government-military-services-2 {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: url("../bg/children/applications/Government-Contract-Services/Furniture-Services-for-Government-Contract-Services-cservaustin.jpg");
+  }
+}
+#children-services-page-office-furniture-services-1 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: transparent;
+  background-blend-mode: soft-light;
+  background-image: url("../bg/children/applications/Office-Furniture-Services/Office-Furniture-Services-cservaustin-mobile.jpg");
+}
+@media (min-width: 981px) {
+  #children-services-page-office-furniture-services-1 {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: url("../bg/children/applications/Office-Furniture-Services/Office-Furniture-Services-cservaustin.jpg");
+  }
+}
+#children-services-page-office-furniture-services-2 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: transparent;
+  background-blend-mode: soft-light;
+  background-image: url("../bg/children/applications/Office-Furniture-Services/Office-Furniture-Installation-Office-Furniture-Services-cservaustin-mobile.jpg");
+}
+@media (min-width: 981px) {
+  #children-services-page-office-furniture-services-2 {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    background-image: url("../bg/children/applications/Office-Furniture-Services/Office-Furniture-Installation-Office-Furniture-Services-cservaustin.jpg");
+  }
+}
+#children-services-page-healthcare-care-furniture-services-1 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: transparent;
+  background-blend-mode: soft-light;
+  background-image: url("../bg/children/applications/Healthcare-Furniture-Services/Healthcare-Furniture-Services-cservaustin-mobile.jpg");
+}
+@media (min-width: 981px) {
+  #children-services-page-healthcare-care-furniture-services-1 {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: url("../bg/children/applications/Healthcare-Furniture-Services/Healthcare-Furniture-Services-cservaustin.jpg");
+  }
+}
+#form_page_2_1_1 {
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center top;
+  background-color: #b0b0b0;
+  background-image: url("../bg/forms/Quote-Form-cservaustin-background-mobile.jpg");
+}
+@media (min-width: 768px) {
+  #form_page_2_1_1 {
+    background-image: url("../bg/forms/Quote-Form-cservaustin-background.jpg");
+  }
+}
+/*** wrap row in a flex box ***/
+@media all and (max-width: 980px) {
+  /*** add margin to last column ***/
+  .custom_row {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    /* Safari 6.1+ */
+    flex-wrap: wrap;
+  }
+  .custom_row .et_pb_column {
+    margin-bottom: 0;
+  }
+  .custom_row .et_pb_module.max_w_400px {
+    max-width: 400px !important;
+  }
+  .first-on-mobile {
+    -webkit-order: 1;
+    order: 1;
+  }
+  .second-on-mobile {
+    -webkit-order: 2;
+    order: 2;
+  }
+  .third-on-mobile {
+    -webkit-order: 3;
+    order: 3;
+  }
+  .fourth-on-mobile {
+    -webkit-order: 4;
+    order: 4;
+  }
+  .custom_row:last-child .et_pb_column:last-child {
+    margin-bottom: 0px;
+  }
+}
+@media (max-width: 600px) {
+  .et_pb_row.mobile_95 {
+    width: 95%;
+  }
+  .et_pb_row.mobile_90 {
+    width: 90%;
+  }
+  .et_pb_row.mobile_85 {
+    width: 85%;
+  }
+}
+.form .et_pb_row {
+  width: 90%;
+  padding: 0 20px;
+}
+@media (min-width: 481px) {
+  .form .et_pb_row {
+    width: 80%;
+    max-width: 540px;
+    padding: 0 30px;
+  }
+}
+@media (min-width: 768px) {
+  .form .et_pb_row {
+    max-width: 720px;
+    padding: 0 50px;
+  }
+}
+@media (min-width: 981px) {
+  .form .et_pb_row {
+    max-width: 960px;
+    padding: 0 70px;
+  }
+}
+@media (min-width: 1200px) {
+  .form .et_pb_row {
+    max-width: 1140px;
+    padding: 0 90px;
+  }
+}
+@media (min-width: 1440px) {
+  .form .et_pb_row {
+    max-width: 1280px;
+    padding: 0 110px;
+  }
+}
+.form .et_pb_column {
+  margin-bottom: 0;
+}
+.form .form-main-header {
+  font-size: 42px;
+  font-family: "Myriad Pro BOLD", Helvetica, Arial, Lucida, sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 0;
+  margin: 0;
+  color: #0f4879 !important;
+  padding: 50px 0;
+}
+@media (min-width: 768px) {
+  .form .form-main-header {
+    font-size: 46px;
+    padding: 75px 0 55px;
+  }
+}
+@media (min-width: 1200px) {
+  .form .form-main-header {
+    font-size: 50px;
+    padding: 100px 0 60px;
+  }
+}
+.form .form-header-center {
+  text-transform: uppercase;
+  font-size: 20px;
+  text-align: center;
+  padding: 10px 0;
+  color: #777;
+  font-weight: 700;
+}
+@media (min-width: 768px) {
+  .form .form-header-center {
+    font-size: 21px;
+  }
+}
+@media (min-width: 1200px) {
+  .form .form-header-center {
+    font-size: 22px;
+  }
+}
+.form .form-header-left {
+  text-transform: uppercase;
+  font-size: 20px;
+  text-align: left;
+  padding: 10px 0;
+  color: #777;
+  font-weight: 700;
+}
+@media (min-width: 768px) {
+  .form .form-header-left {
+    font-size: 21px;
+  }
+}
+@media (min-width: 1200px) {
+  .form .form-header-left {
+    font-size: 22px;
+  }
+}
+.form .hidden {
+  display: inline-block;
+  width: 1px;
+  height: 1px;
+  margin: -1px 0 0;
+  overflow: hidden;
+  position: absolute;
+}
+.form .et_pb_contact {
+  padding: 10px 0;
+}
+.form .et_pb_contact .contact_field .input {
+  width: 100%;
+  padding: 20px 30px;
+  border: 0;
+  border-radius: 0;
+  color: #fff;
+  background-color: #3b3b3b;
+  -webkit-appearance: none;
+  font-size: 18px;
+  line-height: 1;
+  min-height: 80px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+}
+@media (min-width: 768px) {
+  .form .et_pb_contact .contact_field .input {
+    font-size: 19px;
+  }
+}
+@media (min-width: 1200px) {
+  .form .et_pb_contact .contact_field .input {
+    font-size: 21px;
+  }
+}
+.form .et_pb_contact .contact_field .input::-webkit-input-placeholder {
+  color: #fff;
+}
+.form .et_pb_contact .contact_field .input::-moz-placeholder {
+  color: #fff;
+}
+.form .et_pb_contact .contact_field .input:-ms-input-placeholder {
+  color: #fff;
+}
+.form .et_pb_contact .contact_field .input:-moz-placeholder {
+  color: #fff;
+}
+.form .et_pb_radio_check_tooltips {
+  padding: 10px 0;
+}
+.form .et_pb_radio_check_tooltips .radio_check-label {
+  display: block;
+  background-color: transparent;
+}
+.form .et_pb_radio_check_tooltips .radio_check-label .radio_check-input {
+  width: 1px;
+  height: 1px;
+  margin-left: -1px;
+  overflow: hidden;
+  display: inline-block;
+}
+.form .et_pb_radio_check_tooltips .radio_check-label .radio_check_tooltip_wrapper {
+  border: 1px solid #d1d1d1;
+  height: 80px;
+  box-sizing: border-box;
+  color: #eb7719;
+  font-family: "Myriad Pro BOLD", Helvetica, Arial, Lucida, sans-serif;
+  font-weight: 600;
+}
+.form .et_pb_radio_check_tooltips.blue {
+  color: #0e3c6e;
+}
+.et_pb_quote_form_layout #page-container #et-main-area #main-content #form_page_2_1_1.et_pb_section_0, .et_fixed_nav.et_show_nav #page-container #et-main-area #main-content #form_page_2_1_1.et_pb_section_0 {
+  padding: 0 0 110px;
+  border-top: 10px solid #0f4879;
+}
+.et_pb_quote_form_layout #page-container #et-main-area #main-content #form_page_2_1_1 .et_pb_row_0, .et_fixed_nav.et_show_nav #page-container #et-main-area #main-content #form_page_2_1_1 .et_pb_row_0 {
+  padding: 90px 0 60px;
+}
+@media (min-width: 768px) {
+  .et_pb_quote_form_layout #page-container #et-main-area #main-content #form_page_2_1_1 .et_pb_row_0, .et_fixed_nav.et_show_nav #page-container #et-main-area #main-content #form_page_2_1_1 .et_pb_row_0 {
+    padding: 120px 0 100px;
+  }
+}
+@media (min-width: 1200px) {
+  .et_pb_quote_form_layout #page-container #et-main-area #main-content #form_page_2_1_1 .et_pb_row_0, .et_fixed_nav.et_show_nav #page-container #et-main-area #main-content #form_page_2_1_1 .et_pb_row_0 {
+    padding: 150px 0;
+  }
+}
+.et_pb_quote_form_layout #page-container #et-main-area #main-content #form_page_2_1_1 .et_pb_column_0, .et_fixed_nav.et_show_nav #page-container #et-main-area #main-content #form_page_2_1_1 .et_pb_column_0 {
+  margin: 0;
+  padding: 0;
+}
+.et_pb_quote_form_layout #page-container #et-main-area #main-content #form_page_2_1_1 .et_pb_text_0 h1, .et_fixed_nav.et_show_nav #page-container #et-main-area #main-content #form_page_2_1_1 .et_pb_text_0 h1 {
+  font-size: 44px;
+  font-family: "Myriad Pro BOLD", Helvetica, Arial, Lucida, sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 0;
+  margin: 0;
+}
+@media (min-width: 768px) {
+  .et_pb_quote_form_layout #page-container #et-main-area #main-content #form_page_2_1_1 .et_pb_text_0 h1, .et_fixed_nav.et_show_nav #page-container #et-main-area #main-content #form_page_2_1_1 .et_pb_text_0 h1 {
+    font-size: 54px;
+  }
+}
+@media (min-width: 1200px) {
+  .et_pb_quote_form_layout #page-container #et-main-area #main-content #form_page_2_1_1 .et_pb_text_0 h1, .et_fixed_nav.et_show_nav #page-container #et-main-area #main-content #form_page_2_1_1 .et_pb_text_0 h1 {
+    font-size: 64px;
+  }
+}
+.et_pb_quote_form_layout #page-container #et-main-area #main-content #form_page_2_1_1 .et_pb_row_1, .et_fixed_nav.et_show_nav #page-container #et-main-area #main-content #form_page_2_1_1 .et_pb_row_1, .et_pb_quote_form_layout #page-container #et-main-area #main-content #form_page_2_1_1 .et_pb_row_2, .et_fixed_nav.et_show_nav #page-container #et-main-area #main-content #form_page_2_1_1 .et_pb_row_2, .et_pb_quote_form_layout #page-container #et-main-area #main-content #form_page_2_1_1 .et_pb_row_3, .et_fixed_nav.et_show_nav #page-container #et-main-area #main-content #form_page_2_1_1 .et_pb_row_3 {
+  background-color: #fff;
+}
+.et_pb_quote_form_layout #page-container #et-main-area #main-content #form_page_2_1_1 .et_pb_row_1, .et_fixed_nav.et_show_nav #page-container #et-main-area #main-content #form_page_2_1_1 .et_pb_row_1 {
+  border-top: 10px solid #eb7719;
+}
+.et_pb_quote_form_layout #page-container, .et_fixed_nav.et_show_nav #page-container {
+  padding-top: 107px !important;
 }
 /*# sourceMappingURL=cservaustin.css.map */
