@@ -10,7 +10,7 @@ function et_custom_logo($logo_container)
 
     $logo_container .= '<!-- menu insert Start -->
         <div class="top-header-second-menu">
-            <!--a href="#" class="second-nav-block">
+            <!--a href="#" target="_blank" class="second-nav-block">
                 <div class="nav-icon-block">
                     <span class="nav-icon-calendar"></span>
                 </div>
@@ -19,7 +19,7 @@ function et_custom_logo($logo_container)
                     <span class="nav-cta-desc">Appontment</span>
                 </div>
             </a-->
-            <a href="#" class="second-nav-block">
+            <a href="tel:+15125355016" target="_blank" class="second-nav-block">
                 <div class="nav-icon-block">
                     <span class="nav-icon-phone"></span>
                 </div>
@@ -29,14 +29,14 @@ function et_custom_logo($logo_container)
                 </div>
             </a>
             <div class="second-nav-block">
-                <a href="#" class="nav-social-inline">
+                <a href="https://twitter.com/cservaustin" target="_blank" class="nav-social-inline">
                     <span class="nav-icon-circle  nav-icon-twitter"></span>
                 </a>
-                <a href="#" class="nav-social-inline">
+                <a href="https://www.facebook.com/CServAustin/" target="_blank" class="nav-social-inline">
                     <span class="nav-icon-circle  nav-icon-facebook"></span>
                 </a>
-                <a href="#" class="nav-social-inline">
-                    <span class="nav-icon-circle nav-icon-google-plus"></span>
+                <a href="https://www.linkedin.com/company/c-serv-office-furniture-installation-and-logistics" target="_blank" class="nav-social-inline">
+                    <span class="nav-icon-circle nav-icon-linkedin-in"></span>
                 </a>
             </div>
         </div>

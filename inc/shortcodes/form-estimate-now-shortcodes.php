@@ -20,35 +20,37 @@ function cservaustin__shortcodes_form_estimate($atts, $content)
       </div>
       <div class="input-group col-50">
         <label for="estimateName">
-          <input type="text" class="form-estimate-input" name="estimateName" id="estimateName" placeholder="*Name">
+          <input type="text" class="form-estimate-input" name="estimateName" id="estimateName" placeholder="*Name" required>
         </label>
       </div>
       <div class="input-group col-50">
         <label for="estimateEmail">
-          <input type="email" class="form-estimate-input" name="estimateEmail" id="estimateEmail" placeholder="*Enter">
+          <input type="email" class="form-estimate-input" name="estimateEmail" id="estimateEmail" placeholder="*E-mail" required>
         </label>
       </div>
       <div class="input-group col-50">
         <label for="estimatePhone">
-          <input type="tel" class="form-estimate-input" name="estimatePhone" id="estimatePhone" placeholder="*Phone Number">
+          <input type="tel" class="form-estimate-input" name="estimatePhone" id="estimatePhone" placeholder="*Phone Number" required>
         </label>
       </div>
       <div class="input-group col-50">
         <label for="estimateCompany">
-          <input type="text" class="form-estimate-input" name="estimateCompany" id="estimateCompany" placeholder="*Company">
+          <input type="text" class="form-estimate-input" name="estimateCompany" id="estimateCompany" placeholder="*Company" required>
         </label>
       </div>
       <div class="textarea-group">
         <label for="estimateDetails">
           <textarea class="form-estimate-textarea" name="estimateDetails" id="estimateDetails" placeholder="*Type service request details"
-            rows="3"></textarea>
+            rows="3" required></textarea>
         </label>
       </div>
       <div class="input-group col-50">
-        <label for="estimateFile"><span class="file-attacment-label"><i class="far fa-file-alt"></i> <u>attach
+
+        <!-- <label for="estimateFile"><span class="file-attacment-label"><i class="far fa-file-alt"></i> <u>attach
               documents</u></span>
-          <input type="file" class="form-estimate-file" name="estimateFile" id="estimateFile" multiple>
-        </label>
+          <input type="file" class="form-estimate-file" name="estimateFile[]" id="estimateFile" multiple>
+        </label> -->
+
       </div>
       <div class="input-group col-50">
         <label class="form-estimate-submit">

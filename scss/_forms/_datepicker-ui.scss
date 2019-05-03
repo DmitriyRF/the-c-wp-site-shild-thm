@@ -1,0 +1,232 @@
+#ui-datepicker-div {
+  background-color: $form-dark-text;
+  display: none;
+
+  .ui-datepicker-group {
+    width: 50%;
+    float: left;
+
+    .ui-datepicker-header {
+      .ui-datepicker-title {
+        line-height: 20px;
+        font-size: 14px;
+        text-align: center;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: $main-color-orange;
+      }
+      .ui-datepicker-prev,
+      .ui-datepicker-next {
+        position: absolute;
+        top: 50%;
+        display: inline-block;
+        span {
+          border: 0;
+          clip: rect(0 0 0 0);
+          height: 1px;
+          margin: -1px;
+          overflow: hidden;
+          padding: 0;
+          position: absolute;
+          width: 1px;
+          display: inline-block;
+        }
+      }
+
+      .ui-datepicker-prev {
+        cursor: pointer;
+        left: 10px;
+        &:before {
+          content: "4";
+          font-family: "ETmodules" !important;
+          text-shadow: none;
+          font-size: 40px;
+          font-style: normal;
+          font-variant: none;
+          line-height: 1em;
+          text-transform: none;
+          font-weight: bold;
+          color: $main-color-orange;
+        }
+        &.ui-state-disabled {
+          &:before {
+            color: $form-grey-text;
+          }
+        }
+      }
+      .ui-datepicker-next {
+        cursor: pointer;
+        right: 10px;
+        &:before {
+          content: "5";
+          font-family: "ETmodules" !important;
+          text-shadow: none;
+          font-size: 40px;
+          font-style: normal;
+          font-variant: none;
+          line-height: 1em;
+          text-transform: none;
+          font-weight: bold;
+          color: $main-color-orange;
+        }
+      }
+    }
+
+    .ui-datepicker-calendar {
+      thead {
+        th {
+          font-size: 10px;
+          padding: 4px 8px;
+          text-align: center;
+          text-transform: uppercase;
+          color: $main-color-orange;
+          &.ui-datepicker-week-end {
+            opacity: 0.8;
+          }
+        }
+      }
+      tbody {
+        td {
+          text-align: center;
+          font-size: 14px;
+          a.ui-state-default {
+            color: $form-light-border;
+          }
+          &:hover {
+            a.ui-state-default {
+              color: $main-color-orange;
+            }
+          }
+          &.ui-state-disabled {
+            color: $text-color;
+          }
+          &.ui-datepicker-week-col {
+            color: $form-grey-text;
+          }
+        }
+      }
+    }
+  }
+
+  .ui-datepicker-group-first {
+    padding: 20px 10px 30px 50px;
+  }
+
+  .ui-datepicker-group-last {
+    padding: 20px 40px 30px 20px;
+  }
+  .ui-datepicker-buttonpane {
+  }
+
+  @media (max-width: 600px) {
+    padding: 20px 60px;
+
+    .ui-datepicker-header {
+      .ui-datepicker-title {
+        line-height: 20px;
+        font-size: 16px;
+        text-align: center;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: $main-color-orange;
+      }
+
+      .ui-datepicker-prev,
+      .ui-datepicker-next {
+        position: absolute;
+        top: 50%;
+        display: inline-block;
+        margin-top: -30px;
+        span {
+          border: 0;
+          clip: rect(0 0 0 0);
+          height: 1px;
+          margin: -1px;
+          overflow: hidden;
+          padding: 0;
+          position: absolute;
+          width: 1px;
+          display: inline-block;
+        }
+      }
+
+      .ui-datepicker-prev {
+        cursor: pointer;
+        left: 0px;
+        &:before {
+          content: "4";
+          font-family: "ETmodules" !important;
+          text-shadow: none;
+          font-size: 60px;
+          font-style: normal;
+          font-variant: none;
+          line-height: 1em;
+          text-transform: none;
+          font-weight: bold;
+          color: $main-color-orange;
+        }
+        &.ui-state-disabled {
+          &:before {
+            color: $form-grey-text;
+          }
+        }
+      }
+
+      .ui-datepicker-next {
+        cursor: pointer;
+        right: 0px;
+        &:before {
+          content: "5";
+          font-family: "ETmodules" !important;
+          text-shadow: none;
+          font-size: 60px;
+          font-style: normal;
+          font-variant: none;
+          line-height: 1em;
+          text-transform: none;
+          font-weight: bold;
+          color: $main-color-orange;
+        }
+      }
+    }
+
+    .ui-datepicker-calendar {
+      thead {
+        th {
+          font-size: 18px;
+          padding: 4px 8px;
+          text-align: center;
+          text-transform: uppercase;
+          color: $main-color-orange;
+          &.ui-datepicker-week-end {
+            opacity: 0.8;
+          }
+        }
+      }
+
+      tbody {
+        td {
+          text-align: center;
+          font-size: 24px;
+          padding: 7px 3px;
+          a.ui-state-default {
+            color: $form-light-border;
+          }
+          &:hover {
+            a.ui-state-default {
+              color: $main-color-orange;
+            }
+          }
+          &.ui-state-disabled {
+            color: $text-color;
+          }
+          &.ui-datepicker-week-col {
+            color: $form-grey-text;
+          }
+        }
+      }
+    }
+  }
+}

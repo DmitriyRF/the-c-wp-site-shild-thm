@@ -2,6 +2,8 @@
 @import "mixins";
 @import "fonts";
 
+@import "_partials/bootstrap-legacy";
+
 @import "_partials/header";
 @import "_partials/footer";
 @import "_partials/shortcodes";
@@ -11,5 +13,7 @@
 @import "_partials/services_children";
 @import "_partials/backgrounds";
 @import "_partials/components";
+
+@import "_partials/contact-menu";
 
 @import "_forms/all_forms";

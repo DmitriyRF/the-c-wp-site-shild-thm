@@ -3,21 +3,9 @@
   background-repeat: no-repeat;
   background-color: rgba($main-color-blue, 0.8);
   background-size: cover;
-  background: -moz-linear-gradient(
-    top,
-    rgba(57, 100, 119, 1) 80%,
-    rgba(230, 228, 224, 1) 99%
-  );
-  background: -webkit-linear-gradient(
-    top,
-    rgba(57, 100, 119, 1) 80%,
-    rgba(230, 228, 224, 1) 99%
-  );
-  background: linear-gradient(
-    to bottom,
-    rgba(57, 100, 119, 1) 80%,
-    rgba(230, 228, 224, 1) 99%
-  );
+  background: -moz-linear-gradient(top, rgba(57, 100, 119, 1) 80%, rgba(230, 228, 224, 1) 99%);
+  background: -webkit-linear-gradient(top, rgba(57, 100, 119, 1) 80%, rgba(230, 228, 224, 1) 99%);
+  background: linear-gradient(to bottom, rgba(57, 100, 119, 1) 80%, rgba(230, 228, 224, 1) 99%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#396477', endColorstr='#e6e4e0',GradientType=0 );
 
   @media (min-width: $main-tablet-breakpoint) {
@@ -128,7 +116,7 @@
 
   @media (max-width: $main-tablet-breakpoint) {
     background-image: url("../bg/children/services/Furniture-Installation/Office-Furniture-Installation-Packages-cservaustin-tablet.jpg");
-  } 
+  }
   @media (max-width: $main-mobile-breakpoint) {
     background-image: url("../bg/children/services/Furniture-Installation/Office-Furniture-Installation-Packages-cservaustin-mobile.jpg");
   }
@@ -622,6 +610,101 @@
   }
 }
 
+#contact-page-of-cserv-austin {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: transparent;
+  background-blend-mode: soft-light;
+  background-image: url("../bg/contact/contact-cservaustin-mobile.jpg");
+
+  @media (min-width: $main-tablet-breakpoint) {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: url("../bg/contact/contact-cservaustin.jpg");
+  }
+}
+
+#contact-page-contact-section-cserv-austin {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: transparent;
+  background-blend-mode: soft-light;
+  background-image: url("../bg/contact/contact-page-contacts-section-mobile-background-cservaustin-com.jpg");
+
+  @media (min-width: $main-tablet-breakpoint) {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: url("../bg/contact/contact-page-contacts-section-desktop-background-cservaustin-com.jpg");
+  }
+}
+
+#contact-page-social-section-cserv-austin {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: transparent;
+  background-blend-mode: soft-light;
+  background-image: url("../bg/contact/contact-page-social-section-mobile-background-cservaustin-com.jpg");
+
+  @media (min-width: $main-tablet-breakpoint) {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: url("../bg/contact/contact-page-social-section-desktop-background-cservaustin-com.jpg");
+  }
+}
+
+#contact-page-of-cserv-austin-1 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: transparent;
+  background-blend-mode: soft-light;
+  background-image: url("../bg/contact/careers/contact-careers-in-cservaustin-mobile.jpg");
+
+  @media (min-width: $main-tablet-breakpoint) {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: url("../bg/contact/careers/contact-careers-in-cservaustin.jpg");
+  }
+}
+
+#testimonials-page-of-cserv-austin {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: transparent;
+  background-blend-mode: soft-light;
+  background-image: url("../bg/about/testimonials/testimonials-mobile-cservaustin-com.jpg");
+
+  @media (min-width: $main-tablet-breakpoint) {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: url("../bg/about/testimonials/testimonials-desktop-cservaustin-com.jpg");
+  }
+}
+
+#page-of-cserv-austin-is-under-construction {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: transparent;
+  background-blend-mode: soft-light;
+  background-image: url("../bg/children/common/page-under-construction-mobile-cservaustin.jpg");
+
+  @media (min-width: $main-tablet-breakpoint) {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: url("../bg/children/common/page-under-construction-desktop-cservaustin.jpg");
+  }
+}
 
 #form_page_2_1_1 {
   background-repeat: no-repeat;

@@ -86,6 +86,8 @@
     margin: -1px 0 0;
     overflow: hidden;
     position: absolute;
+    visibility: hidden;
+    -webkit-appearance: none;
   }
 
   .et_pb_contact {
@@ -127,10 +129,10 @@
   }
 
   .et_pb_radio_check_tooltips {
-    padding: 10px 0;
+    padding: 5px 0;
     .radio_check-label {
       display: block;
-      background-color: transparent;
+      cursor: pointer;
 
       .radio_check-input {
         position: absolute;
@@ -139,11 +141,13 @@
         margin-left: -1px;
         overflow: hidden;
         display: block;
+        visibility: hidden;
+        -webkit-appearance: none;
 
         & + .radio_check_tooltip_wrapper {
           min-height: 80px;
           border: 2px solid $form-light-border;
-          padding: 5px;
+          padding: 8px;
           box-sizing: border-box;
           color: $main-color-blue;
           font-family: $ff-myriad;
@@ -176,10 +180,10 @@
               box-sizing: border-box;
             }
             .radio_check-label_text {
-              font-size: 14px;
+              font-size: 18px;
               padding: 0 20px;
               @media (min-width: $main-all_mobile-breakpoint) {
-                font-size: 18px;
+                font-size: 20px;
               }
               @media (min-width: $main-decktop-breakpoint) {
                 font-size: 22px;
@@ -211,11 +215,17 @@
           }
         }
         &:checked + .radio_check_tooltip_wrapper {
+          padding: 5px;
           border: 5px solid $form-light-border;
           color: $main-color-orange;
           background-color: $form-light-background;
           font-weight: 600;
-          padding: 12px;
+          @media (min-width: $main-all_mobile-breakpoint) {
+            padding: 7px;
+          }
+          @media (min-width: $main-decktop-breakpoint) {
+            padding: 12px;
+          }
 
           .radio_check_checkmark {
             border-color: $main-color-orange;
@@ -236,10 +246,336 @@
     }
   }
 
+  .type-checkbox-input-group {
+    padding: 5px 0;
+    overflow: hidden;
+    .checkbox-type-input {
+      position: absolute;
+      display: block;
+      width: 1px;
+      height: 1px;
+      margin-left: -1px;
+      visibility: hidden;
+      -webkit-appearance: none;
+
+      & ~ .checkbox-self-wrapper {
+        width: 100%;
+        margin: 0;
+        min-height: 1px;
+        overflow: hidden;
+        cursor: pointer;
+        @media (min-width: $main-tablet-breakpoint) {
+          width: 42.2%;
+        }
+
+        .checkbox-description {
+          display: flex;
+          padding: 20px;
+          text-align: left;
+          cursor: pointer;
+          border-top: 1px solid $form-light-border;
+          border-left: 1px solid $form-light-border;
+          border-right: 1px solid $form-light-border;
+          @media (min-width: $main-tablet-breakpoint) {
+            border-top: 1px solid $form-light-border;
+            border-left: 1px solid $form-light-border;
+            border-bottom: 1px solid $form-light-border;
+            border-right: 0;
+          }
+
+          .checkbox-square {
+            display: inline-block;
+            width: 38px;
+            height: 38px;
+            border: 6px solid $form-dark-background;
+            background-color: $form-dark-background;
+            vertical-align: middle;
+            flex-shrink: 0;
+          }
+          .checkbox-text {
+            display: inline-block;
+            padding-left: 20px;
+            vertical-align: middle;
+            font-family: $ff-poppins;
+            font-size: 18px;
+            line-height: 38px;
+            color: $form-dark-text;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+          }
+        }
+      }
+      & ~ .input-text-wrapper {
+        width: 100%;
+        min-height: 1px;
+        @media (min-width: $main-tablet-breakpoint) {
+          width: 57.8%;
+        }
+        .input-for-checkbox {
+          height: 80px;
+          width: 100%;
+          padding: 20px;
+          border: 0;
+          margin: 0;
+          font-size: 18px;
+          color: $form-grey-text;
+          background-color: $form-dark-background;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+      }
+
+      &:checked ~ .checkbox-self-wrapper {
+        .checkbox-description {
+          background-color: $form-light-background;
+          .checkbox-square {
+            background-color: $main-color-orange;
+          }
+          .checkbox-text {
+          }
+        }
+      }
+      &:checked ~ .input-text-wrapper {
+        .input-for-checkbox {
+          color: $form-light-text;
+          &::placeholder {
+            color: $form-light-text;
+          }
+        }
+      }
+    }
+  }
+
+  .et_pb_radio_check_multiple_choice {
+    padding: 5px 0;
+    overflow: hidden;
+
+    .radio_check-label {
+      display: block;
+      cursor: pointer;
+
+      .radio_check-input {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin-left: -1px;
+        overflow: hidden;
+        display: block;
+        visibility: hidden;
+        -webkit-appearance: none;
+
+        & + .radio_check_tooltip_wrapper {
+          min-height: 80px;
+          border: 2px solid $form-light-border;
+          padding: 8px;
+          box-sizing: border-box;
+          color: $main-color-orange;
+          font-family: $ff-myriad;
+          display: flex;
+          align-items: center;
+          @media (min-width: $main-all_mobile-breakpoint) {
+            padding: 10px;
+          }
+          @media (min-width: $main-decktop-breakpoint) {
+            padding: 15px;
+          }
+          .centralize_content {
+            display: flex;
+            flex-flow: nowrap;
+            align-items: flex-start;
+            justify-content: space-between;
+            width: 100%;
+            .radio_check_checkmark {
+              display: block;
+              flex-shrink: 0;
+              width: 33px;
+              height: 33px;
+              padding: 3px;
+              border-radius: 50%;
+              border: 5px solid $main-color-orange;
+              background-color: $form-grey-radio;
+              box-shadow: 0 0 0px 3px inset white;
+              box-sizing: border-box;
+            }
+
+            .radio_check-label_text {
+              font-size: 18px;
+              padding: 0 20px;
+              text-align: right;
+              @media (min-width: $main-all_mobile-breakpoint) {
+                font-size: 20px;
+              }
+              @media (min-width: $main-decktop-breakpoint) {
+                font-size: 22px;
+              }
+            }
+          }
+        }
+        &:checked + .radio_check_tooltip_wrapper {
+          padding: 5px;
+          border-width: 5px;
+          color: $main-color-orange;
+          background-color: $form-light-background;
+          font-weight: 600;
+          @media (min-width: $main-all_mobile-breakpoint) {
+            padding: 7px;
+          }
+          @media (min-width: $main-decktop-breakpoint) {
+            padding: 12px;
+          }
+          .centralize_content {
+            .radio_check_checkmark {
+              background-color: $main-color-orange;
+            }
+
+            .radio_check-label_text {
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .input-text-wrapper-for-multiple-radio {
+    padding: 5px 0;
+
+    .input-for-multiple-radio {
+      height: 80px;
+      width: 100%;
+      padding: 20px;
+      border: 0;
+      margin: 0;
+      font-size: 18px;
+      color: $form-grey-text;
+      background-color: $form-dark-background;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+
   .et_pb_radio_check {
   }
 
   .et_pb_radio_check_field {
+  }
+
+  .centralize_content_vertical {
+    display: flex;
+    flex-flow: nowrap;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  .input-datepicker-wrapper {
+    .input-datepicker-installation {
+      position: relative;
+      height: 80px;
+      width: 100%;
+      padding: 20px 80px 20px 80px;
+      border: 0;
+      margin: 0;
+      font-size: 18px;
+      color: $main-color-orange;
+      background-color: $form-dark-background;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      &::placeholder {
+        color: $form-light-border;
+      }
+    }
+
+    &:before {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 70px;
+      height: 80px;
+      font-family: "ETmodules" !important;
+      font-size: 30px;
+      font-style: normal;
+      font-variant: none;
+      font-weight: bold;
+      text-shadow: none;
+      text-align: center;
+      text-transform: none;
+      line-height: 80px;
+      color: $main-color-orange;
+      z-index: 1;
+    }
+    &:after {
+      content: "3";
+      display: inline-block;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 70px;
+      height: 80px;
+      font-family: "ETmodules" !important;
+      font-size: 60px;
+      font-style: normal;
+      font-variant: none;
+      font-weight: bold;
+      text-shadow: none;
+      text-align: center;
+      text-transform: none;
+      line-height: 80px;
+      color: $main-color-orange;
+    }
+  }
+
+  .submit-button-wrapper {
+    padding: 15px 0;
+    @media (min-width: $main-all_mobile-breakpoint) {
+      text-align: right;
+    }
+
+    .form-quote-submit {
+      display: inline-block;
+      width: 100%;
+      @media (min-width: $main-all_mobile-breakpoint) {
+        max-width: 350px;
+      }
+
+      input[type="submit"] {
+        display: block;
+        width: 100%;
+        background-color: $main-color-orange;
+        font-size: 24px;
+        font-family: $ff-poppins;
+        font-weight: 600;
+        line-height: 25px;
+        padding: 25px 5px;
+        color: $form-light-text;
+        text-transform: uppercase;
+        border: none;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .et_pb_column_2_5_no_margin {
+    width: 100%;
+    @media (min-width: $main-tablet-breakpoint) {
+      width: 42.2%;
+      margin: 0;
+    }
+  }
+
+  .p-y-5 {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  .last-submit-button-row {
+    padding-top: 30px;
+    padding-bottom: 50px;
   }
 }
 

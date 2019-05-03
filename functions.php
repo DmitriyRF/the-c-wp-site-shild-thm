@@ -30,17 +30,7 @@ require_once get_stylesheet_directory() . '/inc/builder/service.php';
 add_action('phpmailer_init', 'smtp_email_config', 10, 1);
 function smtp_email_config(PHPMailer $phpmailer)
 {
-    $phpmailer->isSMTP();
-    $phpmailer->Host = 'smtp.office365.com';
-    $phpmailer->SMTPAuth = true;
-    $phpmailer->Port = 587;
-    $phpmailer->SMTPSecure = 'TLS';
-    // $phpmailer->SMTPDebug = 2;
-    $phpmailer->Username = 'webquotereq@cservaustin.com';
-    $phpmailer->Password = '2018Cserv$';
-    $phpmailer->From = 'webquotereq@cservaustin.com';
-    $phpmailer->FromName = 'Cserv-team';
-    $phpmailer->CharSet = "utf-8";
+
 }
 
 // show wp_mail() errors
@@ -65,3 +55,20 @@ function cserv_add_wp_body_classes($classes)
 
 }
 add_filter('body_class', 'cserv_add_wp_body_classes');
+
+
+function reArrayFiles(&$file_post) {
+
+    $file_ary = array();
+    $file_count = count($file_post['name']);
+    $file_keys = array_keys($file_post);
+
+    for ($i=0; $i<$file_count; $i++) {
+
+        foreach ($file_keys as $key) {
+            $file_ary[$i][$key] = $file_post[$key][$i];
+        }
+    }
+
+    return $file_ary;
+}
