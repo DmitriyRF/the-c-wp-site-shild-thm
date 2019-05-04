@@ -3,7 +3,7 @@
 
   $(window).load(function () {
 
-    estimateForm = $("#js-form-estimate").eq(0);
+    estimateForm = $("#js-form-estimate");
     formSubmitBtn = $("#submit-estimate");
     formFileInput = $("#estimateFile");
     formFileLabel = $(".file-attacment-label u");
@@ -58,7 +58,7 @@
       })
         .done(function (jqDATA) {
           console.log('Done ajax request for quick estimate form');
-          console.log(jqDATA);
+          // console.log(jqDATA);
         })
 
         .fail(function (jqXHR) {

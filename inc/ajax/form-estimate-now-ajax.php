@@ -17,7 +17,7 @@ function estimate_now_form()
         wp_send_json_error($error);
     }
     $response = array();
-    $response['post'] = $_POST; //sanitize_text_field
+    // $response['post'] = $_POST; //sanitize_text_field
     $error = array();
 
     
@@ -49,7 +49,8 @@ function estimate_now_form()
 
 
     $to = 'quotes@cservaustin.com';
-    $subject = 'Installation Form';
+    // $to = 'dmitriy_r_f@mail.ru';
+    $subject = 'NEED A QUICK ESTIMATE NOW!';
     $body = '';
     $body .= '<table align="center" width="600" border="0" cellspacing="0" cellpadding="0" style="border:1px solid #ccc;">';
     $body .= '<tbody>';
@@ -83,7 +84,7 @@ function estimate_now_form()
     $body .= '</table>';
 
     $headers = array('Content-Type: text/html; charset=UTF-8');
-    $response['attachments']  = $attachments;
+    // $response['attachments']  = $attachments;
 
     $response['wp_mail_response_quotes'] = wp_mail($to, $subject, $body, $headers);
     $response['wp_mail_response'] = wp_mail('marketing@cservaustin.com', $subject, $body, $headers );

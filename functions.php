@@ -25,6 +25,8 @@ require_once get_stylesheet_directory() . '/inc/shortcodes/form-estimate-now-sho
 
 require_once get_stylesheet_directory() . '/inc/ajax/form-estimate-now-ajax.php';
 
+require_once get_stylesheet_directory() . '/inc/ajax/quote-form-ajax.php';
+
 require_once get_stylesheet_directory() . '/inc/builder/service.php';
 
 add_action('phpmailer_init', 'smtp_email_config', 10, 1);

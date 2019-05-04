@@ -1,8 +1,16 @@
 (function ($) {
+  var estimateForm, formSubmitBtn, formFileInput, formFileLabel, formPreloader;
+
   $(window).load(function () {
-    $("#submit-quote-form").click(form_ajax_request_response);
+    estimateForm = $("#quote_form");
+    formSubmitBtn = $("#submit-quote-form");
+    formFileInput = $("#estimateFile");
+    formFileLabel = $(".file-attacment-label u");
+    formPreloader = $("#wrapper-ajax-loader-full");
+
+    formSubmitBtn.click(form_ajax_request_response);
     //Change label when files chosen
-    $("#estimateFile").change(form_change_fileInput_label);
+    formFileInput.change(form_change_fileInput_label);
     // grecaptcha.execute();
   });
 
@@ -17,42 +25,131 @@
       default:
         fileAttacmentLabel = this.files.length + " DOCUMENTS";
     }
-    $(".file-attacment-label u").text(fileAttacmentLabel);
+    formFileLabel.text(fileAttacmentLabel);
   }
 
   function form_ajax_request_response(e) {
-    alert('handler')
     e.preventDefault();
-    var quoteForm = $("#quote_form");
 
-    var ajaxFormData = new FormData(quoteForm[0]);
+    if (isRequiredFieldFilled()) {
+      //add form data
+      var ajaxFormData = new FormData(estimateForm[0]);
+      //add field for wordpress nonce
+      ajaxFormData.append("action", localize_data.action);
 
-    ajaxFormData.append("action", localize_data.action);
+      // Display the key/value pairs
+      for (var pair of ajaxFormData.entries()) {
+        console.log(pair[0] + ', ' + pair[1]);
+      }
 
-    console.log('ajaxFormData', ajaxFormData);
+      formPreloader.css("display", "block");
+      estimateForm.css("opacity", "0.7");
 
-    $("#wrapper-ajax-loader-full").css("display", "block");
-    $("#quote_form").css("opacity", "0.7");
-
-    $.ajax({
-      url: localize_data.ajax_url,
-      type: "post",
-      data: ajaxFormData,
-      processData: false,
-      contentType: false,
-      cache: false
-    })
-      .done(function (jqDATA) {
-        console.log('done');
-        console.log(jqDATA);
+      $.ajax({
+        url: localize_data.ajax_url,
+        type: "post",
+        data: ajaxFormData,
+        processData: false,
+        contentType: false,
+        cache: false
       })
-      .fail(function (jqXHR) {
-        console.log('fail');
-        console.log(jqXHR);
-      })
-      .always(function (e) {
-        $("#wrapper-ajax-loader-full").css("display", "none");
-        $("#quote_form").css("opacity", "1").find("input[type=text], textarea").val("");
-      });
+        .done(function (jqDATA) {
+          console.log('Done ajax request for quote form');
+          console.log(jqDATA);
+        })
+
+        .fail(function (jqXHR) {
+          console.log('Fail ajax request for quote form');
+          console.log(jqXHR);
+        })
+        .always(function (e) {
+          formPreloader.css("display", "none");
+          estimateForm
+            .css("opacity", "1")
+            .find("input, textarea")
+            .filter(":not([type='submit'])")
+            .filter(":not([type='hidden'])")
+            .filter(':visible')
+            .val("");
+          formFileLabel.text("ATTACH DOCUMENTS");
+        });
+    }
   }
+
+  function isRequiredFieldFilled() {
+    if (estimateForm) {
+
+      var result = true;
+
+      estimateForm
+        .find("input:not([type='submit']), textarea")
+        .filter('[required]:visible')
+        .each(function (i, requiredField) {
+          if ($(requiredField).val() == '') {
+            $(requiredField).css("background-color", "#840808");
+            $(requiredField).keydown(requiredFieldFilled);
+            result = false;
+          } else if ($(requiredField)[0].type == 'email') {
+
+            var email = $(requiredField).val();
+            if (!validateEmail(email)) {
+              //$(requiredField).val(email + " is not valid E-mail");
+              $(requiredField).css("background-color", "#840808");
+              $(requiredField).keydown(requiredFieldFilled);
+              result = false;
+            }
+          }
+
+        });
+
+      return result;
+    }
+    return false;
+  }
+
+  function requiredFieldFilled() {
+    $(this).css("background-color", "#464646");
+    $(this).unbind("keydown", requiredFieldFilled);
+  }
+
+  function validateEmail(email) {
+    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+  }
+
+})(jQuery);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+(function ($) {
+
+  $(window).load(function () {
+
+  });
+
+
+
+  function form_ajax_request_response(e) {
+
+
+  }
+
+
+
 })(jQuery);

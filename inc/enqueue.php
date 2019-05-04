@@ -20,13 +20,19 @@ add_action('wp_enqueue_scripts', 'cservaustin_enqueue_front_scripts');
 function cservaustin_enqueue_front_scripts_for_forms()
 {
     //wp_enqueue_script( $handle, $src, $deps, $ver, $in_footer );
-    wp_enqueue_script('ajax-form-script', get_stylesheet_directory_uri() . '/js/form-c-serv-ajax.js', array('jquery'), (string)rand(), false);
-    wp_localize_script('ajax-form-script', 'localize_data', array(
-        'ajax_url' => admin_url('admin-ajax.php'),
-        'action' => 'estimate_now_form',
-    ));
+
+    global $post;
+	if( is_a( $post, 'WP_Post' ) && has_shortcode( $post->post_content, 'form_estimate') ) {
+
+        wp_enqueue_script('ajax-form-script', get_stylesheet_directory_uri() . '/js/form-c-serv-ajax.js', array('jquery'), (string)rand(), false);
+        wp_localize_script('ajax-form-script', 'localize_data', array(
+            'ajax_url' => admin_url('admin-ajax.php'),
+            'action' => 'estimate_now_form',
+        ));
+	}
 
     if (is_page_template('forms-quote/quote-2-1-1-furniture-installation.php')) {
+
         wp_enqueue_script('jquery-ui-datepicker');
         wp_enqueue_script('input-ui-datepicker', get_stylesheet_directory_uri() . '/js/input-ui-datepicker-cserv.js', array('jquery', 'jquery-ui-datepicker'), null, true);
 

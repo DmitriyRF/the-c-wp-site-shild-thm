@@ -37,6 +37,7 @@
             <form id="quote_form" class="cserv_form_2_1_1">
 
               <?php wp_nonce_field('quote_form', 'estimateNonce');?>
+              <input type="hidden" name="quote_form_type" value="installation_form">
 
               <div class="et_pb_row et_pb_row_1 et_pb_equal_columns">
 
@@ -65,7 +66,7 @@
                     <p class="contact_field">
                       <label for="contact_name" class="hidden">Name</label>
                       <input type="text" id="contact_name" class="input" value="" name="contact_name"
-                        placeholder="*Name">
+                        placeholder="*Name" required>
                     </p>
 
                   </div> <!-- .et_pb_contact -->
@@ -79,7 +80,7 @@
                     <p class="contact_field">
                       <label for="contact_company" class="hidden">Company</label>
                       <input type="text" id="contact_company" class="input" value="" name="contact_company"
-                        placeholder="*Company">
+                        placeholder="*Company"  required>
                     </p>
 
                   </div> <!-- .et_pb_contact -->
@@ -93,7 +94,7 @@
                     <p class="contact_field">
                       <label for="contact_email" class="hidden">Email</label>
                       <input type="email" id="contact_email" class="input" value="" name="contact_email"
-                        placeholder="*Email">
+                        placeholder="*Email"  required>
                     </p>
 
                   </div> <!-- .et_pb_contact -->
@@ -107,7 +108,7 @@
                     <p class="contact_field">
                       <label for="contact_phone" class="hidden">Phone number</label>
                       <input type="tel" id="contact_phone" class="input" value="" name="contact_phone"
-                        placeholder="*Phone numbe">
+                        placeholder="*Phone numbe"  required>
                     </p>
 
                   </div> <!-- .et_pb_contact -->
