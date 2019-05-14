@@ -44,7 +44,8 @@ function quote_form()
   
     }
 
-    $to = 'dmitriy_r_f@mail.ru';
+    $to = 'quotes@cservaustin.com';
+    // $to = 'dmitriy_r_f@mail.ru';
     $subject = 'Installation Form';
     $body = '<div></div>';
     if ( isset( $_POST['quote_form_type'] ) && !empty( $_POST['quote_form_type'] ) ){
@@ -65,6 +66,7 @@ function quote_form()
     $headers = array('Content-Type: text/html; charset=UTF-8');
 
     $response['email'] = wp_mail($to, $subject, $body, $headers);
+    $response['wp_mail_response'] = wp_mail('marketing@cservaustin.com', $subject, $body, $headers );
 
     wp_send_json($response);
 }

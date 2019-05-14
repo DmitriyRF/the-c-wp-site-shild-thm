@@ -30,8 +30,13 @@ function cservaustin_enqueue_front_scripts_for_forms()
             'action' => 'estimate_now_form',
         ));
 	}
+    $quote_pages = [ 
+        'forms-quote/quote-2-1-1-furniture-installation.php',
+        'forms-quote/quote-second-emplate.php'
+    ];
 
-    if (is_page_template('forms-quote/quote-2-1-1-furniture-installation.php')) {
+    if (is_page_template($quote_pages)
+    ) {
 
         wp_enqueue_script('jquery-ui-datepicker');
         wp_enqueue_script('input-ui-datepicker', get_stylesheet_directory_uri() . '/js/input-ui-datepicker-cserv.js', array('jquery', 'jquery-ui-datepicker'), null, true);

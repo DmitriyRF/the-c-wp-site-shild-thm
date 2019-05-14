@@ -37,10 +37,14 @@
       //add field for wordpress nonce
       ajaxFormData.append("action", localize_data.action);
 
+      estimateForm.find(':checkbox:checked, :radio:checked').each(function () {
+        ajaxFormData.append(this.name, $(this).val());
+      });
+
       // Display the key/value pairs
-      for (var pair of ajaxFormData.entries()) {
-        console.log(pair[0] + ', ' + pair[1]);
-      }
+      // for (var pair of ajaxFormData.entries()) {
+      //   console.log(pair[0] + ', ' + pair[1]);
+      // }
 
       formPreloader.css("display", "block");
       estimateForm.css("opacity", "0.7");
@@ -64,14 +68,8 @@
         })
         .always(function (e) {
           formPreloader.css("display", "none");
-          estimateForm
-            .css("opacity", "1")
-            .find("input, textarea")
-            .filter(":not([type='submit'])")
-            .filter(":not([type='hidden'])")
-            .filter(':visible')
-            .val("");
-          formFileLabel.text("ATTACH DOCUMENTS");
+          estimateForm.css("opacity", "1");
+          clearingInputs();
         });
     }
   }
@@ -117,24 +115,74 @@
     return re.test(email);
   }
 
+  function clearingInputs() {
+
+    estimateForm
+      .find("textarea")
+      .val("");
+
+    estimateForm
+      .find("input")
+      .filter(function () {
+        var type = $(this)[0].type;
+        return (
+          type == 'text' ||
+          type == 'tel' ||
+          type == 'email' ||
+          type == 'file'
+        );
+      })
+      .filter(':visible')
+      .val("");
+
+    estimateForm
+      .find("input")
+      .filter(':checked')
+      .filter(':visible')
+      .attr("checked", false);
+
+    formFileLabel.text("ATTACH DOCUMENTS");
+
+  }
+
 })(jQuery);
 
 
 
+(function ($) {
+
+  $(window).load(function () {
+    $("input").filter('[data-text-required]').each(
+      // to hook whole radio input to handler onChange
+      // we take the name and add them to onChage listener
+      function (index, input) {
+        var radioElement = $(input);
+        var radioName = radioElement.attr('name');
+        var radioGroup = $('input[name=' + radioName + ']');
+        radioGroup.change(use_text_input.bind(radioGroup, radioElement.data('textRequired')));
+      }
+    );
+  });
+
+  function use_text_input(textRequiredName) {
+
+    var elementWithLink = this.filter('[data-text-required]');
+
+    if (elementWithLink.attr('checked')) {
+      $('input[name=' + textRequiredName + ']')
+        .attr({ required: true, disabled: false })
+        .addClass('input-must-be-filled')
+        .focus();
+    } else {
+      $('input[name=' + textRequiredName + ']')
+        .attr({ required: false, disabled: true })
+        .removeClass('input-must-be-filled')
+        .val('');
+    }
+  }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+})(jQuery);
 
 
 (function ($) {
@@ -142,14 +190,6 @@
   $(window).load(function () {
 
   });
-
-
-
-  function form_ajax_request_response(e) {
-
-
-  }
-
 
 
 })(jQuery);

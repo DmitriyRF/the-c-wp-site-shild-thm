@@ -93,7 +93,8 @@
   .et_pb_contact {
     padding: 10px 0;
     .contact_field {
-      .input {
+      .input,
+      .select {
         width: 100%;
         padding: 20px 30px;
         border: 0;
@@ -125,6 +126,134 @@
           color: $form-light-text;
         }
       }
+    }
+    .input-arrow-down {
+      position: relative;
+      display: block;
+      &:after {
+        content: "3";
+        display: inline-block;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 70px;
+        height: 80px;
+        font-family: "ETmodules" !important;
+        font-size: 60px;
+        font-style: normal;
+        font-variant: none;
+        font-weight: bold;
+        text-shadow: none;
+        text-align: center;
+        text-transform: none;
+        line-height: 80px;
+        color: $main-color-orange;
+        pointer-events: none;
+      }
+    }
+  }
+
+  .textarea-group {
+    padding: 40px 0 20px;
+    label {
+      display: block;
+      .textarea {
+        width: 100%;
+        max-width: 100%;
+        min-width: 100%;
+        min-height: 120px;
+        padding: 20px 30px;
+        border: 0;
+        border-radius: 0;
+        font-family: $ff-poppins;
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 1;
+        color: $form-light-text;
+        background-color: $form-dark-background;
+        -webkit-appearance: none;
+        @media (min-width: $main-all_mobile-breakpoint) {
+          font-size: 19px;
+          min-height: 180px;
+        }
+        @media (min-width: $main-decktop-breakpoint) {
+          font-size: 21px;
+          min-height: 220px;
+        }
+        &::-webkit-input-placeholder {
+          color: $form-light-text;
+        }
+        &::-moz-placeholder {
+          color: $form-light-text;
+        }
+        &:-ms-input-placeholder {
+          color: $form-light-text;
+        }
+        &:-moz-placeholder {
+          color: $form-light-text;
+        }
+      }
+    }
+  }
+
+  .input-file-group {
+    label {
+      min-height: 80px;
+      border: 2px solid $form-light-border;
+      padding: 10px;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+
+      .file-attacment-label {
+        color: #104074;
+        font-size: 20px;
+        text-transform: uppercase;
+        text-align: center;
+        display: inline-block;
+        font-weight: 600;
+        line-height: 1.1;
+        padding-right: 15px;
+        cursor: pointer;
+
+        @media (min-width: $main-tablet-breakpoint) {
+          text-align: left;
+          font-size: 24px;
+          display: inline-flex;
+          height: 100%;
+          align-items: center;
+          padding-left: 30px;
+        }
+
+        i {
+          padding-right: 15px;
+          font-size: 1.5em;
+        }
+        u {
+        }
+      }
+      .input-file {
+        width: 1px;
+        height: 1px;
+        position: absolute;
+        display: block;
+        margin-left: -1px;
+        overflow: hidden;
+      }
+    }
+  }
+
+  .input-file-description {
+    font-size: 18px;
+    color: $form-dark-text;
+    font-family: $ff-poppins;
+
+    @media (min-width: $main-all_mobile-breakpoint) {
+      font-size: 19px;
+    }
+    @media (min-width: $main-decktop-breakpoint) {
+      font-size: 21px;
     }
   }
 
@@ -573,9 +702,36 @@
     padding-bottom: 5px;
   }
 
+  .p-y-10 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .p-y-15 {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  .p-y-20 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .p-y-25 {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
   .last-submit-button-row {
     padding-top: 30px;
     padding-bottom: 50px;
+  }
+
+  .input-must-be-filled {
+    color: $form-light-text !important;
+    &::placeholder {
+      color: $form-light-text !important;
+    }
   }
 }
 
