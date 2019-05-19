@@ -468,14 +468,14 @@
 
                 <div class="et_pb_column et_pb_column_1_2">
 
-                  <div class="type-checkbox-input-group">
-                    <input id="input_type_system_furniture" class="checkbox-type-input" type="checkbox"
-                      name="input_type_system_furniture" value="System Furniture" />
+                  <div class="type-checkbox-single-input-group">
+                    <input id="input_type_system_furniture_1" class="checkbox-type-input" type="checkbox"
+                      name="input_type_system_furniture_1" value="System Furniture" />
 
                     <div class="et_pb_column checkbox-self-wrapper">
-                      <label class="checkbox-description" for="input_type_system_furniture">
+                      <label class="checkbox-description" for="input_type_system_furniture_1">
                         <span class="checkbox-square"></span>
-                        <span class="checkbox-text">System Furniture</span>
+                        <span class="checkbox-text">System Furniture 1</span>
                       </label>
                     </div>
 
@@ -485,14 +485,14 @@
 
                 <div class="et_pb_column et_pb_column_1_2 et-last-child">
 
-                <div class="type-checkbox-input-group">
-                    <input id="input_type_system_furniture" class="checkbox-type-input" type="checkbox"
-                      name="input_type_system_furniture" value="System Furniture" />
+                <div class="type-checkbox-single-input-group">
+                    <input id="input_type_system_furniture_2" class="checkbox-type-input" type="checkbox"
+                      name="input_type_system_furniture_2" value="System Furniture" />
 
                     <div class="et_pb_column checkbox-self-wrapper ">
-                      <label class="checkbox-description" for="input_type_system_furniture">
+                      <label class="checkbox-description" for="input_type_system_furniture_2">
                         <span class="checkbox-square"></span>
-                        <span class="checkbox-text">System Furniture</span>
+                        <span class="checkbox-text">System Furniture 2</span>
                       </label>
                     </div>
 
@@ -501,14 +501,14 @@
                 </div><!-- .et_pb_column -->
 
                 <div class="et_pb_column et_pb_column_1_2">
-                <div class="type-checkbox-input-group">
-                    <input id="input_type_system_furniture" class="checkbox-type-input" type="checkbox"
-                      name="input_type_system_furniture" value="System Furniture" />
+                <div class="type-checkbox-single-input-group">
+                    <input id="input_type_system_furniture_3" class="checkbox-type-input" type="checkbox"
+                      name="input_type_system_furniture_3" value="System Furniture" />
 
                     <div class="et_pb_column checkbox-self-wrapper">
-                      <label class="checkbox-description" for="input_type_system_furniture">
+                      <label class="checkbox-description" for="input_type_system_furniture_3">
                         <span class="checkbox-square"></span>
-                        <span class="checkbox-text">System Furniture</span>
+                        <span class="checkbox-text">System Furniture 3</span>
                       </label>
                     </div>
 
