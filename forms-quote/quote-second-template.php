@@ -14,13 +14,13 @@
 
         <div class="et_builder_inner_content et_pb_gutters3">
 
-          <div id="form_page_2_1_1" class="et_pb_section  et_pb_section_0 et_pb_form_section_2_1_1">
+          <div id="form_page_2_1_1" class="et_pb_section  form_section et_pb_form_section_2_1_1">
 
-            <div class="et_pb_row et_pb_row_0">
+            <div class="et_pb_row row_for_form_title">
 
               <div class="et_pb_column et_pb_column_4_4 et-last-child">
 
-                <div class="et_pb_module et_pb_text et_pb_text_0 et_pb_bg_layout_dark  et_pb_text_align_center">
+                <div class="et_pb_module et_pb_text form_title et_pb_bg_layout_dark  et_pb_text_align_center">
 
                   <div class="et_pb_text_inner">
 
@@ -32,14 +32,14 @@
 
               </div> <!-- .et_pb_column -->
 
-            </div> <!-- .et_pb_row_0 -->
+            </div> <!-- .row_for_form_title -->
 
             <form id="quote_form" class="cserv_form_2_1_1">
 
               <?php wp_nonce_field('quote_form', 'estimateNonce');?>
               <input type="hidden" name="quote_form_type" value="quote_second_template">
 
-              <div class="et_pb_row et_pb_row_1 et_pb_equal_columns">
+              <div class="et_pb_row border_top_10 et_pb_equal_columns">
 
                 <div class="et_pb_column et_pb_column_4_4 et-last-child">
 
@@ -55,7 +55,7 @@
 
                 </div> <!-- .et_pb_column -->
 
-              </div><!-- .et_pb_row_1 -->
+              </div><!-- .border_top_10 -->
 
               <div class="et_pb_row et_pb_row_2">
                 <div class="et_pb_column et_pb_column_4_4 et-last-child">
@@ -596,7 +596,7 @@
 
               </div><!-- .et_pb_row_9 -->
 
-              <div class="et_pb_row et_pb_row_10 p-y-20">
+              <div class="et_pb_row border_top_100 p-y-20">
 
                 <div class="et_pb_column et_pb_column_2_5">
 
@@ -629,10 +629,10 @@
                   </div>
                 </div><!-- .et_pb_column -->
 
-              </div><!-- .et_pb_row_10 -->
+              </div><!-- .border_top_100 -->
 
 
-              <div class="et_pb_row et_pb_row_11">
+              <div class="et_pb_row border_top_101">
 
                 <div class="et_pb_column et_pb_column_4_4 et-last-child">
 
@@ -649,7 +649,7 @@
 
                 </div> <!-- .et_pb_column -->
 
-              </div><!-- .et_pb_row_11 -->
+              </div><!-- .border_top_101 -->
 
               <div class="et_pb_row et_pb_row_99 last-submit-button-row et_pb_equal_columns">
                 <div class="et_pb_column et_pb_column_4_4 et-last-child">

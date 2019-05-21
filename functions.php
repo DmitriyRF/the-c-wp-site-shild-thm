@@ -27,9 +27,9 @@ require_once get_stylesheet_directory() . '/inc/enqueue.php';
 
 require_once get_stylesheet_directory() . '/forms-quote/utilites.php';
 
-require_once get_stylesheet_directory() . '/inc/shortcodes/form-estimate-now-shortcodes.php';
+require_once get_stylesheet_directory() . '/inc/shortcodes/shortcodes.php';
 
-require_once get_stylesheet_directory() . '/inc/ajax/form-estimate-now-ajax.php';
+require_once get_stylesheet_directory() . '/inc/ajax/shortcodes/shortcodes-ajax.php';
 
 require_once get_stylesheet_directory() . '/inc/ajax/quote-form-ajax.php';
 

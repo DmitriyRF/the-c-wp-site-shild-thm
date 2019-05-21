@@ -1,23 +1,10 @@
 %styles-wrapper {
-  &.et_pb_section_0 {
+  &.form_section {
     padding: 0 0 110px;
     border-top: 10px solid $main-color-blue;
   }
 
-  .et_pb_row_0 {
-    padding: 90px 0 60px;
-    @media (min-width: $main-all_mobile-breakpoint) {
-      padding: 120px 0 100px;
-    }
-    @media (min-width: $main-decktop-breakpoint) {
-      padding: 150px 0;
-    }
-  }
-  .et_pb_column_0 {
-    margin: 0;
-    padding: 0;
-  }
-  .et_pb_text_0 {
+  .form_title {
     h1 {
       font-size: 44px;
       font-family: $ff-myriad;
@@ -38,11 +25,19 @@
     background-color: #fff;
   }
 
-  .et_pb_row_0 {
+  .row_for_form_title {
+    //have to be after .et_pb_row
     background-color: initial;
+    padding: 90px 0 60px;
+    @media (min-width: $main-all_mobile-breakpoint) {
+      padding: 120px 0 100px;
+    }
+    @media (min-width: $main-decktop-breakpoint) {
+      padding: 150px 0;
+    }
   }
 
-  .et_pb_row_1 {
+  .border_top_10 {
     border-top: 10px solid $main-color-orange;
   }
 }

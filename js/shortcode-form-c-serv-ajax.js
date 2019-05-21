@@ -3,9 +3,9 @@
 
   $(window).load(function () {
 
-    estimateForm = $("#js-form-estimate");
-    formSubmitBtn = $("#submit-estimate");
-    formFileInput = $("#estimateFile");
+    estimateForm = $("#js-" + localize_data.action);
+    formSubmitBtn = $("#form-shortcode-submit");
+    formFileInput = $("#shortcodeFormFile");
     formFileLabel = $(".file-attacment-label u");
     formPreloader = $("#wrapper-ajax-loader");
 
@@ -42,7 +42,7 @@
       // add files
       // var formFiles = formFileInput[0].files;
       // for (let i = 0; i < formFiles.length; i++) {
-      //   ajaxFormData.append('estimateFile[]', formFiles[i]);
+      //   ajaxFormData.append('shortcodeFormFile[]', formFiles[i]);
       // }
 
       formPreloader.css("display", "block");

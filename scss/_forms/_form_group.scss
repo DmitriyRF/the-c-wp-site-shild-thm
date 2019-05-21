@@ -126,6 +126,13 @@
           color: $form-light-text;
         }
       }
+      .select {
+        option {
+          font-size: 16px;
+          background: $form-dark-text;
+          padding: 2px 5px 2px 5px;
+        }
+      }
     }
     .input-arrow-down {
       position: relative;

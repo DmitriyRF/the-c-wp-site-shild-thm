@@ -1,9 +1,9 @@
 <?php
 
-add_shortcode('form_estimate', 'cservaustin__shortcodes_form_estimate');
+add_shortcode('form_career', 'cservaustin__shortcodes_form_career');
 
-// [form_estimate foo="foo-value"]
-function cservaustin__shortcodes_form_estimate($atts, $content)
+// [form_career foo="foo-value"]
+function cservaustin__shortcodes_form_career($atts, $content)
 {
     $a = shortcode_atts(array(
         //  'foo' => 'default',
@@ -12,35 +12,35 @@ function cservaustin__shortcodes_form_estimate($atts, $content)
     ob_start();
     ?>
 
-<div class=" shortcodes-form-wrapper shortcodes-estimate_now_form">
-  <form id="js-estimate_now_form" class="form-container">
+<div class="shortcodes-form-wrapper shortcodes-career_form">
+  <form id="js-career_form" class="form-container">
     <div class="form-row">
       <div class="input-group">
-        <?php wp_nonce_field('estimate_now_form', 'estimateNonce');?>
+        <?php wp_nonce_field('career_form', 'careerNonce');?>
       </div>
       <div class="input-group col-50">
-        <label for="estimateName">
-          <input type="text" class="form-shortcode-input-text" name="estimateName" id="estimateName" placeholder="*Name" required>
+        <label for="careerName">
+          <input type="text" class="form-shortcode-input-text" name="careerName" id="careerName" placeholder="*Name" required>
         </label>
       </div>
       <div class="input-group col-50">
-        <label for="estimateEmail">
-          <input type="email" class="form-shortcode-input-text" name="estimateEmail" id="estimateEmail" placeholder="*E-mail" required>
+        <label for="careerEmail">
+          <input type="email" class="form-shortcode-input-text" name="careerEmail" id="careerEmail" placeholder="*E-mail" required>
         </label>
       </div>
       <div class="input-group col-50">
-        <label for="estimatePhone">
-          <input type="tel" class="form-shortcode-input-text" name="estimatePhone" id="estimatePhone" placeholder="*Phone Number" required>
+        <label for="careerPhone">
+          <input type="tel" class="form-shortcode-input-text" name="careerPhone" id="careerPhone" placeholder="*Phone Number" required>
         </label>
       </div>
       <div class="input-group col-50">
-        <label for="estimateCompany">
-          <input type="text" class="form-shortcode-input-text" name="estimateCompany" id="estimateCompany" placeholder="*Company" required>
+        <label for="careerInterest">
+          <input type="text" class="form-shortcode-input-text" name="careerInterest" id="careerInterest" placeholder="*Areas of Interest" required>
         </label>
       </div>
       <div class="textarea-group">
-        <label for="estimateDetails">
-          <textarea class="form-shortcode-textarea" name="estimateDetails" id="estimateDetails" placeholder="*Type service request details"
+        <label for="careerDetails">
+          <textarea class="form-shortcode-textarea" name="careerDetails" id="careerDetails" placeholder="*Cover Letter"
             rows="3" required></textarea>
         </label>
       </div>
@@ -54,13 +54,13 @@ function cservaustin__shortcodes_form_estimate($atts, $content)
       </div>
       <div class="input-group col-50">
         <label class="form-shortcode-submit">
-          <input type="submit" id="form-shortcode-submit" value="Submit for Pricing »">
+          <input type="submit" id="form-shortcode-submit" value="Apply Now »">
         </label>
       </div>
     </div>
 
     <?php echo recaptcha_HTML(); ?>
-
+    
     <div id="wrapper-ajax-loader">
       <div class="cserv-ajax-ripple">
         <div></div>

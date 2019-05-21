@@ -1,0 +1,35 @@
+$custom-mobile-sm-breakpoint: 350px;
+$custom-mobile-md-breakpoint: 380px;
+$custom-mobile-lg-breakpoint: 410px;
+$custom-mobile-xl-breakpoint: 440px;
+$custom-mobile-ld-breakpoint: 470px;
+
+.et_pb_text h1 {
+  @media (max-width: $custom-mobile-ld-breakpoint) {
+    //max 470px
+    font-size: 35px !important;
+    line-height: 1.4 !important;
+  }
+  @media (max-width: $custom-mobile-xl-breakpoint) {
+    //max 440px
+    font-size: 32px !important;
+    line-height: 1.4 !important;
+  }
+  @media (max-width: $custom-mobile-lg-breakpoint) {
+    //max 410px
+    font-size: 30px !important;
+    line-height: 1.4 !important;
+  }
+
+  @media (max-width: $custom-mobile-md-breakpoint) {
+    //max 380px
+    font-size: 28px !important;
+    line-height: 1.4 !important;
+  }
+
+  @media (max-width: $custom-mobile-sm-breakpoint) {
+    //max 350px
+    font-size: 24px !important;
+    line-height: 1.4 !important;
+  }
+}
