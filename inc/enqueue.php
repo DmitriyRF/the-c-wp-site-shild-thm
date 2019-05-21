@@ -26,10 +26,21 @@ function cservaustin_enqueue_front_scripts_for_forms()
 	if( is_a( $post, 'WP_Post' ) ) {
         $content = $post->post_content;
         // implies one form for on the page
-        $shortcode_form_acton = has_shortcode( $content, 'form_estimate') ? 'estimate_now_form' : '';
-        $shortcode_form_acton = has_shortcode( $content, 'form_career') ? 'form_career' : '';
+        $shortcode_form_acton = '';
+        $shortcodes = [
+            'form_estimate' => 'estimate_now_form',
+            'career_form' => 'career_form'
+        ];
 
-        if ( empty ($shortcode_form_acton) ){
+        foreach ($shortcodes as $short_code => $form_action) {
+
+            if(has_shortcode( $content, $short_code)){
+                $shortcode_form_acton = $form_action;
+                break;
+            }
+        }
+
+        if (! empty ($shortcode_form_acton) ){
 
             wp_enqueue_script('ajax-form-script', get_stylesheet_directory_uri() . '/js/shortcode-form-c-serv-ajax.js', array('jquery'), (string)rand(), false);
             wp_localize_script('ajax-form-script', 'localize_data', array(

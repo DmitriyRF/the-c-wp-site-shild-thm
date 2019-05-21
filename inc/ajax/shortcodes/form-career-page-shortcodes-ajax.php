@@ -50,7 +50,7 @@ function career_form()
 
     $to = 'quotes@cservaustin.com';
     // $to = 'dmitriy_r_f@mail.ru';
-    $subject = 'NEED A QUICK ESTIMATE NOW!';
+    $subject = 'CAREER PAGE REQUEST!';
     $body = '';
     $body .= '<table align="center" width="600" border="0" cellspacing="0" cellpadding="0" style="border:1px solid #ccc;">';
     $body .= '<tbody>';

@@ -1,9 +1,9 @@
 <?php
 
-add_shortcode('form_career', 'cservaustin__shortcodes_form_career');
+add_shortcode('career_form', 'cservaustin__shortcodes_career_form');
 
-// [form_career foo="foo-value"]
-function cservaustin__shortcodes_form_career($atts, $content)
+// [career_form foo="foo-value"]
+function cservaustin__shortcodes_career_form($atts, $content)
 {
     $a = shortcode_atts(array(
         //  'foo' => 'default',
