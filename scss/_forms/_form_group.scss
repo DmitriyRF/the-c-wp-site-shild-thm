@@ -1,7 +1,14 @@
 .form {
+  .form_section {
+    padding: 0 0 110px;
+    border-top: 10px solid $main-color-blue;
+  }
+
   .et_pb_row {
     width: 90%;
     padding: 0 20px;
+    background-color: #fff;
+
     @media (min-width: $main-mobile-breakpoint) {
       width: 80%;
       max-width: 540px;
@@ -24,6 +31,40 @@
       padding: 0 110px;
     }
   }
+
+  .row_for_form_title {
+    //have to be after .et_pb_row
+    background-color: initial;
+    padding: 90px 0 60px;
+    @media (min-width: $main-all_mobile-breakpoint) {
+      padding: 120px 0 100px;
+    }
+    @media (min-width: $main-decktop-breakpoint) {
+      padding: 150px 0;
+    }
+
+    .form_title {
+      h1 {
+        font-size: 44px;
+        font-family: $ff-myriad;
+        text-transform: uppercase;
+        font-weight: 700;
+        padding: 0;
+        margin: 0;
+        @media (min-width: $main-all_mobile-breakpoint) {
+          font-size: 54px;
+        }
+        @media (min-width: $main-decktop-breakpoint) {
+          font-size: 64px;
+        }
+      }
+    }
+  }
+
+  .border_top_10 {
+    border-top: 10px solid $main-color-orange;
+  }
+
   .et_pb_column {
     margin-bottom: 0;
   }
@@ -327,7 +368,7 @@
             }
             .radio_check-tooltips {
               position: relative;
-              display: flex;
+              display: none;
               flex-shrink: 0;
               justify-content: center;
               align-items: center;
@@ -337,15 +378,15 @@
               border-radius: 50%;
               background: transparent;
               box-sizing: border-box;
+              @media (min-width: $main-decktop-breakpoint) {
+                display: flex;
+              }
               span {
                 font-size: 24px;
                 line-height: 24px;
                 font-weight: 600;
                 font-family: $ff-poppins;
                 color: $form-grey-text;
-              }
-              .radio_check-tooltips_text {
-                position: absolute;
               }
             }
           }
@@ -369,10 +410,6 @@
           }
           .radio_check-tooltips {
             border: 5px solid $form-light-border;
-            span {
-            }
-            .radio_check-tooltips_text {
-            }
           }
         }
       }
@@ -802,6 +839,31 @@
     &::placeholder {
       color: $form-light-text !important;
     }
+  }
+}
+.radio_check-tooltips_text {
+  display: none;
+}
+
+.c-serv-ui-toolTip-style {
+  width: 400px;
+  z-index: 1000;
+  overflow: hidden;
+  .radio_check-tooltips_text {
+    display: block;
+    position: relative;
+    // left: 50%;
+    top: 5px;
+    // transform: translateX(-50%);
+    width: 100%;
+    padding: 15px;
+    margin: 0 auto;
+    font-size: 16px;
+    // box-shadow: 0 0 7px black;
+    background: $form-light-text;
+  }
+
+  .ui-tooltip-content {
   }
 }
 

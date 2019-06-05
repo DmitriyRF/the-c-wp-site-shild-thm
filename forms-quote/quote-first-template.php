@@ -15,7 +15,7 @@
 
         <div class="et_builder_inner_content et_pb_gutters3">
 
-          <div id="form_page_2_1_1" class="et_pb_section  form_section et_pb_form_section_2_1_1">
+          <div id="form_page_background" class="et_pb_section  form_section et_pb_form_section_2_1_1">
 
             <div class="et_pb_row row_for_form_title">
 
@@ -35,7 +35,7 @@
 
             </div> <!-- .row_for_form_title -->
 
-            <form id="quote_form" class="cserv_form_2_1_1">
+            <form id="quote_form" class="cserv_form">
 
               <?php wp_nonce_field('quote_form', 'estimateNonce');?>
               <input type="hidden" name="quote_form_type" value="installation_form">
@@ -141,7 +141,7 @@
                       <input class="radio_check-input" type="radio" name="installation_service_type" value="TURNKEY">
                       <div class="radio_check_tooltip_wrapper">
                         <div class="centralize_content">
-                          <button class="radio_check_checkmark"></button>
+                          <button type="button" class="radio_check_checkmark"></button>
                           <span class="radio_check-label_text">C-SERV TURNKEY INSTALLATION SERVICE</span>
                           <button type="button" class="radio_check-tooltips">
                             <span>?</span>
@@ -160,7 +160,7 @@
                       <input class="radio_check-input" type="radio" name="installation_service_type" value="STANDARD">
                       <div class="radio_check_tooltip_wrapper">
                         <div class="centralize_content">
-                          <button class="radio_check_checkmark"></button>
+                          <button type="button" class="radio_check_checkmark"></button>
                           <span class="radio_check-label_text">C-SERV STANDARD INSTALLATION SERVICE</span>
                           <button type="button" class="radio_check-tooltips">
                             <span>?</span>
@@ -389,7 +389,7 @@
                       <input class="radio_check-input" type="radio" name="installation_space" value="OFFICE SPACE">
                       <div class="radio_check_tooltip_wrapper">
                         <div class="centralize_content">
-                          <button class="radio_check_checkmark"></button>
+                          <button type="button" class="radio_check_checkmark"></button>
                           <span class="radio_check-label_text">OFFICE SPACE</span>
                         </div>
                       </div>
@@ -406,7 +406,7 @@
                         value="ACTIVE CONSTRUCTION">
                       <div class="radio_check_tooltip_wrapper">
                         <div class="centralize_content">
-                          <button class="radio_check_checkmark"></button>
+                          <button type="button" class="radio_check_checkmark"></button>
                           <span class="radio_check-label_text">ACTIVE CONSTRUCTION</span>
                         </div>
                       </div>
@@ -426,7 +426,7 @@
                       <input class="radio_check-input" type="radio" name="installation_space" value="LABORATORY">
                       <div class="radio_check_tooltip_wrapper">
                         <div class="centralize_content">
-                          <button class="radio_check_checkmark"></button>
+                          <button type="button" class="radio_check_checkmark"></button>
                           <span class="radio_check-label_text">LABORATORY</span>
                         </div>
                       </div>
@@ -443,7 +443,7 @@
                         value="INDUSTRIAL FACILITY">
                       <div class="radio_check_tooltip_wrapper">
                         <div class="centralize_content">
-                          <button class="radio_check_checkmark"></button>
+                          <button type="button" class="radio_check_checkmark"></button>
                           <span class="radio_check-label_text">INDUSTRIAL FACILITY</span>
                         </div>
                       </div>
@@ -462,7 +462,7 @@
                       <input class="radio_check-input" type="radio" name="installation_space" data-text-required="installation_space_other" value="OTHER">
                       <div class="radio_check_tooltip_wrapper">
                         <div class="centralize_content">
-                          <button class="radio_check_checkmark"></button>
+                          <button type="button" class="radio_check_checkmark"></button>
                           <span class="radio_check-label_text">OTHER</span>
                         </div>
                       </div>
@@ -555,7 +555,7 @@
                 </div>
               </div>
 
-            </form><!-- .cserv_form_2_1_1 -->
+            </form><!-- .cserv_form -->
 
           </div><!-- .et_pb_section -->
 

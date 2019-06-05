@@ -2084,7 +2084,7 @@
     background-image: url("../bg/children/applications/Healthcare-Furniture-Services/Healthcare-Furniture-Services-cservaustin.jpg");
   }
 }
-#form_page_2_1_1 {
+#form_page_background {
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: center top;
@@ -2092,7 +2092,7 @@
   background-image: url("../bg/forms/Quote-Form-cservaustin-background-mobile.jpg");
 }
 @media (min-width: 768px) {
-  #form_page_2_1_1 {
+  #form_page_background {
     background-image: url("../bg/forms/Quote-Form-cservaustin-background.jpg");
   }
 }
@@ -2314,34 +2314,34 @@
 .form .et_pb_radio_check_tooltips.blue {
   color: #0e3c6e;
 }
-.et_pb_quote_form_layout #page-container #et-main-area #main-content #form_page_2_1_1.form_section,
-.et_fixed_nav.et_show_nav #page-container #et-main-area #main-content #form_page_2_1_1.form_section {
+.et_pb_quote_form_layout #page-container #et-main-area #main-content #form_page_background.form_section,
+.et_fixed_nav.et_show_nav #page-container #et-main-area #main-content #form_page_background.form_section {
   padding: 0 0 110px;
   border-top: 10px solid #0f4879;
 }
-.et_pb_quote_form_layout #page-container #et-main-area #main-content #form_page_2_1_1 .row_for_form_title,
-.et_fixed_nav.et_show_nav #page-container #et-main-area #main-content #form_page_2_1_1 .row_for_form_title {
+.et_pb_quote_form_layout #page-container #et-main-area #main-content #form_page_background .row_for_form_title,
+.et_fixed_nav.et_show_nav #page-container #et-main-area #main-content #form_page_background .row_for_form_title {
   padding: 90px 0 60px;
 }
 @media (min-width: 768px) {
-  .et_pb_quote_form_layout #page-container #et-main-area #main-content #form_page_2_1_1 .row_for_form_title,
-  .et_fixed_nav.et_show_nav #page-container #et-main-area #main-content #form_page_2_1_1 .row_for_form_title {
+  .et_pb_quote_form_layout #page-container #et-main-area #main-content #form_page_background .row_for_form_title,
+  .et_fixed_nav.et_show_nav #page-container #et-main-area #main-content #form_page_background .row_for_form_title {
     padding: 120px 0 100px;
   }
 }
 @media (min-width: 1200px) {
-  .et_pb_quote_form_layout #page-container #et-main-area #main-content #form_page_2_1_1 .row_for_form_title,
-  .et_fixed_nav.et_show_nav #page-container #et-main-area #main-content #form_page_2_1_1 .row_for_form_title {
+  .et_pb_quote_form_layout #page-container #et-main-area #main-content #form_page_background .row_for_form_title,
+  .et_fixed_nav.et_show_nav #page-container #et-main-area #main-content #form_page_background .row_for_form_title {
     padding: 150px 0;
   }
 }
-.et_pb_quote_form_layout #page-container #et-main-area #main-content #form_page_2_1_1 .et_pb_column_0,
-.et_fixed_nav.et_show_nav #page-container #et-main-area #main-content #form_page_2_1_1 .et_pb_column_0 {
+.et_pb_quote_form_layout #page-container #et-main-area #main-content #form_page_background .et_pb_column_0,
+.et_fixed_nav.et_show_nav #page-container #et-main-area #main-content #form_page_background .et_pb_column_0 {
   margin: 0;
   padding: 0;
 }
-.et_pb_quote_form_layout #page-container #et-main-area #main-content #form_page_2_1_1 .form_title h1,
-.et_fixed_nav.et_show_nav #page-container #et-main-area #main-content #form_page_2_1_1 .form_title h1 {
+.et_pb_quote_form_layout #page-container #et-main-area #main-content #form_page_background .form_title h1,
+.et_fixed_nav.et_show_nav #page-container #et-main-area #main-content #form_page_background .form_title h1 {
   font-size: 44px;
   font-family: "Myriad Pro BOLD", Helvetica, Arial, Lucida, sans-serif;
   text-transform: uppercase;
@@ -2350,27 +2350,27 @@
   margin: 0;
 }
 @media (min-width: 768px) {
-  .et_pb_quote_form_layout #page-container #et-main-area #main-content #form_page_2_1_1 .form_title h1,
-  .et_fixed_nav.et_show_nav #page-container #et-main-area #main-content #form_page_2_1_1 .form_title h1 {
+  .et_pb_quote_form_layout #page-container #et-main-area #main-content #form_page_background .form_title h1,
+  .et_fixed_nav.et_show_nav #page-container #et-main-area #main-content #form_page_background .form_title h1 {
     font-size: 54px;
   }
 }
 @media (min-width: 1200px) {
-  .et_pb_quote_form_layout #page-container #et-main-area #main-content #form_page_2_1_1 .form_title h1,
-  .et_fixed_nav.et_show_nav #page-container #et-main-area #main-content #form_page_2_1_1 .form_title h1 {
+  .et_pb_quote_form_layout #page-container #et-main-area #main-content #form_page_background .form_title h1,
+  .et_fixed_nav.et_show_nav #page-container #et-main-area #main-content #form_page_background .form_title h1 {
     font-size: 64px;
   }
 }
-.et_pb_quote_form_layout #page-container #et-main-area #main-content #form_page_2_1_1 .border_top_10,
-.et_fixed_nav.et_show_nav #page-container #et-main-area #main-content #form_page_2_1_1 .border_top_10,
-.et_pb_quote_form_layout #page-container #et-main-area #main-content #form_page_2_1_1 .et_pb_row_2,
-.et_fixed_nav.et_show_nav #page-container #et-main-area #main-content #form_page_2_1_1 .et_pb_row_2,
-.et_pb_quote_form_layout #page-container #et-main-area #main-content #form_page_2_1_1 .et_pb_row_3,
-.et_fixed_nav.et_show_nav #page-container #et-main-area #main-content #form_page_2_1_1 .et_pb_row_3 {
+.et_pb_quote_form_layout #page-container #et-main-area #main-content #form_page_background .border_top_10,
+.et_fixed_nav.et_show_nav #page-container #et-main-area #main-content #form_page_background .border_top_10,
+.et_pb_quote_form_layout #page-container #et-main-area #main-content #form_page_background .et_pb_row_2,
+.et_fixed_nav.et_show_nav #page-container #et-main-area #main-content #form_page_background .et_pb_row_2,
+.et_pb_quote_form_layout #page-container #et-main-area #main-content #form_page_background .et_pb_row_3,
+.et_fixed_nav.et_show_nav #page-container #et-main-area #main-content #form_page_background .et_pb_row_3 {
   background-color: #fff;
 }
-.et_pb_quote_form_layout #page-container #et-main-area #main-content #form_page_2_1_1 .border_top_10,
-.et_fixed_nav.et_show_nav #page-container #et-main-area #main-content #form_page_2_1_1 .border_top_10 {
+.et_pb_quote_form_layout #page-container #et-main-area #main-content #form_page_background .border_top_10,
+.et_fixed_nav.et_show_nav #page-container #et-main-area #main-content #form_page_background .border_top_10 {
   border-top: 10px solid #eb7719;
 }
 .et_pb_quote_form_layout #page-container,

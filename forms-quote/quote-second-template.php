@@ -14,7 +14,7 @@
 
         <div class="et_builder_inner_content et_pb_gutters3">
 
-          <div id="form_page_2_1_1" class="et_pb_section  form_section et_pb_form_section_2_1_1">
+          <div id="form_page_background" class="et_pb_section  form_section et_pb_form_section_2_1_1">
 
             <div class="et_pb_row row_for_form_title">
 
@@ -34,7 +34,7 @@
 
             </div> <!-- .row_for_form_title -->
 
-            <form id="quote_form" class="cserv_form_2_1_1">
+            <form id="quote_form" class="cserv_form">
 
               <?php wp_nonce_field('quote_form', 'estimateNonce');?>
               <input type="hidden" name="quote_form_type" value="quote_second_template">
@@ -76,7 +76,7 @@
                       <input class="radio_check-input" type="radio" name="loading_duck_access" value="YES">
                       <div class="radio_check_tooltip_wrapper">
                         <div class="centralize_content">
-                          <button class="radio_check_checkmark"></button>
+                          <button type="button" class="radio_check_checkmark"></button>
                           <span class="radio_check-label_text">YES</span>
                         </div>
                       </div>
@@ -91,7 +91,7 @@
                       <input class="radio_check-input" type="radio" name="loading_duck_access" value="NO">
                       <div class="radio_check_tooltip_wrapper">
                         <div class="centralize_content">
-                          <button class="radio_check_checkmark"></button>
+                          <button type="button" class="radio_check_checkmark"></button>
                           <span class="radio_check-label_text">NO</span>
                         </div>
                       </div>
@@ -120,7 +120,7 @@
                       <input class="radio_check-input" type="radio" name="freight_elevator" value="YES">
                       <div class="radio_check_tooltip_wrapper">
                         <div class="centralize_content">
-                          <button class="radio_check_checkmark"></button>
+                          <button type="button" class="radio_check_checkmark"></button>
                           <span class="radio_check-label_text">YES</span>
                         </div>
                       </div>
@@ -135,7 +135,7 @@
                       <input class="radio_check-input" type="radio" name="freight_elevator" value="NO">
                       <div class="radio_check_tooltip_wrapper">
                         <div class="centralize_content">
-                          <button class="radio_check_checkmark"></button>
+                          <button type="button" class="radio_check_checkmark"></button>
                           <span class="radio_check-label_text">NO</span>
                         </div>
                       </div>
@@ -164,7 +164,7 @@
                       <input class="radio_check-input" type="radio" name="install_in_rooms" value="ONE ROOM">
                       <div class="radio_check_tooltip_wrapper">
                         <div class="centralize_content">
-                          <button class="radio_check_checkmark"></button>
+                          <button type="button" class="radio_check_checkmark"></button>
                           <span class="radio_check-label_text">ONE ROOM</span>
                         </div>
                       </div>
@@ -182,7 +182,7 @@
                           data-text-required="install_in_rooms_text" value="MULTIPLE ROOMS">
                         <div class="radio_check_tooltip_wrapper">
                           <div class="centralize_content">
-                            <button class="radio_check_checkmark"></button>
+                            <button type="button" class="radio_check_checkmark"></button>
                             <span class="radio_check-label_text">MULTIPLE ROOMS:</span>
                           </div>
                         </div>
@@ -222,7 +222,7 @@
                       <input class="radio_check-input" type="radio" name="freight_elevator" value="YES">
                       <div class="radio_check_tooltip_wrapper">
                         <div class="centralize_content">
-                          <button class="radio_check_checkmark"></button>
+                          <button type="button" class="radio_check_checkmark"></button>
                           <span class="radio_check-label_text">YES</span>
                         </div>
                       </div>
@@ -240,7 +240,7 @@
                           data-text-required="freight_elevator_text" value="NO">
                         <div class="radio_check_tooltip_wrapper">
                           <div class="centralize_content">
-                            <button class="radio_check_checkmark"></button>
+                            <button type="button" class="radio_check_checkmark"></button>
                             <span class="radio_check-label_text">NO</span>
                           </div>
                         </div>
@@ -281,7 +281,7 @@
                       <input class="radio_check-input" type="radio" name="facility_permits_required" value="NO">
                       <div class="radio_check_tooltip_wrapper">
                         <div class="centralize_content">
-                          <button class="radio_check_checkmark"></button>
+                          <button type="button" class="radio_check_checkmark"></button>
                           <span class="radio_check-label_text">NO</span>
                         </div>
                       </div>
@@ -299,7 +299,7 @@
                           data-text-required="facility_permits_required_text" value="YES">
                         <div class="radio_check_tooltip_wrapper">
                           <div class="centralize_content">
-                            <button class="radio_check_checkmark"></button>
+                            <button type="button" class="radio_check_checkmark"></button>
                             <span class="radio_check-label_text">YES</span>
                           </div>
                         </div>
@@ -340,7 +340,7 @@
                       <input class="radio_check-input" type="radio" name="is_there_dumpster" value="DUMPSTER AVAILABLE">
                       <div class="radio_check_tooltip_wrapper">
                         <div class="centralize_content">
-                          <button class="radio_check_checkmark"></button>
+                          <button type="button" class="radio_check_checkmark"></button>
                           <span class="radio_check-label_text">DUMPSTER AVAILABLE</span>
                         </div>
                       </div>
@@ -355,7 +355,7 @@
                       <input class="radio_check-input" type="radio" name="is_there_dumpster" value="HAUL IT OFF">
                       <div class="radio_check_tooltip_wrapper">
                         <div class="centralize_content">
-                          <button class="radio_check_checkmark"></button>
+                          <button type="button" class="radio_check_checkmark"></button>
                           <span class="radio_check-label_text">HAUL IT OFF</span>
                         </div>
                       </div>
@@ -386,7 +386,7 @@
                           data-text-required="delivery_preference_text" value="DURING BUSINESS HOURS">
                         <div class="radio_check_tooltip_wrapper">
                           <div class="centralize_content">
-                            <button class="radio_check_checkmark"></button>
+                            <button type="button" class="radio_check_checkmark"></button>
                             <span class="radio_check-label_text">DURING BUSINESS HOURS:</span>
                           </div>
                         </div>
@@ -412,7 +412,7 @@
                         value="DURING AFTER HOURS">
                       <div class="radio_check_tooltip_wrapper">
                         <div class="centralize_content">
-                          <button class="radio_check_checkmark"></button>
+                          <button type="button" class="radio_check_checkmark"></button>
                           <span class="radio_check-label_text">DURING AFTER HOURS</span>
                         </div>
                       </div>
@@ -428,7 +428,7 @@
                       <input class="radio_check-input" type="radio" name="delivery_preference" value="DURING WEEKEND">
                       <div class="radio_check_tooltip_wrapper">
                         <div class="centralize_content">
-                          <button class="radio_check_checkmark"></button>
+                          <button type="button" class="radio_check_checkmark"></button>
                           <span class="radio_check-label_text">DURING WEEKEND</span>
                         </div>
                       </div>
@@ -444,7 +444,7 @@
                       <input class="radio_check-input" type="radio" name="delivery_preference" value="NO PREFERENCE">
                       <div class="radio_check_tooltip_wrapper">
                         <div class="centralize_content">
-                          <button class="radio_check_checkmark"></button>
+                          <button type="button" class="radio_check_checkmark"></button>
                           <span class="radio_check-label_text">NO PREFERENCE</span>
                         </div>
                       </div>
@@ -596,7 +596,7 @@
 
               </div><!-- .et_pb_row_9 -->
 
-              <div class="et_pb_row border_top_100 p-y-20">
+              <div class="et_pb_row et_pb_row_10 p-y-20">
 
                 <div class="et_pb_column et_pb_column_2_5">
 
@@ -629,10 +629,10 @@
                   </div>
                 </div><!-- .et_pb_column -->
 
-              </div><!-- .border_top_100 -->
+              </div><!-- .et_pb_row_10 -->
 
 
-              <div class="et_pb_row border_top_101">
+              <div class="et_pb_row et_pb_row_11 ">
 
                 <div class="et_pb_column et_pb_column_4_4 et-last-child">
 
@@ -649,7 +649,7 @@
 
                 </div> <!-- .et_pb_column -->
 
-              </div><!-- .border_top_101 -->
+              </div><!-- .et_pb_row_11 -->
 
               <div class="et_pb_row et_pb_row_99 last-submit-button-row et_pb_equal_columns">
                 <div class="et_pb_column et_pb_column_4_4 et-last-child">
@@ -668,7 +668,7 @@
                 </div>
               </div>
 
-            </form><!-- .cserv_form_2_1_1 -->
+            </form><!-- .cserv_form -->
 
           </div><!-- .et_pb_section -->
 

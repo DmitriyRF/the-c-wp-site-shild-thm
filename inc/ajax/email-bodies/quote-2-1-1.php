@@ -1,4 +1,12 @@
 <?php
+require_once('groups_for_email.php');
+
+// column_for_2_values( $label_1, $value_1, $label_2, $value_2 );
+// line_for_1_value( $label, $value );
+// line_for_1_value_input_box_with_text( $value, $value_with_text );
+// line_for_1_value_input_box_with_error( $label, $value );
+// lines_for_multiple_values( $label, $value );
+// line_for_1_header( $header );
 
 function make_body_2_1_1 ($post) {
 
@@ -6,112 +14,39 @@ function make_body_2_1_1 ($post) {
   $body .= '<table align="center" width="600" border="0" cellspacing="0" cellpadding="0" style="border:1px solid #ccc;">';
   $body .= '<tbody>';
   
-  $body .= '<tr style="background: #eeeeee;">';
-  $body .= ' <td style="padding: 5px; border: 1px solid #bbbbbb" width="300">Full Name : </td>';
-  $body .= ' <td style="padding: 5px; border: 1px solid #bbbbbb" width="300">Phone : </td>';
-  $body .= '</tr>';
-  $body .= '<tr>';
-  $body .= ' <td style="padding: 5px; border: 1px solid #bbbbbb"> '. $_POST['contact_name'] .' </td>';
-  $body .= ' <td style="padding: 5px; border: 1px solid #bbbbbb"> '. $_POST['contact_phone'] .' </td>';
-  $body .= '</tr>';
-  
-  $body .= '<tr style="background: #eeeeee;">';
-  $body .= ' <td style="padding: 5px; border: 1px solid #bbbbbb" width="300"> Company : </td>';
-  $body .= ' <td style="padding: 5px; border: 1px solid #bbbbbb" width="300"> E-mail : </td>';
-  $body .= '</tr>';
-  $body .= '<tr>';
-  $body .= ' <td style="padding: 5px; border: 1px solid #bbbbbb"> '. $_POST['contact_company'] .' </td>';
-  $body .= ' <td style="padding: 5px; border: 1px solid #bbbbbb"> '. $_POST['contact_email'] .' </td>';
-  $body .= '</tr>';
+  $body .= column_for_2_values( 'Full Name', $_POST['contact_name'], 'Phone', $_POST['contact_phone'] );
 
-  if( isset( $_POST['installation_service_type'] ) && !empty( $_POST['installation_service_type'] ) ) {
-    
-    switch ($_POST['installation_service_type']) {
-      case 'STANDARD':
-        $installation_service_type = 'C-SERV STANDARD INSTALLATION SERVICE';
-        break;
-      case 'TURNKEY':
-        $installation_service_type = 'C-SERV TURNKEY INSTALLATION SERVICE';
-        break;
-      default:
-        $installation_service_type = '';
-        break;
-    }
+  $body .= column_for_2_values( 'Company', $_POST['contact_company'], 'E-mail', $_POST['contact_email'] );
 
-    $body .= '<tr style="background: #eeeeee;">';
-    $body .= ' <td colspan="2" style="padding: 40px 5px 10px; text-align: center;"> TYPE OF INSTALLATION SERVICE NEEDED </td>';
-    $body .= '</tr>';
-    $body .= '<tr style="">';
-    $body .= ' <td colspan="2" style="padding: 5px; text-align: center;"> '. $installation_service_type .' </td>';
-    $body .= '</tr>';
-  }
+  $body .= line_for_1_value( 'TYPE OF INSTALLATION SERVICE NEEDED', $_POST['installation_service_type'] );
 
-  // TYPES OF FURNITURE TO INSTALL
-  $body .= '<tr style="background: #eeeeee;">';
-  $body .= ' <td colspan="2" style="padding: 20px 5px 10px; text-align: center; border-top: 2px solid #888888"> TYPES OF FURNITURE TO INSTALL : </td>';
-  $body .= '</tr>';
+  $body .= line_for_1_header('TYPES OF FURNITURE TO INSTALL');
 
-  $types_of_furniture_to_install = [
-    'input_type_modular_furniture' => 'MODULAR FURNITURE',
-    'input_type_system_furniture' => 'SYSTEM FURNITURE',
-    'input_type_conference_room_furniture' => 'CONFERENCE ROOM FURNITURE',
-    'input_type_casework_lab_furniture' => 'CASEWORK OR LAB FURNITURE',
-    'input_type_industrial_worksrations' => 'INDUSTRIAL WORKSTATIONS',
-    'input_type_cubicles_partition_walls' => 'CUBICLES AND PARTITION WALLS',
-    'input_type_trade_show_setup' => 'TRADE SHOW SETUP',
-    'input_type_srorage_racking_system' => 'STORAGE & RACKING SYSTEMS',
-    'input_type_seating_systems' => 'SEATING SYSTEMS'
+  $types_of_furniture_to_install = [ // placeholder here for having the same array as for fromt
+    'input_type_modular_furniture' => ['label' => 'Modular Furniture', 'placeholder' => 'Describe ( # of units, desks, etc. )' ],
+    'input_type_system_furniture' => ['label' => 'System Furniture', 'placeholder' => 'Describe (the furniture brand, #, etc.)' ],
+    'input_type_cubicles_partition_walls' => ['label' => 'Cubicles and Partition Walls', 'placeholder' => 'Describe ( # of units, desks, etc. )' ],
+    'input_type_conference_room_furniture' => ['label' => 'Conference Room Furniture', 'placeholder' => 'Describe (size of table, brand, etc.)' ],
+    'input_type_casework_lab_furniture' => ['label' => 'Casework or Lab Furniture', 'placeholder' => 'Describe (worksurface material, upper...)' ],
+    'input_type_industrial_worksrations' => ['label' => 'Industrial Workstations', 'placeholder' => 'Describe (# of units, conveyors, etc.)' ],
+    'input_type_trade_show_setup' => ['label' => 'Trade Show Setup', 'placeholder' => 'Describe (square ft of booth, furniture ...)' ],
+    'input_type_srorage_racking_system' => ['label' => 'Storage & Racking Systems', 'placeholder' => 'Describe (# of units, material, type ...)' ],
+    'input_type_seating_systems' => ['label' => 'Seating Systems', 'placeholder' => 'Describe (the furniture brand, #, etc.)' ],
+    'input_type_other' => ['label' => 'Others', 'placeholder' => 'Describe (# of units, material, type ...)' ]
   ];
 
-  foreach ($types_of_furniture_to_install as $key => $value){
-
-    if( isset( $_POST[$key] )  && !empty( $_POST[$key] ) ) {
-
-      $body .= '<tr style="background: #bbbbbb;">';
-      $body .= ' <td colspan="2" style="padding: 20px 5px 10px; text-align: center;"> '.$_POST[$key].': </td>';
-      $body .= '</tr>';
+  foreach ($types_of_furniture_to_install as $checkbox_input_group => $types_of_furniture){
       
-      if( isset( $_POST[ $key . '_text'] )  && !empty( $_POST[ $key . '_text'] ) ) {
-  
-        $body .= '<tr style="background: #444444; color: #ffffff">';
-        $body .= ' <td colspan="2" style="padding: 20px 5px 10px; text-align: center;"> '.$_POST[ $key . '_text'].': </td>';
-        $body .= '</tr>';
-  
-      }
-  
-    } elseif( isset( $_POST[ $key . '_text'] )  && !empty( $_POST[ $key . '_text'] ) ) {
-  
-      $body .= '<tr style="background: #444444; color: #ffffff">';
-      $body .= ' <td colspan="2" style="padding: 20px 5px 10px; text-align: center;"> ' . $value . ' HAVE NOT CHECKED BUT FILLED </td>';
-      $body .= '</tr>';
-      $body .= '<tr style="background: #444444; color: #ff4444">';
-      $body .= ' <td colspan="2" style="padding: 20px 5px 10px; text-align: center;"> '.$_POST[ $key . '_text'].'</td>';
-      $body .= '</tr>';
-    }
-  } // END TYPES OF FURNITURE TO INSTALL
-  
-  // THE INSTALLATION SPACE
-  if( isset( $_POST['installation_space'] ) && !empty( $_POST['installation_space'] ) ) {
+    $body .= line_for_1_value_input_box_with_text( $types_of_furniture['label'], $_POST[$checkbox_input_group], $_POST[ $checkbox_input_group . '_text'] );
+    
+  }
 
-    $body .= '<tr style="background: #eeeeee;">';
-    $body .= ' <td colspan="2" style="padding: 20px 5px 10px; text-align: center; border-top: 2px solid #888888"> THE INSTALLATION SPACE: </td>';
-    $body .= '</tr>';
-    $body .= '<tr style="">';
-    $body .= ' <td colspan="2" style="padding: 5px; text-align: center;"> '. $_POST['installation_space'] .' </td>';
-    $body .= '</tr>';
-  };
+  $radio__title = 'ARE YOU ABLE TO PROVIDE ASSEMBLY INSTRUCTIONS';
+  $radio__name = 'provide_assembly_instructions';
+  $radio__value_for_text = 'NO'; 
 
-  if( isset( $_POST['installation_space_other'] ) && !empty( $_POST['installation_space_other'] ) ) {
-
-    $body .= '<tr style="background: #eeeeee;  border-top: 2px solid #888888">';
-    $body .= ' <td colspan="2" style="padding: 20px 5px 10px; text-align: center;"> THE OTHER SPACE: </td>';
-    $body .= '</tr>';
-    $body .= '<tr style="">';
-    $body .= ' <td colspan="2" style="padding: 5px;"> '. $_POST['installation_space_other'] .' </td>';
-    $body .= '</tr>';
-  }; // END THE INSTALLATION SPACE
-
-
+  $body .= line_for_1_value_radio_with_text( $radio__title, $_POST[$radio__name], $radio__value_for_text, $_POST[$radio__name . '_text'] );
+  
   
   // INSTALLATION DATE
   $body .= '<tr style="background: #eeeeee;">';

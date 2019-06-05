@@ -44,15 +44,22 @@ function quote_form()
   
     }
 
-    $to = 'quotes@cservaustin.com';
-    // $to = 'dmitriy_r_f@mail.ru';
+    // $to = 'quotes@cservaustin.com';
+    $to = 'dmitriy_r_f@mail.ru';
     $subject = 'Installation Form';
     $body = '<div></div>';
     if ( isset( $_POST['quote_form_type'] ) && !empty( $_POST['quote_form_type'] ) ){
 
         switch ($_POST['quote_form_type'] ) {
+
             case 'installation_form':
                 $subject = 'Installation Form';
+                require_once('email-bodies/quote-2-1-1-furniture-installation.php');
+                $body = make_body_furniture_installation($_POST);
+                break;
+
+            case 'furniture_installation':
+                $subject = 'FREE FURNITURE INSTALLATION QUOTE';
                 require_once('email-bodies/quote-2-1-1.php');
                 $body = make_body_2_1_1($_POST);
                 break;
@@ -66,7 +73,7 @@ function quote_form()
     $headers = array('Content-Type: text/html; charset=UTF-8');
 
     $response['email'] = wp_mail($to, $subject, $body, $headers);
-    $response['wp_mail_response'] = wp_mail('marketing@cservaustin.com', $subject, $body, $headers );
+    // $response['wp_mail_response'] = wp_mail('marketing@cservaustin.com', $subject, $body, $headers );
 
     wp_send_json($response);
 }

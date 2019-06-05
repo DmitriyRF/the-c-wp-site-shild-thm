@@ -22,7 +22,7 @@ function cservaustin_enqueue_front_scripts_for_forms()
     //wp_enqueue_script( $handle, $src, $deps, $ver, $in_footer );
 
     global $post;
-    //for shortcode form 
+    //add js for shortcode form 
 	if( is_a( $post, 'WP_Post' ) ) {
         $content = $post->post_content;
         // implies one form for on the page
@@ -53,7 +53,7 @@ function cservaustin_enqueue_front_scripts_for_forms()
     $quote_pages = [ 
         'forms-quote/quote-2-1-1-furniture-installation.php',
         'forms-quote/quote-first-template.php',
-        'forms-quote/quote-second-emplate.php',
+        'forms-quote/quote-second-template.php',
         'forms-quote/quote-2-1-1.php'
     ];
 
@@ -61,7 +61,10 @@ function cservaustin_enqueue_front_scripts_for_forms()
     ) {
 
         wp_enqueue_script('jquery-ui-datepicker');
-        wp_enqueue_script('input-ui-datepicker', get_stylesheet_directory_uri() . '/js/input-ui-datepicker-cserv.js', array('jquery', 'jquery-ui-datepicker'), null, true);
+        wp_enqueue_script('cserv-ui-datepicker', get_stylesheet_directory_uri() . '/js/ui-datepicker-cserv.js', array('jquery', 'jquery-ui-datepicker'), null, true);
+        wp_enqueue_script('jquery-ui-tooltip');
+        wp_enqueue_script('jquery-ui-position');
+        wp_enqueue_script('cserv-ui-tooltip', get_stylesheet_directory_uri() . '/js/ui-tooltip-cserv.js', array('jquery', 'jquery-ui-position', 'jquery-ui-tooltip'), (string)rand(), true);
 
         wp_enqueue_script('ajax-quote-form-script', get_stylesheet_directory_uri() . '/js/quote-form-c-serv-ajax.js', array('jquery'), (string)rand(), true);
         wp_localize_script('ajax-quote-form-script', 'localize_data', array(

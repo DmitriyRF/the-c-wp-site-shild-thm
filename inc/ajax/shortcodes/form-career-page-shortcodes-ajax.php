@@ -48,7 +48,7 @@ function career_form()
       }
 
 
-    $to = 'quotes@cservaustin.com';
+    $to = 'info@cservaustin.com';
     // $to = 'dmitriy_r_f@mail.ru';
     $subject = 'CAREER PAGE REQUEST!';
     $body = '';
