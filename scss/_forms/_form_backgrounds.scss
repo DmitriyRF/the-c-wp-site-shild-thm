@@ -1,0 +1,47 @@
+// #form_page_background {
+// background-repeat: no-repeat;
+// background-size: 100%;
+// background-position: center top;
+// background-color: $outside-form-bg-color;
+// background-image: url("../bg/forms/Quote-Form-cservaustin-background-mobile.jpg");
+
+// @media (min-width: $main-all_mobile-breakpoint) {
+//   background-image: url("../bg/forms/Quote-Form-cservaustin-background.jpg");
+// }
+// }
+
+.et_pb_form_section_2_1_1 {
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center top;
+  background-color: $outside-form-bg-color;
+  background-image: url("../bg/forms/Quote-Form-cservaustin-background-mobile.jpg");
+
+  @media (min-width: $main-all_mobile-breakpoint) {
+    background-image: url("../bg/forms/Quote-Form-cservaustin-background.jpg");
+  }
+}
+
+.et_pb_form_section_2_2_1 {
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center top;
+  background-color: $outside-form-bg-color;
+  background-image: url("../bg/forms/Form_Free_Workplace_Reconfiguration_Quote_mobile_background.jpg");
+
+  @media (min-width: $main-all_mobile-breakpoint) {
+    background-image: url("../bg/forms/Form_Free_Workplace_Reconfiguration_Quote_descktop_background.jpg");
+  }
+}
+
+.et_pb_form_section_2_3_1 {
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center top;
+  background-color: $outside-form-bg-color;
+  background-image: url("../bg/forms/Form_Free_Workplace_Moving_Quote_mobile_background.jpg");
+
+  @media (min-width: $main-all_mobile-breakpoint) {
+    background-image: url("../bg/forms/Form_Free_Workplace_Moving_Quote_descktop_background.jpg");
+  }
+}

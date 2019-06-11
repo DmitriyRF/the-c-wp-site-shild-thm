@@ -706,18 +706,6 @@
   }
 }
 
-#form_page_background {
-  background-repeat: no-repeat;
-  background-size: 100%;
-  background-position: center top;
-  background-color: $outside-form-bg-color;
-  background-image: url("../bg/forms/Quote-Form-cservaustin-background-mobile.jpg");
-
-  @media (min-width: $main-all_mobile-breakpoint) {
-    background-image: url("../bg/forms/Quote-Form-cservaustin-background.jpg");
-  }
-}
-
 // #{
 // background-repeat: no-repeat;
 // background-size: cover;

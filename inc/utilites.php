@@ -1,22 +1,5 @@
 <?php
 
-add_filter('body_class', 'cserv_add_wp_body_classes');
-
-function cserv_add_wp_body_classes($classes)
-{
-    if (is_page_template()) {
-        //if page page has page template and 
-        //it's template locates under forms-quote folder
-        if (strpos(get_page_template(), '/forms-quote/') !== false) {
-            $classes[] = 'et_pb_quote_form_layout';
-        }
-
-    }
-    return $classes;
-
-}
-
-
 function reArrayFiles(&$file_post) {
 
     $file_ary = array();

@@ -19,13 +19,9 @@ add_action('wp_enqueue_scripts', 'chld_thm_cfg_parent_css', 10);
 
 require_once get_stylesheet_directory() . '/inc/nav.php';
 
-require_once get_stylesheet_directory() . '/inc/utilites.php';
-
 require_once get_stylesheet_directory() . '/inc/phpmailer.php';
 
 require_once get_stylesheet_directory() . '/inc/enqueue.php';
-
-require_once get_stylesheet_directory() . '/forms-quote/utilites.php';
 
 require_once get_stylesheet_directory() . '/inc/shortcodes/shortcodes.php';
 
@@ -34,3 +30,5 @@ require_once get_stylesheet_directory() . '/inc/ajax/shortcodes/shortcodes-ajax.
 require_once get_stylesheet_directory() . '/inc/ajax/quote-form-ajax.php';
 
 require_once get_stylesheet_directory() . '/inc/builder/service.php';
+
+require_once get_stylesheet_directory() . '/include_utilites.php';

@@ -348,6 +348,80 @@ function row_with_header___group_of_multiple_checkboxInputs_with_text( $row_numb
   return $innerHTML;
 }
 
+function row_with_title____group_of_single___page_title( $row_number, $title ) {
+
+  ob_start();
+
+    ?>  
+
+      <?php if( isset( $title ) && !empty( $title )){ ?>
+
+        <div class="et_pb_row et_pb_row_<?php echo $row_number ?> row_for_form_title">
+
+          <div class="et_pb_column et_pb_column_4_4 et-last-child">
+
+            <div class="et_pb_module et_pb_text form_title et_pb_bg_layout_dark et_pb_text_align_center">
+
+              <div class="et_pb_text_inner">
+
+                <h1><?php echo $title; ?></h1>
+
+              </div>
+
+            </div> <!-- .et_pb_text -->
+
+          </div> <!-- .et_pb_column -->
+
+        </div><!-- .et_pb_row_<?php echo $row_number ?> .row_for_form_title -->
+
+      <?php } ?>
+
+    <?php
+
+  $innerHTML = ob_get_contents();
+
+  ob_end_clean();
+
+  return $innerHTML;
+}
+
+function row_with_header___group_of_single___main_header( $row_number, $main_header ) {
+
+  ob_start();
+
+    ?>  
+
+      <?php if( isset( $main_header ) && !empty( $main_header )){ ?>
+
+        <div class="et_pb_row et_pb_row_<?php echo $row_number ?> border_top_10 et_pb_equal_columns">
+
+           <div class="et_pb_column et_pb_column_4_4 et-last-child">
+
+              <div class="et_pb_module et_pb_text  et_pb_text_align_center">
+
+                <div class="et_pb_text_inner">
+
+                  <h2 class="form-main-header"><?php echo $main_header; ?></h2>
+
+                </div>
+
+              </div> <!-- .et_pb_text -->
+
+            </div> <!-- .et_pb_column -->
+
+        </div><!-- .et_pb_row_<?php echo $row_number ?> -->
+
+      <?php } ?>
+
+    <?php
+
+  $innerHTML = ob_get_contents();
+
+  ob_end_clean();
+
+  return $innerHTML;
+}
+
 function row_with_header___group_of_single___header( $row_number, $header ) {
 
   ob_start();
@@ -494,7 +568,7 @@ function row_with_header___group_of_multiple_pair_radioInputs_with_text( $row_nu
 
                   <div class="input-text-wrapper-for-multiple-radio">
                     <input type="text" class="input-for-multiple-radio" name="<?php echo $one_pair_radio_data['name']; ?>_text"
-                      placeholder="Make and model of the furniture" disabled>
+                      placeholder="<?php echo $one_pair_radio_data['placeholder']; ?>" disabled>
                   </div><!-- .input-text-wrapper-for-multiple-radio -->
 
                 </div><!-- .et_pb_column_3_5 -->
@@ -502,6 +576,111 @@ function row_with_header___group_of_multiple_pair_radioInputs_with_text( $row_nu
             <?php
           }
         ?>
+      </div><!-- .et_pb_row_<?php echo $row_number ?> -->
+
+    <?php
+
+  $innerHTML = ob_get_contents();
+
+  ob_end_clean();
+
+  return $innerHTML;
+}
+
+function row_with_header___group_of_multiple_radioInputs___one_line_2_from_3( $row_number, $header, $radio_array ) {
+
+  ob_start();
+
+  $count = 0;
+
+    ?>  
+
+      <div class="et_pb_row et_pb_row_<?php echo $row_number ?>">
+
+        <?php echo __________________group_of_single___header( $header ); ?>
+
+        <?php 
+          foreach ($radio_array['values'] as $value ){
+            ?>
+
+              <div class="et_pb_column et_pb_column_1_3">
+                <div class="et_pb_radio_check_multiple_choice">
+                    <label class="radio_check-label">
+
+                      <input class="radio_check-input" type="radio" name="<?php echo $radio_array['name']; ?>"
+                        value="<?php echo $value; ?>">
+
+                      <div class="radio_check_tooltip_wrapper">
+                        <div class="centralize_content">
+                          <button type="button" class="radio_check_checkmark"></button>
+                          <span class="radio_check-label_text"><?php echo $value; ?></span>
+                        </div>
+                      </div>
+
+                    </label><!-- .radio_check-label -->
+                </div><!-- .et_pb_radio_check_multiple_choice -->
+              </div><!-- .et_pb_column -->
+
+              <?php if( $count++%2 ){ ?>
+                <div class="et_pb_column et_pb_column_1_3 et-last-child"></div>
+              <?php } ?>
+              
+            <?php
+          }
+        ?>
+      
+      </div><!-- .et_pb_row_<?php echo $row_number ?> -->
+
+    <?php
+
+  $innerHTML = ob_get_contents();
+
+  ob_end_clean();
+
+  return $innerHTML;
+}
+
+function row_with_header___group_of_single___radioInputs_with_text( $row_number, $header, $radio_item ) {
+
+  ob_start();
+
+  $count = 0;
+
+    ?>  
+
+      <div class="et_pb_row et_pb_row_<?php echo $row_number ?>">
+
+        <?php echo __________________group_of_single___header( $header ); ?>
+
+        <div class="et_pb_column et_pb_column_4_4 et-last-child">
+
+          <div class="et_pb_column et_pb_column_2_5_no_margin">
+            <div class="et_pb_radio_check_multiple_choice">
+              <label class="radio_check-label">
+                
+                <input class="radio_check-input" type="radio" name="<?php echo $radio_item['name'] ?>"
+                  data-text-required="<?php echo $radio_item['name'] ?>_text" value="<?php echo $radio_item['value'] ?>">
+                <div class="radio_check_tooltip_wrapper">
+                  <div class="centralize_content">
+                    <button type="button" class="radio_check_checkmark"></button>
+                    <span class="radio_check-label_text"><?php echo $radio_item['value'] ?></span>
+                  </div>
+                </div>
+
+              </label>
+            </div><!-- .et_pb_radio_check_multiple_choice -->
+          </div><!-- .et_pb_column et_pb_column_2_5_no_margin -->
+
+          <div class="et_pb_column et_pb_column_3_5 et-last-child">
+            <div class="input-text-wrapper-for-multiple-radio">
+
+              <input type="text" class="input-for-multiple-radio" name="<?php echo $radio_item['name'] ?>_text"
+                placeholder="<?php echo $radio_item['placeholder'] ?>" disabled>
+            </div>
+          </div><!-- .et_pb_column et_pb_column_3_5 -->
+
+        </div><!-- .et_pb_column et_pb_column_4_4 -->
+      
       </div><!-- .et_pb_row_<?php echo $row_number ?> -->
 
     <?php

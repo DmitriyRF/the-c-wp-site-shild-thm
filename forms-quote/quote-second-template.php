@@ -16,650 +16,163 @@
 
           <div id="form_page_background" class="et_pb_section  form_section et_pb_form_section_2_1_1">
 
-            <div class="et_pb_row row_for_form_title">
+            <?php
 
-              <div class="et_pb_column et_pb_column_4_4 et-last-child">
+            $title = 'Free Furniture <br>Installation Quote <br> Second template';
 
-                <div class="et_pb_module et_pb_text form_title et_pb_bg_layout_dark  et_pb_text_align_center">
+            echo row_with_title____group_of_single___page_title('0', $title);
 
-                  <div class="et_pb_text_inner">
-
-                    <h1>Free Furniture <br>Installation Quote</h1>
-
-                  </div>
-
-                </div> <!-- .et_pb_text -->
-
-              </div> <!-- .et_pb_column -->
-
-            </div> <!-- .row_for_form_title -->
+            ?>
 
             <form id="quote_form" class="cserv_form">
 
               <?php wp_nonce_field('quote_form', 'estimateNonce');?>
               <input type="hidden" name="quote_form_type" value="quote_second_template">
 
-              <div class="et_pb_row border_top_10 et_pb_equal_columns">
-
-                <div class="et_pb_column et_pb_column_4_4 et-last-child">
+              <?php
 
-                  <div class="et_pb_module et_pb_text et_pb_text_1  et_pb_text_align_center">
-
-                    <div class="et_pb_text_inner">
+                $main_header = 'Share More Details for<br>an Accurate Project Estimate';
 
-                      <h2 class="form-main-header">Share More Details for an Accurate Project Estimate</h2>
+                echo row_with_header___group_of_single___main_header('0', $main_header);
 
-                    </div>
+              ?>
 
-                  </div> <!-- .et_pb_text -->
+              <?php
 
-                </div> <!-- .et_pb_column -->
+                $header = 'Is there a loading duck access?';
 
-              </div><!-- .border_top_10 -->
+                $radio_array = [
+                  'name' => 'loading_duck_access',
+                  'values' => [
+                    'YES',
+                    'NO'
+                    ]
+                ];
 
-              <div class="et_pb_row et_pb_row_2">
-                <div class="et_pb_column et_pb_column_4_4 et-last-child">
+                echo row_with_header___group_of_multiple_radioInputs___one_line_2_from_3('1', $header, $radio_array);
 
-                  <div class="et_pb_module et_pb_text et_pb_text_1  et_pb_text_align_center">
+              ?>
+              <?php
 
-                    <div class="et_pb_text_inner">
-                      <h3 class="form-header-center">Is there a loading duck access?</h3>
-                    </div>
+                $header = 'Is there a freight elevator?';
 
-                  </div> <!-- .et_pb_text -->
+                $radio_array = [
+                  'name' => 'freight_elevator',
+                  'values' => [
+                    'YES',
+                    'NO'
+                    ]
+                ];
 
-                </div> <!-- .et_pb_column -->
-                <div class="et_pb_column et_pb_column_1_3">
-
-                  <div class="et_pb_radio_check_multiple_choice">
-                    <label class="radio_check-label">
-                      <input class="radio_check-input" type="radio" name="loading_duck_access" value="YES">
-                      <div class="radio_check_tooltip_wrapper">
-                        <div class="centralize_content">
-                          <button type="button" class="radio_check_checkmark"></button>
-                          <span class="radio_check-label_text">YES</span>
-                        </div>
-                      </div>
-                    </label>
-                  </div><!-- .et_pb_radio_check_multiple_choice -->
-                </div>
-
-                <div class="et_pb_column et_pb_column_1_3 et-last-child">
-
-                  <div class="et_pb_radio_check_multiple_choice">
-                    <label class="radio_check-label">
-                      <input class="radio_check-input" type="radio" name="loading_duck_access" value="NO">
-                      <div class="radio_check_tooltip_wrapper">
-                        <div class="centralize_content">
-                          <button type="button" class="radio_check_checkmark"></button>
-                          <span class="radio_check-label_text">NO</span>
-                        </div>
-                      </div>
-                    </label>
-                  </div><!-- .et_pb_radio_check_multiple_choice -->
-
-                </div>
-              </div><!-- .et_pb_row_2 -->
-
-              <div class="et_pb_row et_pb_row_3">
-                <div class="et_pb_column et_pb_column_4_4 et-last-child">
+                echo row_with_header___group_of_multiple_radioInputs___one_line_2_from_3('12', $header, $radio_array);
 
-                  <div class="et_pb_module et_pb_text et_pb_text_1  et_pb_text_align_center">
-
-                    <div class="et_pb_text_inner">
-                      <h3 class="form-header-center">Is there a freight elevator?</h3>
-                    </div>
+              ?>
 
-                  </div> <!-- .et_pb_text -->
+              
+              <?php
+                  $header = "Is the install in";
 
-                </div> <!-- .et_pb_column -->
-                <div class="et_pb_column et_pb_column_1_3">
+                  $pairs_radioInput_array_with_text = [
+                    ['name' => 'install_in_rooms', 'value_only' => 'ONE ROOM' , 'value_text' => 'MULTIPLE ROOMS', 'placeholder' => '# of rooms' ],
+                  ];
 
-                  <div class="et_pb_radio_check_multiple_choice">
-                    <label class="radio_check-label">
-                      <input class="radio_check-input" type="radio" name="freight_elevator" value="YES">
-                      <div class="radio_check_tooltip_wrapper">
-                        <div class="centralize_content">
-                          <button type="button" class="radio_check_checkmark"></button>
-                          <span class="radio_check-label_text">YES</span>
-                        </div>
-                      </div>
-                    </label>
-                  </div><!-- .et_pb_radio_check_multiple_choice -->
-                </div>
-
-                <div class="et_pb_column et_pb_column_1_3 et-last-child">
-
-                  <div class="et_pb_radio_check_multiple_choice">
-                    <label class="radio_check-label">
-                      <input class="radio_check-input" type="radio" name="freight_elevator" value="NO">
-                      <div class="radio_check_tooltip_wrapper">
-                        <div class="centralize_content">
-                          <button type="button" class="radio_check_checkmark"></button>
-                          <span class="radio_check-label_text">NO</span>
-                        </div>
-                      </div>
-                    </label>
-                  </div><!-- .et_pb_radio_check_multiple_choice -->
-
-                </div>
-              </div><!-- .et_pb_row_3 -->
-
-              <div class="et_pb_row et_pb_row_4">
-                <div class="et_pb_column et_pb_column_4_4 et-last-child">
-
-                  <div class="et_pb_module et_pb_text et_pb_text_1  et_pb_text_align_center">
-
-                    <div class="et_pb_text_inner">
-                      <h3 class="form-header-center">Is the install in</h3>
-                    </div>
-
-                  </div> <!-- .et_pb_text -->
-
-                </div> <!-- .et_pb_column -->
-                <div class="et_pb_column et_pb_column_1_3">
-
-                  <div class="et_pb_radio_check_multiple_choice">
-                    <label class="radio_check-label">
-                      <input class="radio_check-input" type="radio" name="install_in_rooms" value="ONE ROOM">
-                      <div class="radio_check_tooltip_wrapper">
-                        <div class="centralize_content">
-                          <button type="button" class="radio_check_checkmark"></button>
-                          <span class="radio_check-label_text">ONE ROOM</span>
-                        </div>
-                      </div>
-                    </label>
-                  </div><!-- .et_pb_radio_check_multiple_choice -->
-                </div>
+                  echo row_with_header___group_of_multiple_pair_radioInputs_with_text( '61', $header, $pairs_radioInput_array_with_text );
 
-                <div class="et_pb_column et_pb_column_2_3 et-last-child">
+              ?>
 
-                  <div class="et_pb_column et_pb_column_2_5_no_margin">
+              <?php
+                  $header = "Is there a freight elevator?";
 
-                    <div class="et_pb_radio_check_multiple_choice">
-                      <label class="radio_check-label">
-                        <input class="radio_check-input" type="radio" name="install_in_rooms"
-                          data-text-required="install_in_rooms_text" value="MULTIPLE ROOMS">
-                        <div class="radio_check_tooltip_wrapper">
-                          <div class="centralize_content">
-                            <button type="button" class="radio_check_checkmark"></button>
-                            <span class="radio_check-label_text">MULTIPLE ROOMS:</span>
-                          </div>
-                        </div>
-                      </label>
-                    </div><!-- .et_pb_radio_check_multiple_choice -->
-
-                  </div>
-
-                  <div class="et_pb_column et_pb_column_3_5 et-last-child">
-
-                    <div class="input-text-wrapper-for-multiple-radio">
-                      <input type="text" class="input-for-multiple-radio" name="install_in_rooms_text"
-                        placeholder="# of rooms" disabled>
-                    </div>
-
-                  </div>
-
-                </div>
-              </div><!-- .et_pb_row_4 -->
-
-              <div class="et_pb_row et_pb_row_5">
-                <div class="et_pb_column et_pb_column_4_4 et-last-child">
-
-                  <div class="et_pb_module et_pb_text et_pb_text_1  et_pb_text_align_center">
-
-                    <div class="et_pb_text_inner">
-                      <h3 class="form-header-center">Is there a freight elevator?</h3>
-                    </div>
-
-                  </div> <!-- .et_pb_text -->
-
-                </div> <!-- .et_pb_column -->
-                <div class="et_pb_column et_pb_column_1_3">
-
-                  <div class="et_pb_radio_check_multiple_choice">
-                    <label class="radio_check-label">
-                      <input class="radio_check-input" type="radio" name="freight_elevator" value="YES">
-                      <div class="radio_check_tooltip_wrapper">
-                        <div class="centralize_content">
-                          <button type="button" class="radio_check_checkmark"></button>
-                          <span class="radio_check-label_text">YES</span>
-                        </div>
-                      </div>
-                    </label>
-                  </div><!-- .et_pb_radio_check_multiple_choice -->
-                </div>
-
-                <div class="et_pb_column et_pb_column_2_3 et-last-child">
-
-                  <div class="et_pb_column et_pb_column_2_5_no_margin">
-
-                    <div class="et_pb_radio_check_multiple_choice">
-                      <label class="radio_check-label">
-                        <input class="radio_check-input" type="radio" name="freight_elevator"
-                          data-text-required="freight_elevator_text" value="NO">
-                        <div class="radio_check_tooltip_wrapper">
-                          <div class="centralize_content">
-                            <button type="button" class="radio_check_checkmark"></button>
-                            <span class="radio_check-label_text">NO</span>
-                          </div>
-                        </div>
-                      </label>
-                    </div><!-- .et_pb_radio_check_multiple_choice -->
-
-                  </div>
-
-                  <div class="et_pb_column et_pb_column_3_5 et-last-child">
-
-                    <div class="input-text-wrapper-for-multiple-radio">
-                      <input type="text" class="input-for-multiple-radio" name="freight_elevator_text"
-                        placeholder="freight elevator" disabled>
-                    </div>
-
-                  </div>
-
-                </div>
-              </div><!-- .et_pb_row_5 -->
-
-              <div class="et_pb_row et_pb_row_6">
-                <div class="et_pb_column et_pb_column_4_4 et-last-child">
-
-                  <div class="et_pb_module et_pb_text et_pb_text_1  et_pb_text_align_center">
-
-                    <div class="et_pb_text_inner">
-                      <h3 class="form-header-center">Do C-Serv installers require any permits or paperwork to enter the
-                        facility?</h3>
-                    </div>
-
-                  </div> <!-- .et_pb_text -->
-
-                </div> <!-- .et_pb_column -->
-                <div class="et_pb_column et_pb_column_1_3">
-
-                  <div class="et_pb_radio_check_multiple_choice">
-                    <label class="radio_check-label">
-                      <input class="radio_check-input" type="radio" name="facility_permits_required" value="NO">
-                      <div class="radio_check_tooltip_wrapper">
-                        <div class="centralize_content">
-                          <button type="button" class="radio_check_checkmark"></button>
-                          <span class="radio_check-label_text">NO</span>
-                        </div>
-                      </div>
-                    </label>
-                  </div><!-- .et_pb_radio_check_multiple_choice -->
-                </div>
-
-                <div class="et_pb_column et_pb_column_2_3 et-last-child">
-
-                  <div class="et_pb_column et_pb_column_2_5_no_margin">
-
-                    <div class="et_pb_radio_check_multiple_choice">
-                      <label class="radio_check-label">
-                        <input class="radio_check-input" type="radio" name="facility_permits_required"
-                          data-text-required="facility_permits_required_text" value="YES">
-                        <div class="radio_check_tooltip_wrapper">
-                          <div class="centralize_content">
-                            <button type="button" class="radio_check_checkmark"></button>
-                            <span class="radio_check-label_text">YES</span>
-                          </div>
-                        </div>
-                      </label>
-                    </div><!-- .et_pb_radio_check_multiple_choice -->
-
-                  </div>
-
-                  <div class="et_pb_column et_pb_column_3_5 et-last-child">
-
-                    <div class="input-text-wrapper-for-multiple-radio">
-                      <input type="text" class="input-for-multiple-radio" name="facility_permits_required_text"
-                        placeholder="Describe" disabled>
-                    </div>
-
-                  </div>
-
-                </div>
-              </div><!-- .et_pb_row_6 -->
-
-              <div class="et_pb_row et_pb_row_7">
-                <div class="et_pb_column et_pb_column_4_4 et-last-child">
-
-                  <div class="et_pb_module et_pb_text et_pb_text_1  et_pb_text_align_center">
-
-                    <div class="et_pb_text_inner">
-                      <h3 class="form-header-center">Is there a dumpster at the installation place or we need to haul it
-                        off?</h3>
-                    </div>
-
-                  </div> <!-- .et_pb_text -->
-
-                </div> <!-- .et_pb_column -->
-                <div class="et_pb_column et_pb_column_1_2">
-
-                  <div class="et_pb_radio_check_multiple_choice">
-                    <label class="radio_check-label">
-                      <input class="radio_check-input" type="radio" name="is_there_dumpster" value="DUMPSTER AVAILABLE">
-                      <div class="radio_check_tooltip_wrapper">
-                        <div class="centralize_content">
-                          <button type="button" class="radio_check_checkmark"></button>
-                          <span class="radio_check-label_text">DUMPSTER AVAILABLE</span>
-                        </div>
-                      </div>
-                    </label>
-                  </div><!-- .et_pb_radio_check_multiple_choice -->
-                </div>
-
-                <div class="et_pb_column et_pb_column_1_2 et-last-child">
-
-                  <div class="et_pb_radio_check_multiple_choice">
-                    <label class="radio_check-label">
-                      <input class="radio_check-input" type="radio" name="is_there_dumpster" value="HAUL IT OFF">
-                      <div class="radio_check_tooltip_wrapper">
-                        <div class="centralize_content">
-                          <button type="button" class="radio_check_checkmark"></button>
-                          <span class="radio_check-label_text">HAUL IT OFF</span>
-                        </div>
-                      </div>
-                    </label>
-                  </div><!-- .et_pb_radio_check_multiple_choice -->
-
-                </div>
-              </div><!-- .et_pb_row_7 -->
-
-
-              <div class="et_pb_row et_pb_row_8">
-                <div class="et_pb_column et_pb_column_4_4 et-last-child">
-                  <div class="et_pb_module et_pb_text et_pb_text_4  et_pb_text_align_center">
-
-                    <div class="et_pb_text_inner">
-                      <h3 class="form-header-center">Delivery preference</h3>
-                    </div>
-
-                  </div> <!-- .et_pb_text -->
-                </div> <!-- .et_pb_column -->
-                <div class="et_pb_column et_pb_column_4_4 et-last-child">
-
-                  <div class="et_pb_column et_pb_column_2_5_no_margin">
-
-                    <div class="et_pb_radio_check_multiple_choice">
-                      <label class="radio_check-label">
-                        <input class="radio_check-input" type="radio" name="delivery_preference"
-                          data-text-required="delivery_preference_text" value="DURING BUSINESS HOURS">
-                        <div class="radio_check_tooltip_wrapper">
-                          <div class="centralize_content">
-                            <button type="button" class="radio_check_checkmark"></button>
-                            <span class="radio_check-label_text">DURING BUSINESS HOURS:</span>
-                          </div>
-                        </div>
-                      </label>
-                    </div><!-- .et_pb_radio_check_multiple_choice -->
-
-                  </div>
-
-                  <div class="et_pb_column et_pb_column_3_5 et-last-child">
-
-                    <div class="input-text-wrapper-for-multiple-radio">
-                      <input type="text" class="input-for-multiple-radio" name="delivery_preference_text"
-                        placeholder="Describe the workplace" disabled>
-                    </div>
-
-                  </div><!-- .et_pb_column -->
-                </div><!-- .et_pb_column -->
-                <div class="et_pb_column et_pb_column_1_2">
-
-                  <div class="et_pb_radio_check_multiple_choice">
-                    <label class="radio_check-label">
-                      <input class="radio_check-input" type="radio" name="delivery_preference"
-                        value="DURING AFTER HOURS">
-                      <div class="radio_check_tooltip_wrapper">
-                        <div class="centralize_content">
-                          <button type="button" class="radio_check_checkmark"></button>
-                          <span class="radio_check-label_text">DURING AFTER HOURS</span>
-                        </div>
-                      </div>
-                    </label>
-                  </div><!-- .et_pb_radio_check_multiple_choice -->
-
-                </div><!-- .et_pb_column -->
-
-                <div class="et_pb_column et_pb_column_1_2 et-last-child">
-
-                  <div class="et_pb_radio_check_multiple_choice">
-                    <label class="radio_check-label">
-                      <input class="radio_check-input" type="radio" name="delivery_preference" value="DURING WEEKEND">
-                      <div class="radio_check_tooltip_wrapper">
-                        <div class="centralize_content">
-                          <button type="button" class="radio_check_checkmark"></button>
-                          <span class="radio_check-label_text">DURING WEEKEND</span>
-                        </div>
-                      </div>
-                    </label>
-                  </div><!-- .et_pb_radio_check_multiple_choice -->
-
-                </div><!-- .et_pb_column -->
-
-                <div class="et_pb_column et_pb_column_1_2">
-
-                  <div class="et_pb_radio_check_multiple_choice">
-                    <label class="radio_check-label">
-                      <input class="radio_check-input" type="radio" name="delivery_preference" value="NO PREFERENCE">
-                      <div class="radio_check_tooltip_wrapper">
-                        <div class="centralize_content">
-                          <button type="button" class="radio_check_checkmark"></button>
-                          <span class="radio_check-label_text">NO PREFERENCE</span>
-                        </div>
-                      </div>
-                    </label>
-                  </div><!-- .et_pb_radio_check_multiple_choice -->
-
-                </div><!-- .et_pb_column -->
-
-              </div><!-- .et_pb_row_8 -->
+                  $pairs_radioInput_array_with_text = [
+                    ['name' => 'freight_elevator', 'value_only' => 'YES' , 'value_text' => 'NO', 'placeholder' => 'freight elevator' ],
+                  ];
 
-              <div class="et_pb_row et_pb_row_8_2">
-                <div class="et_pb_column et_pb_column_4_4 et-last-child">
-                  <div class="et_pb_module et_pb_text et_pb_text_4  et_pb_text_align_center">
-
-                    <div class="et_pb_text_inner">
-                      <h3 class="form-header-center">Delivery preference</h3>
-                    </div>
+                  echo row_with_header___group_of_multiple_pair_radioInputs_with_text( '62', $header, $pairs_radioInput_array_with_text );
 
-                  </div> <!-- .et_pb_text -->
-                </div> <!-- .et_pb_column -->
+              ?>
+              
+              <?php
+                  $header = "Do C-Serv installers require any permits<br>or paperwork to enter the
+                  facility?";
 
-                <div class="et_pb_column et_pb_column_1_2">
+                  $pairs_radioInput_array_with_text = [
+                    ['name' => 'facility_permits_required', 'value_only' => 'NO' , 'value_text' => 'YES', 'placeholder' => 'Describe please' ],
+                  ];
 
-                  <div class="type-checkbox-single-input-group">
-                    <input id="input_type_system_furniture_1" class="checkbox-type-input" type="checkbox"
-                      name="input_type_system_furniture_1" value="System Furniture" />
+                  echo row_with_header___group_of_multiple_pair_radioInputs_with_text( '63', $header, $pairs_radioInput_array_with_text );
 
-                    <div class="et_pb_column checkbox-self-wrapper">
-                      <label class="checkbox-description" for="input_type_system_furniture_1">
-                        <span class="checkbox-square"></span>
-                        <span class="checkbox-text">System Furniture 1</span>
-                      </label>
-                    </div>
+              ?>
 
-                  </div><!-- type-checkbox-input-single-group -->
+              <?php
+                  $header = "Is there a dumpster at the installation place<br> or we need to haul it
+                  off?";
 
-                </div><!-- .et_pb_column -->
+                  $radio_array = [
+                    'name' => 'is_there_dumpster',
+                    'values' => [
+                      'DUMPSTER AVAILABLE',
+                      'HAUL IT OFF'
+                      ]
+                  ];
 
-                <div class="et_pb_column et_pb_column_1_2 et-last-child">
+                  echo row_with_header___group_of_multiple_radioInputs( '7', $header, $radio_array );
 
-                <div class="type-checkbox-single-input-group">
-                    <input id="input_type_system_furniture_2" class="checkbox-type-input" type="checkbox"
-                      name="input_type_system_furniture_2" value="System Furniture" />
+              ?>
 
-                    <div class="et_pb_column checkbox-self-wrapper ">
-                      <label class="checkbox-description" for="input_type_system_furniture_2">
-                        <span class="checkbox-square"></span>
-                        <span class="checkbox-text">System Furniture 2</span>
-                      </label>
-                    </div>
 
-                  </div><!-- type-checkbox-input-single-group -->
+              <?php
+                  $header = "DELIVERY PREFERENCE";
 
-                </div><!-- .et_pb_column -->
+                  $radio_item = [
+                    'name' => 'delivery_preference',
+                    'value' => 'DURING BUSINESS HOURS',
+                    'placeholder' => 'Describe the workplace'
+                  ];
 
-                <div class="et_pb_column et_pb_column_1_2">
-                <div class="type-checkbox-single-input-group">
-                    <input id="input_type_system_furniture_3" class="checkbox-type-input" type="checkbox"
-                      name="input_type_system_furniture_3" value="System Furniture" />
+                  $radio_array = [
+                    'name' => 'delivery_preference',
+                    'values' => [
+                      'DURING AFTER HOURS',
+                      'DURING WEEKEND',
+                      'NO PREFERENCE'
+                      ]
+                  ];
 
-                    <div class="et_pb_column checkbox-self-wrapper">
-                      <label class="checkbox-description" for="input_type_system_furniture_3">
-                        <span class="checkbox-square"></span>
-                        <span class="checkbox-text">System Furniture 3</span>
-                      </label>
-                    </div>
+                  echo row_with_header___group_of_single___radioInputs_with_text( '71', $header, $radio_item );
 
-                  </div><!-- type-checkbox-input-single-group -->
+                  echo row_with_header___group_of_multiple_radioInputs( '72', null, $radio_array );
 
-                </div><!-- .et_pb_column -->
+              ?>
 
-              </div><!-- .et_pb_row_8_2 -->
+              <?php 
+                  
+                  $header = 'Delivery preference';
+  
+                  $checkbox_array = [
+                    'input_type_system_furniture_1'   => 'System Furniture 1',
+                    'input_type_system_furniture_2'  => 'System Furniture 2',
+                    'input_type_system_furniture_3'    => 'System Furniture 3',
+                    'input_type_system_furniture_4'    => 'System Furniture 4',
+                    'input_type_system_furniture_5'    => 'System Furniture 5'
+                  ];
+  
+                  echo row_with_header___group_of_multiple_checkboxInputs( '7', $header, $checkbox_array );
+  
+              ?>
 
+              <?php 
 
-              <div class="et_pb_row et_pb_row_9">
+                $header = 'Installation Address:';
 
-                <div class="et_pb_column et_pb_column_4_4 et-last-child">
-                  <div class="et_pb_module et_pb_text et_pb_text_4  et_pb_text_align_center">
+                echo row_with_header___group_of_multiple_textInputs____addresses( '10', $header ); 
+              ?>
 
-                    <div class="et_pb_text_inner">
-                      <h3 class="form-header-center">Installation Address:</h3>
-                    </div>
+              <?php echo row_______________group_of_single___fileInput____attach_file( '11' ); ?>
 
-                  </div> <!-- .et_pb_text -->
-                </div> <!-- .et_pb_column -->
+              <?php echo row_______________group_of_single___textarea____comment( '12' ); ?>
 
-                <div class="et_pb_column et_pb_column_4_4 et-last-child">
+              <?php echo row_______________group_of_single___submitInput____button( '13' ); ?>
 
-                  <div class="et_pb_column et_pb_column_1_2 et-last-child">
-
-                    <div class="et_pb_contact">
-
-                      <p class="contact_field">
-                        <label for="contact_address" class="hidden">*Address</label>
-                        <input type="text" id="contact_address" class="input" value="" name="contact_address"
-                          placeholder="*Address" required>
-                      </p>
-
-                    </div> <!-- .et_pb_contact -->
-
-                  </div><!-- .et_pb_column -->
-
-                </div><!-- .et_pb_column -->
-
-                <div class="et_pb_column et_pb_column_1_2">
-
-                  <div class="et_pb_contact">
-
-                    <p class="contact_field">
-                      <label for="contact_city" class="hidden">*City</label>
-                      <input type="text" id="contact_city" class="input" value="" name="contact_city"
-                        placeholder="*City" required>
-                    </p>
-
-                  </div> <!-- .et_pb_contact -->
-
-                </div><!-- .et_pb_column -->
-
-                <div class="et_pb_column et_pb_column_1_4">
-
-                  <div class="et_pb_contact">
-
-                    <p class="contact_field">
-                      <label for="contact_state" class="input-arrow-down">
-                        <select id="contact_state" class="select" name="contact_state" placeholder="*State" required>
-                          <option value="State">*State</option>
-                          <?php echo get_state_options(); ?>
-                        </select>
-                      </label>
-                    </p>
-
-                  </div> <!-- .et_pb_contact -->
-
-                </div><!-- .et_pb_column -->
-
-                <div class="et_pb_column et_pb_column_1_4 et-last-child">
-
-                  <div class="et_pb_contact">
-
-                    <p class="contact_field">
-                      <label for="contact_zip_code" class="hidden">*Zip Code</label>
-                      <input type="text" id="contact_zip_code" class="input" value="" name="contact_zip_code"
-                        placeholder="*Zip Code" required>
-                    </p>
-
-                  </div> <!-- .et_pb_contact -->
-
-                </div><!-- .et_pb_column -->
-
-              </div><!-- .et_pb_row_9 -->
-
-              <div class="et_pb_row et_pb_row_10 p-y-20">
-
-                <div class="et_pb_column et_pb_column_2_5">
-
-                  <div class="input-file-group">
-
-                    <label for="contact_files">
-
-                      <span class="file-attacment-label">
-                        <i class="far fa-file-alt"></i>
-                        <u>attach documents</u>
-                      </span>
-                      <input type="file" class="input-file" name="contact_files[]" id="contact_files" multiple="true">
-
-                    </label>
-
-                  </div>
-
-                </div><!-- .et_pb_column -->
-
-                <div class="et_pb_column et_pb_column_3_5 et-last-child">
-                  <div class="et_pb_module et_pb_text  et_pb_text_align_left">
-                    <div class="input-file-description">
-
-                      <p>
-                        Please attach any document that will help us with installation quote (such as furniture layout,
-                        ID&E drawings, etc.)
-                      </p>
-
-                    </div>
-                  </div>
-                </div><!-- .et_pb_column -->
-
-              </div><!-- .et_pb_row_10 -->
-
-
-              <div class="et_pb_row et_pb_row_11 ">
-
-                <div class="et_pb_column et_pb_column_4_4 et-last-child">
-
-                  <div class="textarea-group">
-
-                    <label for="contact_details">
-
-                      <textarea class="textarea" name="contact_details" id="contact_details"
-                        placeholder="Additional Comments" rows="3"></textarea>
-
-                    </label>
-
-                  </div>
-
-                </div> <!-- .et_pb_column -->
-
-              </div><!-- .et_pb_row_11 -->
-
-              <div class="et_pb_row et_pb_row_99 last-submit-button-row et_pb_equal_columns">
-                <div class="et_pb_column et_pb_column_4_4 et-last-child">
-                  <div class="submit-button-wrapper">
-                    <label class="form-quote-submit">
-                      <input type="submit" id="submit-quote-form" value="Submit for Pricing »">
-                    </label>
-                  </div>
-                </div>
-              </div><!-- .et_pb_row_99 -->
 
               <div id="wrapper-ajax-loader-full">
                 <div class="cserv-ajax-ripple">

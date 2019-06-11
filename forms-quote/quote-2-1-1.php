@@ -1,7 +1,5 @@
 <?php /* Template Name: Quote form 2.1.1 */?>
 
-<?php require_once('groups_for_browser.php'); ?>
-
 <?php get_header();?>
 
 <?php $page_ID = get_queried_object_id();?>
@@ -18,46 +16,28 @@
 
           <div id="form_page_background" class="et_pb_section  form_section et_pb_form_section_2_1_1">
 
-            <div class="et_pb_row row_for_form_title">
 
-              <div class="et_pb_column et_pb_column_4_4 et-last-child">
+            <?php
 
-                <div class="et_pb_module et_pb_text form_title et_pb_bg_layout_dark  et_pb_text_align_center">
+              $title = 'Free Furniture <br> Installation Quote';
 
-                  <div class="et_pb_text_inner">
+              echo row_with_title____group_of_single___page_title('0', $title);
 
-                    <h1>Free Furniture <br>Installation Quote</h1>
+            ?>
 
-                  </div>
-
-                </div> <!-- .et_pb_text -->
-
-              </div> <!-- .et_pb_column -->
-
-            </div> <!-- .row_for_form_title -->
-
-            <form id="quote_form"  onsubmit="return false" class="cserv_form">
+            <form id="quote_form" class="cserv_form">
 
               <?php wp_nonce_field('quote_form', 'estimateNonce');?>
+
               <input type="hidden" name="quote_form_type" value="furniture_installation">
 
-              <div class="et_pb_row border_top_10 et_pb_equal_columns">
+              <?php
 
-                <div class="et_pb_column et_pb_column_4_4 et-last-child">
+                $main_header = 'Send project details';
 
-                  <div class="et_pb_module et_pb_text  et_pb_text_align_center">
+                echo row_with_header___group_of_single___main_header('0', $main_header);
 
-                    <div class="et_pb_text_inner">
-
-                      <h2 class="form-main-header">Send project details</h2>
-
-                    </div>
-
-                  </div> <!-- .et_pb_text -->
-
-                </div> <!-- .et_pb_column -->
-
-              </div><!-- .et_pb_row -->
+              ?>
               
               <?php 
 
@@ -127,7 +107,7 @@
                   $header = "Are you able to provide assembly instructions?";
 
                   $pairs_radioInput_array_with_text = [
-                    ['name' => 'provide_assembly_instructions', 'value_only' => 'YES' , 'value_text' => 'NO' ],
+                    ['name' => 'provide_assembly_instructions', 'value_only' => 'YES' , 'value_text' => 'NO', 'placeholder' => 'Make and model of the furniture' ],
                   ];
 
                   echo row_with_header___group_of_multiple_pair_radioInputs_with_text( '6', $header, $pairs_radioInput_array_with_text );
