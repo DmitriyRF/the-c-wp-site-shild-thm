@@ -14,7 +14,7 @@
 
         <div class="et_builder_inner_content et_pb_gutters3">
 
-          <div id="form_page_background" class="et_pb_section  form_section et_pb_form_section">
+          <div id="form_page_background" class="et_pb_section  form_section et_pb_form_section et_pb_form_section_2_1_1">
 
             <div class="et_pb_row row_for_form_title">
 

@@ -63,6 +63,18 @@ function quote_form()
                 require_once('email-bodies/quote-2-1-1.php');
                 $body = make_body_2_1_1($_POST);
                 break;
+
+            case 'reconfiguration_quote':
+                $subject = 'FREE WORKPLACE RECONFIGURATION QUOTE';
+                require_once('email-bodies/quote-2-2-1.php');
+                $body = make_body_2_2_1($_POST);
+                break;
+
+            case 'moving_quote':
+                $subject = 'FREE WORKPLACE MOVING QUOTE';
+                require_once('email-bodies/quote-2-3-1.php');
+                $body = make_body_2_3_1($_POST);
+                break;
             
             default:
                 break;

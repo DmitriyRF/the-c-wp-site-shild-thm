@@ -1,4 +1,6 @@
-<?php /* Template Name: Quote form 2.1.1 */?>
+<?php /* Template Name: Quote form 2.1.1 */
+  $row = 0;
+?>
 
 <?php get_header();?>
 
@@ -21,7 +23,7 @@
 
               $title = 'Free Furniture <br> Installation Quote';
 
-              echo row_with_title____group_of_single___page_title('0', $title);
+              echo row_with_title____group_of_single___page_title( $row++, $title);
 
             ?>
 
@@ -35,7 +37,7 @@
 
                 $main_header = 'Send project details';
 
-                echo row_with_header___group_of_single___main_header('0', $main_header);
+                echo row_with_header___group_of_single___main_header( $row++, $main_header);
 
               ?>
               
@@ -48,7 +50,7 @@
                     'contact_phone' => ['label' => 'Phone number', 'placeholder' => '*Phone number' ]
                   ];
 
-                  echo row_with_header___group_of_multiple_textInputs('2', null, $multiple_inputs );
+                  echo row_with_header___group_of_multiple_textInputs( $row++, null, $multiple_inputs );
 
               ?>
 
@@ -56,7 +58,7 @@
                   
                   $header = 'Type of installation service needed: ';
 
-                  echo row_with_header___group_of_single___header( '3', $header );
+                  echo row_with_header___group_of_single___header( $row++, $header );
               ?>
 
               <?php 
@@ -81,7 +83,7 @@
                     ],
                   ];
 
-                  echo row_______________group_of_multiple_radioInputs_with_tooltip( '4', $radio_array_with_tooltip );
+                  echo row_______________group_of_multiple_radioInputs_with_tooltip( $row++, $radio_array_with_tooltip );
               ?>
               <?php 
 
@@ -100,7 +102,7 @@
                     'input_type_other' => ['label' => 'Others', 'placeholder' => 'Describe (# of units, material, type ...)' ]
                   ];
 
-                  echo row_with_header___group_of_multiple_checkboxInputs_with_text( '5', $header, $types_of_furniture_to_install );
+                  echo row_with_header___group_of_multiple_checkboxInputs_with_text(  $row++, $header, $types_of_furniture_to_install );
               ?>
 
               <?php
@@ -110,7 +112,7 @@
                     ['name' => 'provide_assembly_instructions', 'value_only' => 'YES' , 'value_text' => 'NO', 'placeholder' => 'Make and model of the furniture' ],
                   ];
 
-                  echo row_with_header___group_of_multiple_pair_radioInputs_with_text( '6', $header, $pairs_radioInput_array_with_text );
+                  echo row_with_header___group_of_multiple_pair_radioInputs_with_text( $row++, $header, $pairs_radioInput_array_with_text );
 
               ?>
 
@@ -125,7 +127,7 @@
                     'haul_away_existing_furniture'    => 'Haul away existing furniture' 
                   ];
   
-                  echo row_with_header___group_of_multiple_checkboxInputs( '7', $header, $checkbox_array );
+                  echo row_with_header___group_of_multiple_checkboxInputs( $row++, $header, $checkbox_array );
   
               ?>
 
@@ -137,7 +139,7 @@
                     'additional_services_other' => ['label' => 'Other', 'placeholder' => 'Describe the service request' ],
                   ];
 
-                  echo row_with_header___group_of_multiple_checkboxInputs_with_text( '7_1', $header, $types_of_furniture_to_install );
+                  echo row_with_header___group_of_multiple_checkboxInputs_with_text( $row++, $header, $types_of_furniture_to_install );
               ?>
 
               <?php
@@ -151,7 +153,7 @@
                       ]
                   ];
 
-                  echo row_with_header___group_of_multiple_radioInputs( '8', $header, $radio_array );
+                  echo row_with_header___group_of_multiple_radioInputs( $row++, $header, $radio_array );
 
               ?>
 
@@ -163,7 +165,7 @@
                     'placeholder' => 'Pick a date'
                   ];
 
-                  echo row_______________group_of_single___dateInput____date( '9', $dataInputData );
+                  echo row_______________group_of_single___dateInput____date( $row++, $dataInputData );
 
               ?>              
 
@@ -180,7 +182,7 @@
                   'time_to_install_no_preference'   => 'No preference'
                 ];
 
-                echo row_with_header___group_of_multiple_checkboxInputs( '9', $header, $checkbox_array );
+                echo row_with_header___group_of_multiple_checkboxInputs( $row++, $header, $checkbox_array );
 
               ?>
 
@@ -188,14 +190,14 @@
 
                 $header = 'Installation Address:';
 
-                echo row_with_header___group_of_multiple_textInputs____addresses( '10', $header ); 
+                echo row_with_header___group_of_multiple_textInputs____addresses( $row++, $header ); 
               ?>
 
-              <?php echo row_______________group_of_single___fileInput____attach_file( '11' ); ?>
+              <?php echo row_______________group_of_single___fileInput____attach_file( $row++ ); ?>
 
-              <?php echo row_______________group_of_single___textarea____comment( '12' ); ?>
+              <?php echo row_______________group_of_single___textarea____comment( $row++ ); ?>
 
-              <?php echo row_______________group_of_single___submitInput____button( '13' ); ?>
+              <?php echo row_______________group_of_single___submitInput____button( $row++ ); ?>
 
 
               <div id="wrapper-ajax-loader-full">

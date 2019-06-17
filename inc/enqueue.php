@@ -54,7 +54,9 @@ function cservaustin_enqueue_front_scripts_for_forms()
         'forms-quote/quote-2-1-1-furniture-installation.php',
         'forms-quote/quote-first-template.php',
         'forms-quote/quote-second-template.php',
-        'forms-quote/quote-2-1-1.php'
+        'forms-quote/quote-2-1-1.php',
+        'forms-quote/quote-2-2-1.php',
+        'forms-quote/quote-2-3-1.php'
     ];
 
     if (is_page_template($quote_pages)
