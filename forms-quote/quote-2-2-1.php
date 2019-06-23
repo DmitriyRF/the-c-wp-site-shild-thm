@@ -161,15 +161,55 @@
 
               <?php 
 
-                $header = 'Installation Address:';
+                // $header = 'Installation Address:';
 
-                echo row_with_header___group_of_multiple_textInputs____addresses( $row++, $header ); 
+                // echo row_with_header___group_of_multiple_textInputs____addresses( $row++, $header ); 
               ?>
 
-              <?php echo row_______________group_of_single___fileInput____attach_file( $row++ ); ?>
+              <?php 
 
-              <?php echo row_______________group_of_single___textarea____comment( $row++ ); ?>
+                $header = 'Installation Address:';
 
+                $array_of_fields = [
+                  'address' => [
+                    'label' => '*Address',
+                    'name' => 'contact_address',
+                    'is_required' => true
+                  ],
+                  'city' => [
+                    'label' => '*City',
+                    'name' => 'contact_city',
+                    'is_required' => true
+                  ],
+                  'state' => [
+                    'label' => '*State',
+                    'name' => 'contact_state',
+                    'is_required' => true
+                  ],
+                  'zip_code' => [
+                    'label' => '*Zip Code',
+                    'name' => 'contact_zip_code',
+                    'is_required' => true
+                  ]
+                ];
+
+                echo row_with_header___group_of_multiple_textInputs____addresses_custom( $row++, $header, $array_of_fields );
+
+              ?>
+
+              <?php // echo row_______________group_of_single___fileInput____attach_file( $row++ ); ?>
+
+              <?php //echo row_______________group_of_single___textarea____comment( $row++ ); ?>
+              
+              <?php
+
+                $textarea_opt = [
+                'name' => 'contact_details',
+                'placeholder' => 'Additional Comments',
+                ];
+              
+                echo row_______________group_of_single___textarea____comment_custom( $row++, $textarea_opt );
+              ?>
               <?php echo row_______________group_of_single___submitInput____button( $row++ ); ?>
 
 

@@ -55,13 +55,8 @@
               ?>
 
               <?php 
-                  
+
                   $header = 'TYPE OF MOVING SERVICES NEEDED: ';
-
-                  echo row_with_header___group_of_single___header( $row++, $header );
-              ?>
-
-              <?php 
 
                   $radio_array_with_tooltip = [
                     [
@@ -82,7 +77,7 @@
                     ],
                   ];
 
-                  echo row_______________group_of_multiple_radioInputs_with_tooltip( $row++, $radio_array_with_tooltip );
+                  echo row_______________group_of_multiple_radioInputs_with_tooltip( $row++, $header, $radio_array_with_tooltip );
               ?>
 
               <?php 
@@ -189,7 +184,7 @@
 
                 $array_of_fields = [
                   'address' => [
-                    'label' => '*Address to...',
+                    'label' => '*Address to',
                     'name' => 'contact_address_to',
                     'is_required' => true
                   ],
@@ -219,7 +214,7 @@
 
                 $array_of_fields = [
                   'address' => [
-                    'label' => '*Address from...',
+                    'label' => '*Address from',
                     'name' => 'contact_address_from',
                     'is_required' => true
                   ],
@@ -244,9 +239,17 @@
 
               ?>
 
-              <?php echo row_______________group_of_single___fileInput____attach_file( $row++ ); ?>
+              <?php// echo row_______________group_of_single___fileInput____attach_file( $row++ ); ?>
 
-              <?php echo row_______________group_of_single___textarea____comment( $row++ ); ?>
+              <?php
+
+                $textarea_opt = [
+                'name' => 'contact_details',
+                'placeholder' => 'Additional Comments',
+                ];
+              
+                echo row_______________group_of_single___textarea____comment_custom( $row++, $textarea_opt );
+              ?>
 
               <?php echo row_______________group_of_single___submitInput____button( $row++ ); ?>
 

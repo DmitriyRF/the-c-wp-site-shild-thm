@@ -49,6 +49,8 @@ function quote_form()
     $subject = 'Installation Form';
     $body = '<div></div>';
     if ( isset( $_POST['quote_form_type'] ) && !empty( $_POST['quote_form_type'] ) ){
+        
+        require_once('email-bodies/groups_for_email.php');
 
         switch ($_POST['quote_form_type'] ) {
 
@@ -60,19 +62,19 @@ function quote_form()
 
             case 'furniture_installation':
                 $subject = 'FREE FURNITURE INSTALLATION QUOTE';
-                require_once('email-bodies/quote-2-1-1.php');
+                require_once('email-bodies/email-2-1-1.php');
                 $body = make_body_2_1_1($_POST);
                 break;
 
             case 'reconfiguration_quote':
                 $subject = 'FREE WORKPLACE RECONFIGURATION QUOTE';
-                require_once('email-bodies/quote-2-2-1.php');
+                require_once('email-bodies/email-2-2-1.php');
                 $body = make_body_2_2_1($_POST);
                 break;
 
             case 'moving_quote':
                 $subject = 'FREE WORKPLACE MOVING QUOTE';
-                require_once('email-bodies/quote-2-3-1.php');
+                require_once('email-bodies/email-2-3-1.php');
                 $body = make_body_2_3_1($_POST);
                 break;
             

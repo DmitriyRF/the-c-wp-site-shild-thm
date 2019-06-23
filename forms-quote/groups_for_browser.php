@@ -170,15 +170,10 @@ function row_with_header___group_of_multiple_textInputs____addresses_custom( $ro
             <?php echo $array_of_fields['address']['label'] ?>
           </label>
 
-          <input 
-            type="text"
-            id="<?php echo $array_of_fields['address']['name'] ?>"
-            class="input"
-            value=""
+          <input type="text" id="<?php echo $array_of_fields['address']['name'] ?>" class="input" value=""
             name="<?php echo $array_of_fields['address']['name'] ?>"
             placeholder="<?php echo $array_of_fields['address']['label'] ?>"
-            <?php echo $array_of_fields['address']['is_required'] ? 'required' : '' ?>
-          >
+            <?php echo $array_of_fields['address']['is_required'] ? 'required' : '' ?>>
 
         </p>
       </div> <!-- .et_pb_contact -->
@@ -189,19 +184,14 @@ function row_with_header___group_of_multiple_textInputs____addresses_custom( $ro
     <div class="et_pb_contact">
       <p class="contact_field">
 
-          <label for="<?php echo $array_of_fields['city']['name'] ?>" class="hidden">
-            <?php echo $array_of_fields['city']['label'] ?>
-          </label>
+        <label for="<?php echo $array_of_fields['city']['name'] ?>" class="hidden">
+          <?php echo $array_of_fields['city']['label'] ?>
+        </label>
 
-          <input 
-            type="text"
-            id="<?php echo $array_of_fields['city']['name'] ?>"
-            class="input"
-            value=""
-            name="<?php echo $array_of_fields['city']['name'] ?>"
-            placeholder="<?php echo $array_of_fields['city']['label'] ?>"
-            <?php echo $array_of_fields['city']['is_required'] ? 'required' : '' ?>
-          >
+        <input type="text" id="<?php echo $array_of_fields['city']['name'] ?>" class="input" value=""
+          name="<?php echo $array_of_fields['city']['name'] ?>"
+          placeholder="<?php echo $array_of_fields['city']['label'] ?>"
+          <?php echo $array_of_fields['city']['is_required'] ? 'required' : '' ?>>
 
       </p>
     </div> <!-- .et_pb_contact -->
@@ -213,13 +203,9 @@ function row_with_header___group_of_multiple_textInputs____addresses_custom( $ro
 
         <label for="<?php echo $array_of_fields['state']['name'] ?>" class="input-arrow-down">
 
-          <select 
-            id="<?php echo $array_of_fields['state']['name'] ?>"
-            class="select"
-            name="<?php echo $array_of_fields['state']['name'] ?>"
-            placeholder="*State"
-            <?php echo $array_of_fields['state']['is_required'] ? 'required' : '' ?>
-          >
+          <select id="<?php echo $array_of_fields['state']['name'] ?>" class="select"
+            name="<?php echo $array_of_fields['state']['name'] ?>" placeholder="*State"
+            <?php echo $array_of_fields['state']['is_required'] ? 'required' : '' ?>>
 
             <option value="<?php echo $array_of_fields['state']['label'] ?>">
               <?php echo $array_of_fields['state']['label'] ?>
@@ -237,19 +223,14 @@ function row_with_header___group_of_multiple_textInputs____addresses_custom( $ro
     <div class="et_pb_contact">
       <p class="contact_field">
 
-          <label for="<?php echo $array_of_fields['zip_code']['name'] ?>" class="hidden">
-            <?php echo $array_of_fields['zip_code']['label'] ?>
-          </label>
+        <label for="<?php echo $array_of_fields['zip_code']['name'] ?>" class="hidden">
+          <?php echo $array_of_fields['zip_code']['label'] ?>
+        </label>
 
-          <input 
-            type="text"
-            id="<?php echo $array_of_fields['zip_code']['name'] ?>"
-            class="input"
-            value=""
-            name="<?php echo $array_of_fields['zip_code']['name'] ?>"
-            placeholder="<?php echo $array_of_fields['zip_code']['label'] ?>"
-            <?php echo $array_of_fields['zip_code']['is_required'] ? 'required' : '' ?>
-          >
+        <input type="text" id="<?php echo $array_of_fields['zip_code']['name'] ?>" class="input" value=""
+          name="<?php echo $array_of_fields['zip_code']['name'] ?>"
+          placeholder="<?php echo $array_of_fields['zip_code']['label'] ?>"
+          <?php echo $array_of_fields['zip_code']['is_required'] ? 'required' : '' ?>>
 
       </p>
     </div> <!-- .et_pb_contact -->
@@ -329,6 +310,40 @@ function row_______________group_of_single___textarea____comment( $row_number ) 
           rows="3"></textarea>
 
       </label> <!-- .contact_details -->
+    </div> <!-- .textarea-group -->
+  </div> <!-- .et_pb_column -->
+
+</div><!-- .et_pb_row_<?php echo $row_number ?> -->
+
+<?php
+
+  $innerHTML = ob_get_contents();
+
+  ob_end_clean();
+
+  return $innerHTML;
+}
+
+// $textarea_opt = [
+// 'name' => '',
+// 'placeholder' => '',
+// ];
+function row_______________group_of_single___textarea____comment_custom( $row_number, $textarea_opt ) {
+
+  ob_start();
+
+    ?>
+
+<div class="et_pb_row et_pb_row_<?php echo $row_number ?>">
+
+  <div class="et_pb_column et_pb_column_4_4 et-last-child">
+    <div class="textarea-group">
+      <label for="<?php echo $textarea_opt['name']; ?>">
+
+        <textarea class="textarea" name="<?php echo $textarea_opt['name']; ?>" id="<?php echo $textarea_opt['name']; ?>"
+          placeholder="<?php echo $textarea_opt['placeholder']; ?>" rows="3"></textarea>
+
+      </label> <!-- .<?php echo $textarea_opt['name']; ?> -->
     </div> <!-- .textarea-group -->
   </div> <!-- .et_pb_column -->
 
@@ -431,34 +446,36 @@ function row_with_header___group_of_multiple_checkboxInputs_with_text( $row_numb
 
   <?php echo __________________group_of_single___header( $header ); ?>
 
-  <?php 
-            foreach ($types_of_furniture_to_install as $checkbox_input_group => $types_of_furniture){
-              ?>
+  <div class="et_pb_column et_pb_column_4_4 et-last-child">
+    <?php 
+      foreach ($types_of_furniture_to_install as $checkbox_input_group => $types_of_furniture){
+    ?>
 
-  <div class="type-checkbox-input-group">
+    <div class="type-checkbox-input-group">
 
-    <input id="<?php echo $checkbox_input_group; ?>" class="checkbox-type-input" type="checkbox"
-      name="<?php echo $checkbox_input_group; ?>" value="<?php echo $types_of_furniture['label']; ?>"
-      data-text-required="<?php echo $checkbox_input_group; ?>_text" />
+      <input id="<?php echo $checkbox_input_group; ?>" class="checkbox-type-input" type="checkbox"
+        name="<?php echo $checkbox_input_group; ?>" value="<?php echo $types_of_furniture['label']; ?>"
+        data-text-required="<?php echo $checkbox_input_group; ?>_text" />
 
-    <div class="et_pb_column checkbox-self-wrapper">
-      <label class="checkbox-description" for="<?php echo $checkbox_input_group; ?>" title="<?php echo $types_of_furniture['label']; ?>">
-        <span class="checkbox-square"></span>
-        <span class="checkbox-text"><?php echo $types_of_furniture['label']; ?></span>
-      </label>
-    </div>
+      <div class="et_pb_column checkbox-self-wrapper">
+        <label class="checkbox-description" for="<?php echo $checkbox_input_group; ?>"
+          title="<?php echo $types_of_furniture['label']; ?>">
+          <span class="checkbox-square"></span>
+          <span class="checkbox-text"><?php echo $types_of_furniture['label']; ?></span>
+        </label>
+      </div>
 
-    <div class="et_pb_column et-last-child input-text-wrapper">
-      <input type="text" class="input-for-checkbox" placeholder="<?php echo $types_of_furniture['placeholder']; ?>"
-        name="<?php echo $checkbox_input_group; ?>_text" disabled>
-    </div>
+      <div class="et_pb_column et-last-child input-text-wrapper">
+        <input type="text" class="input-for-checkbox" placeholder="<?php echo $types_of_furniture['placeholder']; ?>"
+          name="<?php echo $checkbox_input_group; ?>_text" disabled>
+      </div>
 
-  </div><!-- type-checkbox-input-group -->
+    </div><!-- type-checkbox-input-group -->
 
-  <?php
+    <?php
             }
         ?>
-
+  </div><!-- .et_pb_column -->
 </div><!-- .et_pb_row_<?php echo $row_number ?> -->
 
 <?php
@@ -598,11 +615,13 @@ function __________________group_of_single___header( $header ) {
   return $innerHTML;
 }
 
-function row_______________group_of_multiple_radioInputs_with_tooltip( $row_number, $radio_array_with_tooltip ) {
+function row_______________group_of_multiple_radioInputs_with_tooltip( $row_number, $header, $radio_array_with_tooltip ) {
 
   ob_start();
 
     ?>
+
+<?php echo row_with_header___group_of_single___header($row_number - 0.5, $header)  ?>
 
 <div class="et_pb_row et_pb_row_<?php echo $row_number ?>  et_pb_equal_columns">
 
@@ -940,7 +959,7 @@ function row_______________group_of_single___dateInput____date( $row_number, $da
 <div class="et_pb_row et_pb_row_<?php echo $row_number; ?> p-y-20 et_pb_equal_columns">
 
   <div class="et_pb_column et_pb_column_2_5_no_margin">
-    <div class="centralize_content_vertical"  title="<?php echo $dataInputData['label']; ?>">
+    <div class="centralize_content_vertical" title="<?php echo $dataInputData['label']; ?>">
       <span class="radio_check-label"><?php echo $dataInputData['label']; ?></span>
     </div>
   </div><!-- .et_pb_column et_pb_column_2_5_no_margin -->

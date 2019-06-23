@@ -1,4 +1,7 @@
-<?php /* Template Name: Quote Second Template*/?>
+<?php /* Template Name: Quote Second Template*/
+
+  $row = 0;
+?>
 
 <?php get_header();?>
 
@@ -20,7 +23,7 @@
 
             $title = 'Free Furniture <br>Installation Quote <br> Second template';
 
-            echo row_with_title____group_of_single___page_title('0', $title);
+            echo row_with_title____group_of_single___page_title( $row++, $title);
 
             ?>
 
@@ -33,7 +36,7 @@
 
                 $main_header = 'Share More Details for<br>an Accurate Project Estimate';
 
-                echo row_with_header___group_of_single___main_header('0', $main_header);
+                echo row_with_header___group_of_single___main_header( $row++, $main_header);
 
               ?>
 
@@ -49,7 +52,7 @@
                     ]
                 ];
 
-                echo row_with_header___group_of_multiple_radioInputs___one_line_2_from_3('1', $header, $radio_array);
+                echo row_with_header___group_of_multiple_radioInputs___one_line_2_from_3( $row++, $header, $radio_array);
 
               ?>
               <?php
@@ -64,7 +67,7 @@
                     ]
                 ];
 
-                echo row_with_header___group_of_multiple_radioInputs___one_line_2_from_3('12', $header, $radio_array);
+                echo row_with_header___group_of_multiple_radioInputs___one_line_2_from_3( $row++, $header, $radio_array);
 
               ?>
 
@@ -76,7 +79,7 @@
                     ['name' => 'install_in_rooms', 'value_only' => 'ONE ROOM' , 'value_text' => 'MULTIPLE ROOMS', 'placeholder' => '# of rooms' ],
                   ];
 
-                  echo row_with_header___group_of_multiple_pair_radioInputs_with_text( '61', $header, $pairs_radioInput_array_with_text );
+                  echo row_with_header___group_of_multiple_pair_radioInputs_with_text( $row++, $header, $pairs_radioInput_array_with_text );
 
               ?>
 
@@ -87,7 +90,7 @@
                     ['name' => 'freight_elevator', 'value_only' => 'YES' , 'value_text' => 'NO', 'placeholder' => 'freight elevator' ],
                   ];
 
-                  echo row_with_header___group_of_multiple_pair_radioInputs_with_text( '62', $header, $pairs_radioInput_array_with_text );
+                  echo row_with_header___group_of_multiple_pair_radioInputs_with_text( $row++, $header, $pairs_radioInput_array_with_text );
 
               ?>
               
@@ -99,7 +102,7 @@
                     ['name' => 'facility_permits_required', 'value_only' => 'NO' , 'value_text' => 'YES', 'placeholder' => 'Describe please' ],
                   ];
 
-                  echo row_with_header___group_of_multiple_pair_radioInputs_with_text( '63', $header, $pairs_radioInput_array_with_text );
+                  echo row_with_header___group_of_multiple_pair_radioInputs_with_text( $row++, $header, $pairs_radioInput_array_with_text );
 
               ?>
 
@@ -115,7 +118,7 @@
                       ]
                   ];
 
-                  echo row_with_header___group_of_multiple_radioInputs( '7', $header, $radio_array );
+                  echo row_with_header___group_of_multiple_radioInputs( $row++, $header, $radio_array );
 
               ?>
 
@@ -138,9 +141,9 @@
                       ]
                   ];
 
-                  echo row_with_header___group_of_single___radioInputs_with_text( '71', $header, $radio_item );
+                  echo row_with_header___group_of_single___radioInputs_with_text( $row++, $header, $radio_item );
 
-                  echo row_with_header___group_of_multiple_radioInputs( '72', null, $radio_array );
+                  echo row_with_header___group_of_multiple_radioInputs( $row++, null, $radio_array );
 
               ?>
 
@@ -156,22 +159,53 @@
                     'input_type_system_furniture_5'    => 'System Furniture 5'
                   ];
   
-                  echo row_with_header___group_of_multiple_checkboxInputs( '7', $header, $checkbox_array );
+                  echo row_with_header___group_of_multiple_checkboxInputs( $row++, $header, $checkbox_array );
   
+              ?>
+
+              <?php 
+
+                // $header = 'Installation Address:';
+
+                // echo row_with_header___group_of_multiple_textInputs____addresses( $row++, $header ); 
               ?>
 
               <?php 
 
                 $header = 'Installation Address:';
 
-                echo row_with_header___group_of_multiple_textInputs____addresses( '10', $header ); 
+                $array_of_fields = [
+                  'address' => [
+                    'label' => '*Address',
+                    'name' => 'contact_address',
+                    'is_required' => true
+                  ],
+                  'city' => [
+                    'label' => '*City',
+                    'name' => 'contact_city',
+                    'is_required' => true
+                  ],
+                  'state' => [
+                    'label' => '*State',
+                    'name' => 'contact_state',
+                    'is_required' => true
+                  ],
+                  'zip_code' => [
+                    'label' => '*Zip Code',
+                    'name' => 'contact_zip_code',
+                    'is_required' => true
+                  ]
+                ];
+
+                echo row_with_header___group_of_multiple_textInputs____addresses_custom( $row++, $header, $array_of_fields );
+
               ?>
 
-              <?php echo row_______________group_of_single___fileInput____attach_file( '11' ); ?>
+              <?php echo row_______________group_of_single___fileInput____attach_file( $row++ ); ?>
 
-              <?php echo row_______________group_of_single___textarea____comment( '12' ); ?>
+              <?php echo row_______________group_of_single___textarea____comment( $row++ ); ?>
 
-              <?php echo row_______________group_of_single___submitInput____button( '13' ); ?>
+              <?php echo row_______________group_of_single___submitInput____button( $row++ ); ?>
 
 
               <div id="wrapper-ajax-loader-full">
