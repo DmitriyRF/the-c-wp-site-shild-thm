@@ -56,7 +56,19 @@ function cservaustin_enqueue_front_scripts_for_forms()
         'forms-quote/quote-second-template.php',
         'forms-quote/quote-2-1-1.php',
         'forms-quote/quote-2-2-1.php',
-        'forms-quote/quote-2-3-1.php'
+        'forms-quote/quote-2-3-1.php',
+        'forms-quote/quote-2-4-1.php',
+        'forms-quote/quote-2-5-1.php',
+        'forms-quote/quote-2-6-1.php',
+        'forms-quote/quote-2-7-1.php',
+        'forms-quote/quote-2-8-1.php',
+        'forms-quote/quote-3-1-1.php',
+        'forms-quote/quote-3-2-1.php',
+        'forms-quote/quote-3-3-1.php',
+        'forms-quote/quote-3-4-1.php',
+        'forms-quote/quote-3-5-1.php',
+        'forms-quote/quote-3-6-1.php',
+        'forms-quote/quote-3-7-1.php'
     ];
 
     if (is_page_template($quote_pages)
@@ -72,6 +84,10 @@ function cservaustin_enqueue_front_scripts_for_forms()
         wp_localize_script('ajax-quote-form-script', 'localize_data', array(
             'ajax_url' => admin_url('admin-ajax.php'),
             'action' => 'quote_form',
+            'messages' => [
+                'doneMessage' => _SUCCESSFULLY_REQUEST_ ,
+                'failMessage' => _FAILED_REQUEST_
+            ]
         ));
     }
 

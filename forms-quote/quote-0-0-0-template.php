@@ -1,4 +1,4 @@
-<?php /* Template Name: Quote form 2.3.1 */
+<?php /* Template Name: Quote form 3.7.1 */
    $row = 0;
 ?>
 
@@ -16,12 +16,12 @@
 
         <div class="et_builder_inner_content et_pb_gutters3">
 
-          <div id="form_page_background" class="et_pb_section  form_section et_pb_form_section_2_3_1">
+          <div id="form_page_background" class="et_pb_section  form_section et_pb_form_section_3_7_1">
 
 
             <?php
 
-              $title = 'Free Workplace <br> Moving Quote';
+              $title = 'FREE GOVERNMENT CONTRACT SERVICES QUOTE';
 
               echo row_with_title____group_of_single___page_title( $row++, $title);
 
@@ -31,7 +31,7 @@
 
               <?php wp_nonce_field('quote_form', 'estimateNonce');?>
 
-              <input type="hidden" name="quote_form_type" value="moving_quote">
+              <input type="hidden" name="quote_form_type" value="government_contract_services_quote">
 
               <?php
 
@@ -54,9 +54,41 @@
 
               ?>
 
+
               <?php 
 
-                  $header = 'TYPE OF MOVING SERVICES NEEDED: ';
+                  $header = 'TYPES OF CORPORATE FURNITURE INSTALLATION';
+
+                  $types_of_furniture_to_install = [
+                    'input_type_modular_furniture' => ['label' => 'MODULAR FURNITURE', 'placeholder' => 'Describe' ],
+                    'input_type_system_furniture' => ['label' => 'SYSTEM FURNITURE', 'placeholder' => 'Describe' ],
+                    'input_type_storage_racking_systems' => ['label' => 'STORAGE AND RACKING SYSTEMS', 'placeholder' => 'Describe' ],
+                    'input_type_cubicles_partition_walls' => ['label' => 'CUBICLES AND PARTITION WALLS', 'placeholder' => 'Describe' ],
+                    'input_type_seating_systems' => ['label' => 'SEATING SYSTEMS', 'placeholder' => 'Describe' ],
+                    'input_type_other' => ['label' => 'OTHER', 'placeholder' => 'Describe' ]
+                  ];
+
+                  echo row_with_header___group_of_multiple_checkboxInputs_with_text( $row++, $header, $types_of_furniture_to_install );
+              ?>
+
+              <?php 
+                  
+                  $header = 'Do you need moving services?';
+
+                  $radio_array = [
+                    'name' => 'do_you_need_moving',
+                    'values' => [
+                      'YES',
+                      'NO'
+                      ]
+                  ];
+
+                  echo row_with_header___group_of_multiple_radioInputs( $row++, $header, $radio_array );
+  
+              ?>
+              <?php 
+
+                  $header = 'TYPE OF MOVING SERVICES NEEDED';
 
                   $radio_array_with_tooltip = [
                     [
@@ -81,21 +113,98 @@
               ?>
 
               <?php 
+                  
+                  $header = 'Would you like additional services?';
 
-                  $header = 'Types of SERVICES REQUESTED (Select all that applies): ';
-
-                  $types_of_furniture_to_install = [
-                    'input_type_corporate_move' => ['label' => 'CORPORATE MOVE', 'placeholder' => 'Describe' ],
-                    'input_type_office_move' => ['label' => 'OFFICE MOVE', 'placeholder' => 'Describe' ],
-                    'input_type_government_move' => ['label' => 'GOVERNMENT MOVE', 'placeholder' => 'Describe' ],
-                    'input_type_industrial_move' => ['label' => 'INDUSTRIAL MOVE', 'placeholder' => 'Describe' ],
-                    'input_type_it_move' => ['label' => 'IT MOVE', 'placeholder' => 'Describe' ],
-                    'input_type_lab_medical_equipment_move' => ['label' => 'LAB / MEDICAL EQUIPMENT MOVE', 'placeholder' => 'Describe' ],
-                    'input_type_other' => ['label' => 'OTHER', 'placeholder' => 'Describe' ]
+                  $radio_array = [
+                    'name' => 'corporate_additional_services',
+                    'values' => [
+                      'Corporate Storage Services',
+                      'Corporate Furniture Steam Cleaning Services',
+                      'Corporate Furniture Disposal Services'
+                      ]
                   ];
 
-                  echo row_with_header___group_of_multiple_checkboxInputs_with_text( $row++, $header, $types_of_furniture_to_install );
+                  echo row_with_header___group_of_multiple_radioInputs( $row++, $header, $radio_array );
+  
               ?>
+
+              <?php 
+                  
+                  $header = 'When would you like to get the services ?';
+
+                  $radio_array = [
+                    'name' => 'when_get_services',
+                    'values' => [
+                      'Don’t have a date',
+                      'As soon as possible'
+                      ]
+                  ];
+
+                  echo row_with_header___group_of_multiple_radioInputs( $row++, $header, $radio_array );
+
+                  $radio_item = [
+                    'name' => 'when_get_services',
+                    'value' => 'Choose the date',
+                    'placeholder' => 'Pick a date'
+                  ];
+
+                  echo row_______________group_of_single___radioInputs_with_date( $row++, $radio_item );
+
+              ?> 
+
+              <?php 
+
+                $header = 'SERVICE ADDRESS';
+
+                $array_of_fields = [
+                  'address' => [
+                    'label' => '*Address',
+                    'name' => 'contact_address',
+                    'is_required' => true
+                  ],
+                  'city' => [
+                    'label' => '*City',
+                    'name' => 'contact_city',
+                    'is_required' => true
+                  ],
+                  'state' => [
+                    'label' => '*State',
+                    'name' => 'contact_state',
+                    'is_required' => true
+                  ],
+                  'zip_code' => [
+                    'label' => '*Zip Code',
+                    'name' => 'contact_zip_code',
+                    'is_required' => true
+                  ]
+                ];
+
+                echo row_with_header___group_of_multiple_textInputs____addresses_custom( $row++, $header, $array_of_fields );
+
+              ?>
+
+              <?php //echo row_______________group_of_single___fileInput____attach_file( $row++ ); ?>
+
+              <?php
+
+                $textarea_opt = [
+                'name' => 'contact_details',
+                'placeholder' => 'Additional Comments',
+                ];
+              
+                echo row_______________group_of_single___textarea____comment_custom( $row++, $textarea_opt );
+              ?>
+
+              <?php echo row_______________group_of_single___submitInput____button( $row++ ); ?>
+
+
+
+
+
+
+
+
 
               <?php
 
@@ -150,6 +259,17 @@
                   echo row_with_header___group_of_multiple_checkboxInputs_with_text( $row++, $header, $types_of_furniture_to_install );
               ?>
 
+              <?php
+                  $header = "Are you able to provide assembly instructions?";
+
+                  $pairs_radioInput_array_with_text = [
+                    ['name' => 'provide_assembly_instructions', 'value_only' => 'YES' , 'value_text' => 'NO', 'placeholder' => 'Make and model of the furniture' ],
+                  ];
+
+                  echo row_with_header___group_of_multiple_pair_radioInputs_with_text( $row++, $header, $pairs_radioInput_array_with_text );
+
+              ?>
+
               <?php 
                   
                   $header = 'When would you like to move?';
@@ -163,10 +283,6 @@
                   ];
 
                   echo row_with_header___group_of_multiple_radioInputs( $row++, $header, $radio_array );
-  
-              ?>
-
-              <?php
 
                   $radio_item = [
                     'name' => 'when_move_happen',
@@ -177,6 +293,44 @@
                   echo row_______________group_of_single___radioInputs_with_date( $row++, $radio_item );
 
               ?>     
+
+              <?php 
+              
+                  $radio_item = [
+                    'name' => 'do_you_need_additional_services',
+                    'value' => 'Other',
+                    'placeholder' => 'Describe...'
+                  ];
+
+                  echo row_with_header___group_of_single___radioInputs_with_text( $row++, null, $radio_item );
+
+              ?>
+
+              <?php
+
+                  $header = "Do you need furniture installation services?";
+
+                  $radio_array = [
+                    'name' => 'need_furniture_installation_services',
+                    'values' => [
+                      'Classroom furniture installation',
+                      'Science lab furniture installation',
+                      'Library installation',
+                      'Makerspace installation'
+                      ]
+                  ];
+
+                  $radio_item = [
+                    'name' => 'need_furniture_installation_services',
+                    'value' => 'Other',
+                    'placeholder' => 'Describe the services'
+                  ];
+
+                  echo row_with_header___group_of_multiple_radioInputs( $row++, $header, $radio_array );
+
+                  echo row_with_header___group_of_single___radioInputs_with_text( $row++, null, $radio_item );
+
+              ?>
 
               <?php 
 
@@ -253,15 +407,6 @@
 
               <?php echo row_______________group_of_single___submitInput____button( $row++ ); ?>
 
-              <?php 
-
-                $object = [
-                    "gtagFunction" => "function gtagFunction(){ gtag('event', 'Submit-Quote', {'event_category' : 'Free-Estimate', 'event_label' : 'Business-Moving'});}",
-                  ];
-              
-                echo java_script_object_in_tag( $object ); 
-                
-              ?>
 
               <div id="wrapper-ajax-loader-full">
                 <div class="cserv-ajax-ripple">

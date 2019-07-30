@@ -455,7 +455,8 @@ function row_with_header___group_of_multiple_checkboxInputs_with_text( $row_numb
 
       <input id="<?php echo $checkbox_input_group; ?>" class="checkbox-type-input" type="checkbox"
         name="<?php echo $checkbox_input_group; ?>" value="<?php echo $types_of_furniture['label']; ?>"
-        data-text-required="<?php echo $checkbox_input_group; ?>_text" />
+         />
+        <?php // data-text-required="<?php echo $checkbox_input_group; ? >_text" ?>
 
       <div class="et_pb_column checkbox-self-wrapper">
         <label class="checkbox-description" for="<?php echo $checkbox_input_group; ?>"
@@ -467,9 +468,17 @@ function row_with_header___group_of_multiple_checkboxInputs_with_text( $row_numb
 
       <div class="et_pb_column et-last-child input-text-wrapper">
         <input type="text" class="input-for-checkbox" placeholder="<?php echo $types_of_furniture['placeholder']; ?>"
-          name="<?php echo $checkbox_input_group; ?>_text" disabled>
+          name="<?php echo $checkbox_input_group; ?>_text" >
+          <?php //disables ?>
       </div>
 
+      <?php if(! empty($types_of_furniture['note']) ){ ?>
+        <div class="et_pb_column et_pb_column_4_4 checkbox-note et-last-child">
+          <p>
+            <?php echo $types_of_furniture['note']; ?>
+          </p>
+        </div>
+      <?php } ?>
     </div><!-- type-checkbox-input-group -->
 
     <?php
@@ -638,12 +647,16 @@ function row_______________group_of_multiple_radioInputs_with_tooltip( $row_numb
 
         <div class="radio_check_tooltip_wrapper">
           <div class="centralize_content">
-            <button type="button" class="radio_check_checkmark"></button>
+            <span class="radio_check_checkmark"></span>
             <span class="radio_check-label_text"><?php echo $radio_data['label']; ?></span>
-            <button type="button" class="radio_check-tooltips"
-              data-tooltip-text="<?php echo empty( $radio_data['tooltip'] ) ? '' : $radio_data['tooltip']; ?>">
-              <span>?</span>
-            </button><!-- .radio_check-tooltips -->
+
+            <?php if(!empty( $radio_data['tooltip'] ) ){  ?>
+              <button type="button" class="radio_check-tooltips"
+                data-tooltip-text="<?php echo $radio_data['tooltip']; ?>">
+                <span>?</span>
+              </button><!-- .radio_check-tooltips -->
+            <?php } ?>
+            
           </div><!-- .centralize_content -->
         </div><!-- .radio_check_tooltip_wrapper -->
 
@@ -685,7 +698,7 @@ function row_with_header___group_of_multiple_pair_radioInputs_with_text( $row_nu
           value="<?php echo $one_pair_radio_data['value_only']; ?>">
         <div class="radio_check_tooltip_wrapper">
           <div class="centralize_content">
-            <button type="button" class="radio_check_checkmark"></button>
+            <span class="radio_check_checkmark"></span>
             <span class="radio_check-label_text"><?php echo $one_pair_radio_data['value_only']; ?></span>
           </div>
         </div>
@@ -701,7 +714,7 @@ function row_with_header___group_of_multiple_pair_radioInputs_with_text( $row_nu
             value="<?php echo $one_pair_radio_data['value_text']; ?>">
           <div class="radio_check_tooltip_wrapper">
             <div class="centralize_content">
-              <button type="button" class="radio_check_checkmark"></button>
+              <span class="radio_check_checkmark"></span>
               <span class="radio_check-label_text"><?php echo $one_pair_radio_data['value_text']; ?></span>
             </div>
           </div>
@@ -756,7 +769,7 @@ function row_with_header___group_of_multiple_radioInputs___one_line_2_from_3( $r
 
         <div class="radio_check_tooltip_wrapper">
           <div class="centralize_content">
-            <button type="button" class="radio_check_checkmark"></button>
+            <span class="radio_check_checkmark"></span>
             <span class="radio_check-label_text"><?php echo $value; ?></span>
           </div>
         </div>
@@ -812,7 +825,7 @@ function row_with_header___group_of_single___radioInputs_with_text( $row_number,
             data-text-required="<?php echo $radio_item['name'] ?>_text" value="<?php echo $radio_item['value'] ?>">
           <div class="radio_check_tooltip_wrapper">
             <div class="centralize_content">
-              <button type="button" class="radio_check_checkmark"></button>
+              <span class="radio_check_checkmark"></span>
               <span class="radio_check-label_text"><?php echo $radio_item['value'] ?></span>
             </div>
           </div>
@@ -866,7 +879,7 @@ function row_______________group_of_single___radioInputs_with_date( $row_number,
           data-text-required="<?php echo $radio_item['name'] ?>_date" value="<?php echo $radio_item['value'] ?>">
         <div class="radio_check_tooltip_wrapper">
           <div class="centralize_content">
-            <button type="button" class="radio_check_checkmark"></button>
+            <span class="radio_check_checkmark"></span>
             <span class="radio_check-label_text"><?php echo $radio_item['value'] ?></span>
           </div>
         </div>
@@ -920,7 +933,7 @@ function row_with_header___group_of_multiple_radioInputs( $row_number, $header, 
 
         <div class="radio_check_tooltip_wrapper">
           <div class="centralize_content">
-            <button type="button" class="radio_check_checkmark"></button>
+            <span type="button" class="radio_check_checkmark"></span>
             <span class="radio_check-label_text"><?php echo $value; ?></span>
           </div>
         </div>
@@ -981,6 +994,78 @@ function row_______________group_of_single___dateInput____date( $row_number, $da
 
   return $innerHTML;
 }
+
+
+// $content = [
+//   "header" => ""
+//   "message" => ""
+// ];
+function section_for_thank_you_message( $content ) {
+
+  ob_start();
+
+  $header = $content['header'];
+  $message = $content['message'];
+
+    if(!empty( $header ) || !empty( $message )){
+      ?>
+
+        <div id="responce-message">
+          <div class="dark-backgroud">
+            <div class="popup">
+              <div class="message-wrapper">
+                <h2 id="error-quote-form" class="error-header">Sorry, something went wrong!</h2>
+                <?php echo !empty( $header ) ? '<h2 class="header">'. $header . '</h2>' : ''; ?>
+                <?php echo !empty( $message ) ? '<p class="message">'. $message . '</p>' : ''; ?>
+              </div>
+            </div>
+          </div>
+        </div><!-- #responce-message-->
+
+      <?php
+    }
+
+  $innerHTML = ob_get_contents();
+
+  ob_end_clean();
+
+  return $innerHTML;
+}
+
+
+
+// $object = [
+//   "" => ""
+// ];
+
+function java_script_object_in_tag( $object ) {
+
+  ob_start();
+
+  $object_to_html;
+
+  foreach ($object as $key => $value ){
+    $object_to_html .= $key.":". $value.",";
+  }
+
+    ?>
+      <script type="text/javascript">
+        /* <![CDATA[ */
+          var quote_form_object = {
+            <?php echo $object_to_html; ?>
+            }
+        /* ]]> */
+      </script>
+    <?php
+
+  $innerHTML = ob_get_contents();
+
+  ob_end_clean();
+
+  return $innerHTML;
+}
+
+
 
 // row_______________group_of_
 // row_with_header___group_of_

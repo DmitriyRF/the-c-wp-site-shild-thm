@@ -16,3 +16,76 @@
     }
   }
 }
+
+#responce-message {
+  display: none;
+  opacity: 0;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100000;
+  transition: opacity 3s ease;
+  .dark-backgroud {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 72, 121, 0.9);
+    pointer-events: none;
+    .popup {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 550px;
+      max-width: 80%;
+      min-height: 300px;
+      padding: 20px 40px;
+
+      .message-wrapper {
+        text-align: center;
+        @include noselect();
+        .header,
+        .error-header {
+          color: $main-color-orange;
+          font-size: 24px;
+          font-family: $ff-myriad;
+          text-transform: uppercase;
+          font-weight: 700;
+          padding: 0;
+          margin: 0;
+          @media (min-width: $main-all_mobile-breakpoint) {
+            font-size: 34px;
+          }
+          @media (min-width: $main-decktop-breakpoint) {
+            font-size: 44px;
+          }
+        }
+        .message {
+          color: $form-light-text;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+  &.thanks {
+    .header,
+    .message {
+      display: block;
+    }
+    .error-header {
+      display: none;
+    }
+  }
+  &.error {
+    .header,
+    .message {
+      display: none;
+    }
+    .error-header {
+      display: block;
+    }
+  }
+}

@@ -674,6 +674,22 @@
   }
 }
 
+#terms-and-warranty-pages-of-cserv-austin {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: transparent;
+  background-blend-mode: soft-light;
+  background-image: url("../bg/contact/terms-warranty/contact-warranty-terms-mobile-cservaustin.jpg");
+
+  @media (min-width: $main-tablet-breakpoint) {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: url("../bg/contact/terms-warranty/contact-warranty-terms-desktop-cservaustin.jpg");
+  }
+}
+
 #testimonials-page-of-cserv-austin {
   background-repeat: no-repeat;
   background-size: cover;
@@ -687,6 +703,38 @@
     background-size: cover;
     background-position: center;
     background-image: url("../bg/about/testimonials/testimonials-desktop-cservaustin-com.jpg");
+  }
+}
+
+#supported-brands-page-of-cserv-austin {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: transparent;
+  background-blend-mode: soft-light;
+  background-image: url("../bg/about/supported-brands/supported-brands-we-install-cservaustin-mobile.jpg");
+
+  @media (min-width: $main-tablet-breakpoint) {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: url("../bg/about/supported-brands/supported-brands-we-install-cservaustin-desktop.jpg");
+  }
+}
+
+#supported-products-page-of-cserv-austin {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: transparent;
+  background-blend-mode: soft-light;
+  background-image: url("../bg/about/supported-products/supported-products-we-install-mobile-cservaustin.jpg");
+
+  @media (min-width: $main-tablet-breakpoint) {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: url("../bg/about/supported-products/supported-products-we-install-cservaustin.jpg");
   }
 }
 

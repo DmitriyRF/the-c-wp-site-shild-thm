@@ -1,4 +1,4 @@
-<?php /* Template Name: Quote form 2.2.1 */
+<?php /* Template Name: Quote form 3.4.1 */
    $row = 0;
 ?>
 
@@ -16,12 +16,12 @@
 
         <div class="et_builder_inner_content et_pb_gutters3">
 
-          <div id="form_page_background" class="et_pb_section  form_section et_pb_form_section_2_2_1">
+          <div id="form_page_background" class="et_pb_section  form_section et_pb_form_section_3_4_1">
 
 
             <?php
 
-              $title = 'Free Workplace <br> Reconfiguration Quote';
+              $title = 'FREE LAB FURNITURE SERVICES QUOTE';
 
               echo row_with_title____group_of_single___page_title( $row++, $title);
 
@@ -31,7 +31,7 @@
 
               <?php wp_nonce_field('quote_form', 'estimateNonce');?>
 
-              <input type="hidden" name="quote_form_type" value="reconfiguration_quote">
+              <input type="hidden" name="quote_form_type" value="lab_furniture_services_quote">
 
               <?php
 
@@ -56,18 +56,13 @@
 
               <?php 
 
-                  $header = 'Types of SERVICES REQUESTED (Select all that applies): ';
+                  $header = 'NEED LAB FURNITURE INSTALLATION SERVICES?';
 
                   $types_of_furniture_to_install = [
-                    'input_type_move_furniture_within_campus' => ['label' => 'Move Furniture within Campus', 'placeholder' => 'Add Notes' ],
-                    'input_type_pick_up_and_deliver_furniture' => ['label' => 'Pick up and Deliver Furniture', 'placeholder' => 'Add Notes' ],
-                    'input_type_assemble_install_new_furniture' => ['label' => 'Assemble/Install New Furniture', 'placeholder' => 'Add Notes' ],
-                    'input_type_coordinate_with_service_providers' => ['label' => 'Coordinate with Service Providers', 'placeholder' => 'List here (property manager, electrician, etc.)' ],
-                    'input_type_disassemble_old_furniture' => ['label' => 'Disassemble Old Furniture', 'placeholder' => 'Add Notes' ],
-                    'input_type_haul_away_old_furniture' => ['label' => 'Haul Away Old Furniture', 'placeholder' => 'Add Notes' ],
-                    'input_type_store_old_furniture_office_equipment' => ['label' => 'Store Old Furniture & Office Equipment', 'placeholder' => 'Add Notes (long term, short term, etc.)' ],
-                    'input_type_help_designing_new_office_layout' => ['label' => 'Help Designing New Office Layout', 'placeholder' => 'Add Notes' ],
-                    'input_type_provide_furniture_steam_cleaning' => ['label' => 'Provide Furniture Steam Cleaning', 'placeholder' => 'Add Notes' ]
+                    'input_type_laboratory_furniture_installation' => ['label' => 'LABORATORY FURNITURE INSTALLATION', 'placeholder' => 'Describe' ],
+                    'input_type_cleanroom_installation' => ['label' => 'CLEANROOM INSTALLATION', 'placeholder' => 'Describe' ],
+                    'input_type_chemical_resistant_countertop_installation' => ['label' => 'CHEMICAL RESISTANT COUNTERTOP INSTALLATION', 'placeholder' => 'Describe' ],
+                    'input_type_other' => ['label' => 'OTHER', 'placeholder' => 'Describe' ]
                   ];
 
                   echo row_with_header___group_of_multiple_checkboxInputs_with_text( $row++, $header, $types_of_furniture_to_install );
@@ -75,12 +70,10 @@
 
               <?php
 
-                // if input_type_assemble_install_new_furniture checked
-
-                $header = 'Is there a freight elevator?';
+                $header = 'Need to move laboratory facilities?';
 
                 $radio_array = [
-                  'name' => 'freight_elevator',
+                  'name' => 'need_move_laboratory_facilities',
                   'values' => [
                     'YES',
                     'NO'
@@ -91,23 +84,37 @@
 
               ?>
 
-              <?php
-                  $header = "Are you able to provide assembly instructions?";
+              <?php 
 
-                  $pairs_radioInput_array_with_text = [
-                    ['name' => 'provide_assembly_instructions', 'value_only' => 'YES' , 'value_text' => 'NO', 'placeholder' => 'Make and model of the furniture' ],
+                  $header = 'TYPE OF MOVING SERVICES NEEDED';
+
+                  $radio_array_with_tooltip = [
+                    [
+                      'name' => 'moving_services_needed',
+                      'label' => 'MOVING TO A NEW LOCATION',
+                      'value' => 'MOVING TO A NEW LOCATION',
+                      'tooltip' => 'C-Serv’s Standard Moving Plan supplies a labor-only 
+                        commercial services team. Additional services, such as RDI,
+                        can be requested during quote stage.' 
+                    ],
+                    [
+                      'name' => 'moving_services_needed',
+                      'label' => 'MOVING WITHIN CAMPUS',
+                      'value' => 'MOVING WITHIN CAMPUS',
+                      'tooltip' => 'Our Turnkey Moving Services handles all details for your 
+                        in-campus move – to another building, up three flights,
+                        or down the hall – so your relocation is painless and smooth.'
+                    ],
                   ];
 
-                  echo row_with_header___group_of_multiple_pair_radioInputs_with_text( $row++, $header, $pairs_radioInput_array_with_text );
-
+                  echo row_______________group_of_multiple_radioInputs_with_tooltip( $row++, $header, $radio_array_with_tooltip );
               ?>
-
               <?php 
                   
-                  $header = 'When would you like the office reconfiguration happen?';
+                  $header = 'When would you like to get service?';
 
                   $radio_array = [
-                    'name' => 'when_office_reconfiguration_happen',
+                    'name' => 'when_get_services',
                     'values' => [
                       'Don’t have a date',
                       'As soon as possible'
@@ -115,60 +122,20 @@
                   ];
 
                   echo row_with_header___group_of_multiple_radioInputs( $row++, $header, $radio_array );
-  
-              ?>
-
-              <?php
 
                   $radio_item = [
-                    'name' => 'when_office_reconfiguration_happen',
+                    'name' => 'when_get_services',
                     'value' => 'Choose the date',
                     'placeholder' => 'Pick a date'
                   ];
 
                   echo row_______________group_of_single___radioInputs_with_date( $row++, $radio_item );
 
-              ?>     
-
-              <?php
-                /*
-                  $dataInputData = [
-                    'name' => 'install_date',
-                    'label' => 'Choose the date:',
-                    'placeholder' => 'Pick a date'
-                  ];
-
-                  echo row_______________group_of_single___dateInput____date( $row++, $dataInputData );
-                */
-              ?>     
-
-              <?php 
-                  
-                  $header = 'What is the best time in the day to install the furniture?';
-  
-                  $checkbox_array = [
-                    'time_to_install_early_morning'   => 'Early Morning (before 9am)',
-                    'time_to_install_morning'         => 'Morning (9am - 12 pm)',
-                    'time_to_install_afternoon'       => 'Afternoon (12pm - 3pm)',
-                    'time_to_install_late_afternoon'  => 'Late Afternoon (3pm - 6pm)',
-                    'time_to_install_evening'         => 'Evening (after 6pm)',
-                    'time_to_install_no_preference'   => 'No preference'
-                  ];
-  
-                  echo row_with_header___group_of_multiple_checkboxInputs( $row++, $header, $checkbox_array );
-  
               ?>
 
               <?php 
 
-                // $header = 'Installation Address:';
-
-                // echo row_with_header___group_of_multiple_textInputs____addresses( $row++, $header ); 
-              ?>
-
-              <?php 
-
-                $header = 'Installation Address:';
+                $header = 'SERVICE ADDRESS';
 
                 $array_of_fields = [
                   'address' => [
@@ -197,10 +164,8 @@
 
               ?>
 
-              <?php // echo row_______________group_of_single___fileInput____attach_file( $row++ ); ?>
+              <?php //echo row_______________group_of_single___fileInput____attach_file( $row++ ); ?>
 
-              <?php //echo row_______________group_of_single___textarea____comment( $row++ ); ?>
-              
               <?php
 
                 $textarea_opt = [
@@ -216,7 +181,7 @@
               <?php 
 
                 $object = [
-                    "gtagFunction" => "function gtagFunction(){ gtag('event', 'Submit-Quote', {'event_category' : 'Free-Estimate', 'event_label' : 'Workplace-Reconfiguration'});}",
+                    "gtagFunction" => "function gtagFunction(){ gtag('event', 'Submit-Quote', {'event_category' : 'Free-Estimate', 'event_label' : 'Lab-Furniture'});}",
                   ];
               
                 echo java_script_object_in_tag( $object ); 

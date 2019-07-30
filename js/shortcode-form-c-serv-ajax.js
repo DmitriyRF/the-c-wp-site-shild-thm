@@ -59,6 +59,12 @@
         .done(function (jqDATA) {
           console.log('Done ajax request for quick estimate form');
           // console.log(jqDATA);
+          gtag('event', 'Submit - Contact', {
+            'event_category': 'Quick - Contact',
+            'event_label': 'Short - Contact - Form'
+          });
+
+
         })
 
         .fail(function (jqXHR) {

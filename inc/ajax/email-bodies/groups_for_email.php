@@ -46,7 +46,7 @@ function row_with_header___group_of_multiple_textInputs($POST, $header, $multipl
 // $header = '';
 function row_with_header___group_of_single___header( $header ){
   if( isset( $header ) && !empty( $header )  ) {
-    return line__one__1__r__( $header );
+    return line__one__1__g__( $header );
   }
   return '';
 }
@@ -71,7 +71,7 @@ function row_______________group_of_multiple_radioInputs_with_tooltip( $POST, $h
 }
 
 // $types_of_furniture_to_install = [
-//   'name' => ['label' => '', 'placeholder' => '' ],
+//   'name' => ['label' => '', 'placeholder' => '', 'note' => '' ],
 // ];
 function row_with_header___group_of_multiple_checkboxInputs_with_text(  $POST, $header, $types_of_furniture_to_install ){
   $html = '';
@@ -89,6 +89,9 @@ function row_with_header___group_of_multiple_checkboxInputs_with_text(  $POST, $
       if( isset( $POST[$name_text] ) && !empty( $POST[$name_text] )  ) {
         $html .= line__two__2__r__( 'WAS NOT CHECKED', $POST[$name_text] );
       }
+    }
+    if( !empty( $checkbox['note'] )  ) {
+      $html .= line__two__2__r__( 'Note : ', $checkbox['note'] );
     }
   }
 
@@ -171,7 +174,7 @@ function row_with_header___group_of_multiple_radioInputs( $POST, $header, $radio
     $name = $dataInputData['name'];
 
     if( isset( $POST[$name] ) && !empty( $POST[$name] )  ) {
-        $html .= line__one__1__r__( $POST[$name] );
+        $html .= line__two__2__r__( $dataInputData['label'], $POST[$name] );
     }
     return $html;
  }

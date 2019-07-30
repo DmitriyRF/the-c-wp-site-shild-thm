@@ -192,6 +192,11 @@
                 }
               }
             }
+            &.current-menu-ancestor {
+              & > a {
+                border-bottom-color: #eb7719;
+              }
+            }
           }
         }
       }

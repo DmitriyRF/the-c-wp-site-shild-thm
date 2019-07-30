@@ -11,6 +11,8 @@ define("_BLUE_TOP_BORDER_", "border-top: 10px solid #0f4879;");
 define("_CELL_PADDING_5_", "padding: 5px;");
 define("_CELL_PADDING_50_5_5_", "padding: 50px 5px 5px;");
 
+define("_LINE_HEIGHT_", "line-height: 1.3;");
+
 define("_TEXT_CENTER_", "text-align: center;");
 define("_TEXT_UPPERCASE_", "text-transform: uppercase;");
 define("_TEXT_BOLD_", "font-weight: 700;");
@@ -70,14 +72,14 @@ function line__two__2__r__($content_1, $content_2){
 
 //orange
 function ___tr___o_( $content ) {
-  $style = _BG_ORANGE_ . _TEXT_BLUE_;
+  $style = _BG_ORANGE_ . _TEXT_BLUE_ . _LINE_HEIGHT_;
   return ___tr___( $content, $style );
 }
 
 //header
 function ___td___h_( $content ) {
   $style = _WIDTH_600_ . _TEXT_CENTER_ . _CELL_PADDING_50_5_5_ . _BLUE_TOP_BORDER_ 
-    . _TEXT_BOLD_ . _TEXT_UPPERCASE_ . _TITLE_FONT_SIZE_;
+    . _TEXT_BOLD_ . _TEXT_UPPERCASE_ . _TITLE_FONT_SIZE_ . _LINE_HEIGHT_;
   return ___td___( $content, $style );
 }
 

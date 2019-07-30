@@ -1,5 +1,10 @@
 (function ($) {
-  var estimateForm, formSubmitBtn, formFileInput, formFileLabel, formPreloader;
+  var estimateForm,
+    formSubmitBtn,
+    formFileInput,
+    formFileLabel,
+    formPreloader,
+    responceMessage;
 
   $(window).load(function () {
     estimateForm = $("#quote_form");
@@ -7,6 +12,7 @@
     formFileInput = $("#estimateFile");
     formFileLabel = $(".file-attacment-label u");
     formPreloader = $("#wrapper-ajax-loader-full");
+    responceMessage = $("#responce-message");
 
     formSubmitBtn.click(form_ajax_request_response);
     //Change label when files chosen
@@ -60,11 +66,25 @@
         .done(function (jqDATA) {
           console.log('Done ajax request for quote form');
           console.log(jqDATA);
+
+          quote_form_object && quote_form_object.gtagFunction && quote_form_object.gtagFunction();//from <sctipt /> tag, like global object
+
+          responceMessage.css({ display: "block", opacity: 1 }).addClass('thanks');
+          setTimeout(function redirectToParent() {
+            //redirect to location with url without last sublink (hight livel of link structure)
+            window.location.replace(window.location.pathname.split('/').slice(0, -2).join('/'));
+          }, 5555);
+
         })
 
         .fail(function (jqXHR) {
           console.log('Fail ajax request for quote form');
           console.log(jqXHR);
+          responceMessage.css({ display: "block", opacity: 1 }).addClass('error');
+          setTimeout(function reloadFromServer() {
+            //reload from server
+            document.location.reload(true)
+          }, 5555);
         })
         .always(function (e) {
           formPreloader.css("display", "none");

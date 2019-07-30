@@ -9,7 +9,7 @@ function make_body_2_3_1($POST)
 
     $body .= row_with_title____group_of_single___page_title( $title);
 
-    $main_header = 'Send project details';
+    $main_header = 'Project details';
 
     $body .= row_with_header___group_of_single___main_header( $main_header);
 

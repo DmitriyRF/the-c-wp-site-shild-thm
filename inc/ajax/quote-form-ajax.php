@@ -44,8 +44,6 @@ function quote_form()
   
     }
 
-    // $to = 'quotes@cservaustin.com';
-    $to = 'dmitriy_r_f@mail.ru';
     $subject = 'Installation Form';
     $body = '<div></div>';
     if ( isset( $_POST['quote_form_type'] ) && !empty( $_POST['quote_form_type'] ) ){
@@ -55,7 +53,7 @@ function quote_form()
         switch ($_POST['quote_form_type'] ) {
 
             case 'installation_form':
-                $subject = 'Installation Form';
+                $subject = 'INSTALLATION FORM';
                 require_once('email-bodies/quote-2-1-1-furniture-installation.php');
                 $body = make_body_furniture_installation($_POST);
                 break;
@@ -77,17 +75,98 @@ function quote_form()
                 require_once('email-bodies/email-2-3-1.php');
                 $body = make_body_2_3_1($_POST);
                 break;
+
+            case 'storage_logistics_quote':
+                $subject = 'FREE STORAGE & LOGISTICS QUOTE';
+                require_once('email-bodies/email-2-4-1.php');
+                $body = make_body_2_4_1($_POST);
+                break;
+
+            case 'furniture_project_management_quote':
+                $subject = 'FREE FURNITURE PROJECT MANAGEMENT QUOTE';
+                require_once('email-bodies/email-2-5-1.php');
+                $body = make_body_2_5_1($_POST);
+                break;
+
+            case 'furniture_steam_cleaning_quote':
+                $subject = 'FREE FURNITURE STEAM CLEANING QUOTE';
+                require_once('email-bodies/email-2-6-1.php');
+                $body = make_body_2_6_1($_POST);
+                break;
+
+            case 'recycle_furniture_quote':
+                $subject = 'FREE RECYCLE FURNITURE QUOTE';
+                require_once('email-bodies/email-2-7-1.php');
+                $body = make_body_2_7_1($_POST);
+                break;
+
+            case 'office_space_planning_design_quote':
+                $subject = 'FREE OFFICE SPACE PLANNING & DESIGN QUOTE';
+                require_once('email-bodies/email-2-8-1.php');
+                $body = make_body_2_8_1($_POST);
+                break;
+
+                
+            case 'dealership_services_quote':
+                $subject = 'FREE DEALERSHIP SERVICES QUOTE';
+                require_once('email-bodies/email-3-1-1.php');
+                $body = make_body_3_1_1($_POST);
+                break;
+
+            case 'corporate_services_quote':
+                $subject = 'FREE CORPORATE SERVICES QUOTE';
+                require_once('email-bodies/email-3-2-1.php');
+                $body = make_body_3_2_1($_POST);
+                break;
+
+            case 'office_furniture_installation_services_quote':
+                $subject = 'FREE OFFICE FURNITURE INSTALLATION SERVICES QUOTE';
+                require_once('email-bodies/email-3-3-1.php');
+                $body = make_body_3_3_1($_POST);
+                break;
+
+            case 'lab_furniture_services_quote':
+                $subject = 'FREE LAB FURNITURE SERVICES QUOTE';
+                require_once('email-bodies/email-3-4-1.php');
+                $body = make_body_3_4_1($_POST);
+                break;
+
+            case 'education_furniture_services_quote':
+                $subject = 'FREE EDUCATION FURNITURE SERVICES QUOTE';
+                require_once('email-bodies/email-3-5-1.php');
+                $body = make_body_3_5_1($_POST);
+                break;
+
+            case 'healthcare_furniture_services_quote':
+                $subject = 'FREE HEALTHCARE FURNITURE SERVICES QUOTE';
+                require_once('email-bodies/email-3-6-1.php');
+                $body = make_body_3_6_1($_POST);
+                break;
+
+            case 'government_contract_services_quote':
+                $subject = 'FREE GOVERNMENT CONTRACT SERVICES QUOTE';
+                require_once('email-bodies/email-3-7-1.php');
+                $body = make_body_3_7_1($_POST);
+                break;
             
             default:
                 break;
         }
     }
-
+    $to = QUOTES_EMAIL;
+    $to_copy = MARKETING_EMAIL;
+    // $to = DEVELOPER_EMAIL;
 
     $headers = array('Content-Type: text/html; charset=UTF-8');
 
     $response['email'] = wp_mail($to, $subject, $body, $headers);
-    // $response['wp_mail_response'] = wp_mail('marketing@cservaustin.com', $subject, $body, $headers );
+    if($to_copy){
+        $response['wp_mail_response'] = wp_mail( $to_copy, $subject, $body, $headers );
+    }
+    if ( isset( $_POST['contact_email'] ) && !empty( $_POST['contact_email'] ) ){
+        $response['to_contact_email'] = wp_mail( $_POST['contact_email'] , $subject, $body, $headers );
+    }
+
 
     wp_send_json($response);
 }
