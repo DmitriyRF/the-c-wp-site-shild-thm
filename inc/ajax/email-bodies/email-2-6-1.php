@@ -55,7 +55,7 @@ function make_body_2_6_1($POST)
 
     $body .= row_with_header___group_of_multiple_checkboxInputs_with_text($POST, $header, $types_of_furniture_to_install);
 
-    $header = 'When would you like the furniture assembled?';
+    $header = 'WHEN WOULD YOU LIKE THE FURNITURE TO BE STEAM CLEANED?';
 
     $radio_array = [
         'name' => 'when_furniture_assembled',
@@ -75,7 +75,31 @@ function make_body_2_6_1($POST)
 
     $body .= row_______________group_of_single___radioInputs_with_date($POST, $radio_item);
 
-    $header = 'INSTALLATION ADDRESS';
+    $header = "SELECT SERVICE FREQUENCY";
+
+    $radio_array = [
+      'name' => 'select_service_frequency',
+      'values' => [
+        'One-time',
+        'Bi-weekly',
+        'Once a month',
+        'Once a quarter',
+        'Every 6 months',
+        'Once a year'
+        ]
+    ];
+
+    $radio_item = [
+      'name' => 'select_service_frequency',
+      'value' => 'Other',
+      'placeholder' => 'Describe frequency'
+    ];
+
+    $body .= row_with_header___group_of_multiple_radioInputs( $POST, $header, $radio_array );
+
+    $body .= row_with_header___group_of_single___radioInputs_with_text( $POST, null, $radio_item );
+
+    $header = 'SERVICE ADDRESS';
 
     $array_of_fields = [
         'address' => [

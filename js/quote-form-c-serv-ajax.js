@@ -17,7 +17,6 @@
     formSubmitBtn.click(form_ajax_request_response);
     //Change label when files chosen
     formFileInput.change(form_change_fileInput_label);
-    // grecaptcha.execute();
   });
 
   function form_change_fileInput_label() {
@@ -42,6 +41,8 @@
       var ajaxFormData = new FormData(estimateForm[0]);
       //add field for wordpress nonce
       ajaxFormData.append("action", localize_data.action);
+
+      gRecaptchaResponse && ajaxFormData.append("gRecaptchaResponse", gRecaptchaResponse);
 
       estimateForm.find(':checkbox:checked, :radio:checked').each(function () {
         ajaxFormData.append(this.name, $(this).val());
@@ -69,11 +70,8 @@
 
           quote_form_object && quote_form_object.gtagFunction && quote_form_object.gtagFunction();//from <sctipt /> tag, like global object
 
-          responceMessage.css({ display: "block", opacity: 1 }).addClass('thanks');
-          setTimeout(function redirectToParent() {
-            //redirect to location with url without last sublink (hight livel of link structure)
-            window.location.replace(window.location.pathname.split('/').slice(0, -2).join('/'));
-          }, 5555);
+          responceMessage.css({ display: "block", opacity: 1 }).addClass(jqDATA.success ? 'thanks' : 'error');
+          setTimeout(redirectToParent, 5555);
 
         })
 
@@ -92,6 +90,11 @@
           clearingInputs();
         });
     }
+  }
+
+  function redirectToParent() {
+    //redirect to location with url without last sublink (hight livel of link structure)
+    window.location.replace(window.location.pathname.split('/').slice(0, -2).join('/'));
   }
 
   function isRequiredFieldFilled() {
@@ -205,11 +208,77 @@
 })(jQuery);
 
 
+
+(function ($) {
+
+  $(window).load(function () {
+    var allInputNamesThanHasDynamicAttr = [], uniqueRatioGroupNames = [];
+
+    $("input").filter('[data-dynamic]').each(function (index, input) {
+      allInputNamesThanHasDynamicAttr.push(input.name);
+    });
+    uniqueRatioGroupNames = allInputNamesThanHasDynamicAttr.unique()
+
+    uniqueRatioGroupNames.forEach(function (name) {
+      // to hook whole Input input to handler onChange
+      // we use the name and add them to onChage listener
+      var inputGroup = $('input[name=' + name + ']');
+      var allIdsToManage = [];
+
+      inputGroup.filter('[data-dynamic]').each(function (index, input) {
+        var arrayOfIdOfOneInput = $(input).data('dynamic');
+        allIdsToManage = allIdsToManage.concat(arrayOfIdOfOneInput);
+      });
+
+      inputGroup.change(update_visibility_of_content.bind(inputGroup, allIdsToManage));
+    });
+
+    function update_visibility_of_content(allIdsToManage) {
+      var allInputsInGroup = this;
+      var checkedInput = allInputsInGroup.filter(':checked');
+      var elementIdsToShow = checkedInput.data('dynamic');
+
+      allIdsToManage.forEach(function hideEveryElementWithId(elementId) {
+        $(elementId).hide(300);
+      });
+
+      if (Array.isArray(elementIdsToShow)) {
+        elementIdsToShow.forEach(function showEveryElementWithId(elementId) {
+          $(elementId).show(300);
+        });
+      }
+
+    }
+
+  });
+})(jQuery);
+
 (function ($) {
 
   $(window).load(function () {
 
   });
 
-
 })(jQuery);
+
+
+// (function ($) {
+
+//   $(window).load(function () {});
+
+// })(jQuery);
+
+
+
+Array.prototype.unique = function () {
+  var a = this.concat();
+
+  for (var i = 0; i < a.length; ++i) {
+    for (var j = i + 1; j < a.length; ++j) {
+      if (a[i] === a[j])
+        a.splice(j--, 1);
+    }
+  }
+
+  return a;
+}

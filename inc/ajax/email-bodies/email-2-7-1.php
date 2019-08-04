@@ -23,19 +23,18 @@ function make_body_2_7_1($POST)
     $body .= row_with_header___group_of_multiple_textInputs($POST, null, $multiple_inputs);
 
 
-
     $header = 'What would you like to do with your un-needed furniture?';
 
     $radio_array = [
       'name' => 'what_do_with_un_needed_furniture',
       'values' => [
-        'Recycle',
-        'Store',
+        'Recycle' => "[\"#recycle-furniture\"]",
+        'Store' => "[\"#store-furniture\"]",
         'Sell'
         ]
     ];
 
-    $body .= row_with_header___group_of_multiple_radioInputs___one_line_2_from_3( $POST, $header, $radio_array);
+    $body .= row_with_header___group_of_multiple_radioInputs( $POST, $header, $radio_array);
 
 
       $header = 'SELECT TYPES OF GOODS';

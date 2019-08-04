@@ -37,7 +37,7 @@
 
   .row_for_form_title {
     //have to be after .et_pb_row
-    background-color: initial;
+    background-color: transparent;
     padding: 90px 0 60px;
     @media (min-width: $main-all_mobile-breakpoint) {
       padding: 120px 0 100px;
@@ -176,6 +176,10 @@
           background: $form-dark-text;
           padding: 2px 5px 2px 5px;
         }
+      }
+      select::-ms-expand,
+      .select::-ms-expand {
+        display: none;
       }
     }
     .input-arrow-down {
@@ -357,6 +361,8 @@
               border-radius: 50%;
               border: 5px solid $main-color-blue;
               background-color: $form-grey-radio;
+              -webkit-box-shadow: 0 0 0px 3px inset white;
+              -moz-box-shadow: 0 0 0px 3px inset white;
               box-shadow: 0 0 0px 3px inset white;
               box-sizing: border-box;
             }
@@ -642,6 +648,8 @@
               border-radius: 50%;
               border: 5px solid $main-color-orange;
               background-color: $form-grey-radio;
+              -webkit-box-shadow: 0 0 0px 3px inset white;
+              -moz-box-shadow: 0 0 0px 3px inset white;
               box-shadow: 0 0 0px 3px inset white;
               box-sizing: border-box;
             }
@@ -869,6 +877,8 @@
     padding: 15px;
     margin: 0 auto;
     font-size: 16px;
+    // -webkit-box-shadow:0 0 7px black;
+    // -moz-box-shadow: 0 0 7px black;
     // box-shadow: 0 0 7px black;
     background: $form-light-text;
   }

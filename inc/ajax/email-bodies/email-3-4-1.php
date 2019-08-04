@@ -38,10 +38,10 @@ function make_body_3_4_1($POST)
     $radio_array = [
         'name' => 'need_move_laboratory_facilities',
         'values' => [
-            'YES',
-            'NO',
-        ],
-    ];
+          'YES' => "[\"#moving-services\"]",
+          'NO'
+          ]
+      ];
 
     $body .= row_with_header___group_of_multiple_radioInputs___one_line_2_from_3($POST, $header, $radio_array);
 

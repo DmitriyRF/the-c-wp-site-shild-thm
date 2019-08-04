@@ -1,4 +1,16 @@
 <?php /* Template Name: Quote form 2.4.1 */
+  
+  $quote_form_title = 'FREE STORAGE & LOGISTICS QUOTE';
+  $quote_form_type = "storage_logistics_quote";
+  $quote_form_event = "Logistics_Storage";
+  $quote_form_number = [
+    "dot" => "2.4.1",
+    "underscore" => "2_4_1"
+  ];
+  $quote_form_nonce = [
+    "input_name" => "quote_form",
+    "nonce_value" => "estimateNonce"
+  ];
    $row = 0;
 ?>
 
@@ -16,12 +28,11 @@
 
         <div class="et_builder_inner_content et_pb_gutters3">
 
-          <div id="form_page_background" class="et_pb_section  form_section et_pb_form_section_2_4_1">
-
+          <div id="form_page_background" class="et_pb_section  form_section et_pb_form_section_<?php echo $quote_form_number['underscore']; ?>">
 
             <?php
 
-              $title = 'FREE STORAGE & LOGISTICS QUOTE';
+              $title = $quote_form_title;
 
               echo row_with_title____group_of_single___page_title( $row++, $title);
 
@@ -29,9 +40,9 @@
 
             <form id="quote_form" class="cserv_form">
 
-              <?php wp_nonce_field('quote_form', 'estimateNonce');?>
+              <?php wp_nonce_field($quote_form_nonce['input_name'], $quote_form_nonce['nonce_value']);?>
 
-              <input type="hidden" name="quote_form_type" value="storage_logistics_quote">
+              <input type="hidden" name="quote_form_type" value="<?php echo $quote_form_type; ?>">
 
               <?php
 
@@ -83,17 +94,17 @@
                     'city' => [
                       'label' => '*Pick-up City',
                       'name' => 'contact_city_pick_up',
-                      'is_required' => false
+                      'is_required' => true
                     ],
                     'state' => [
                       'label' => '*State',
                       'name' => 'contact_state_pick_up',
-                      'is_required' => false
+                      'is_required' => true
                     ],
                     'zip_code' => [
                       'label' => '*Zip Code',
                       'name' => 'contact_zip_code_pick_up',
-                      'is_required' => false
+                      'is_required' => true
                     ]
                   ];
 
@@ -109,7 +120,7 @@
                     'address' => [
                       'label' => '*Delivery Address',
                       'name' => 'contact_address_delivery',
-                      'is_required' => true
+                      'is_required' => false
                     ],
                     'city' => [
                       'label' => '*Delivery City',
@@ -215,7 +226,7 @@
                     'values' => [
                       'Same as pick-up address',
                       'Same as delivery address',
-                      'Enter new  address'
+                      'Enter new  address' => "[\"#billing-address\"]"
                       ]
                   ];
 
@@ -223,36 +234,39 @@
   
               ?>
 
-              <?php 
 
-                $header = 'INSTALLATION ADDRESS';
+              <div id="billing-address" style="display:none;">
+                <?php 
 
-                $array_of_fields = [
-                  'address' => [
-                    'label' => '*Address',
-                    'name' => 'contact_address',
-                    'is_required' => true
-                  ],
-                  'city' => [
-                    'label' => '*City',
-                    'name' => 'contact_city',
-                    'is_required' => true
-                  ],
-                  'state' => [
-                    'label' => '*State',
-                    'name' => 'contact_state',
-                    'is_required' => true
-                  ],
-                  'zip_code' => [
-                    'label' => '*Zip Code',
-                    'name' => 'contact_zip_code',
-                    'is_required' => true
-                  ]
-                ];
+                  $header = 'BILLING ADDRESS';
 
-                echo row_with_header___group_of_multiple_textInputs____addresses_custom( $row++, $header, $array_of_fields );
+                  $array_of_fields = [
+                    'address' => [
+                      'label' => '*Address',
+                      'name' => 'contact_address',
+                      'is_required' => false
+                    ],
+                    'city' => [
+                      'label' => '*City',
+                      'name' => 'contact_city',
+                      'is_required' => false
+                    ],
+                    'state' => [
+                      'label' => '*State',
+                      'name' => 'contact_state',
+                      'is_required' => false
+                    ],
+                    'zip_code' => [
+                      'label' => '*Zip Code',
+                      'name' => 'contact_zip_code',
+                      'is_required' => false
+                    ]
+                  ];
 
-              ?>
+                  echo row_with_header___group_of_multiple_textInputs____addresses_custom( $row++, $header, $array_of_fields );
+
+                ?>
+              </div> 
 
               <?php// echo row_______________group_of_single___fileInput____attach_file( $row++ ); ?>
 
@@ -269,21 +283,32 @@
               <?php echo row_______________group_of_single___submitInput____button( $row++ ); ?>
 
               <?php 
-
+                //quote_form_object will be js global object
                 $object = [
-                    "gtagFunction" => "function gtagFunction(){ gtag('event', 'Submit-Quote', {'event_category' : 'Free-Estimate', 'event_label' : 'Logistics-Storage'});}",
+                    "gtagFunction" => "function gtagFunction(){".
+                                        "console.log('gtag for ".$quote_form_event."');".
+                                        "gtag('event', 'Submit-Quote', {'event_category' : 'Free-Estimate', 'event_label' : ".wrap_string_to_quotes_for_html( $quote_form_event )."});".
+                                      "}",
+                    "formTItle"  => wrap_string_to_quotes_for_html( $quote_form_title ),
+                    "formEvent" => wrap_string_to_quotes_for_html( $quote_form_event ),
+                    "formAction" => wrap_string_to_quotes_for_html( $quote_form_event .'_Quote' ),
+                    "formType"  => wrap_string_to_quotes_for_html($quote_form_type )
                   ];
               
                 echo java_script_object_in_tag( $object ); 
                 
               ?>
 
-              <div id="wrapper-ajax-loader-full">
-                <div class="cserv-ajax-ripple">
-                  <div></div>
-                  <div></div>
-                </div>
-              </div>
+              <?php
+                
+                $page_loader = [
+                  "id" => "wrapper-ajax-loader-full",
+                  "class" => "cserv-ajax-ripple",
+                  "divs_inside" => 2
+                ];
+
+                echo div_______________wrapper_ajax_loader___default( $page_loader );
+              ?>
 
             </form><!-- .cserv_form -->
 

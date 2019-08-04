@@ -1,9 +1,10 @@
-(function($) {
+var gRecaptchaResponse;
+(function ($) {
   function setup_collapsible_submenus() {
     var $menu = $("#mobile_menu"),
       top_level_link = "#mobile_menu .menu-item-has-children > a";
 
-    $menu.find("a").each(function() {
+    $menu.find("a").each(function () {
       $(this).off("click");
       /*   
           if ( $(this).is(top_level_link) ) {
@@ -11,13 +12,13 @@
           }*/
 
       if (!$(this).siblings(".sub-menu").length) {
-        $(this).on("click", function(event) {
+        $(this).on("click", function (event) {
           $(this)
             .parents(".mobile_nav")
             .trigger("click");
         });
       } else {
-        $(this).on("click", function(event) {
+        $(this).on("click", function (event) {
           event.preventDefault();
           $(this)
             .parent()
@@ -27,9 +28,16 @@
     });
   }
 
-  $(window).load(function() {
-    setTimeout(function() {
+  $(window).load(function () {
+    setTimeout(function () {
       setup_collapsible_submenus();
     }, 700);
   });
 })(jQuery);
+
+
+grecaptcha.ready(function () {
+  grecaptcha.execute(recaptcha.siteKey, { action: quote_form_object.formAction }).then(function (token) {
+    gRecaptchaResponse = token;
+  });
+});

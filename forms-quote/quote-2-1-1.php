@@ -1,4 +1,16 @@
 <?php /* Template Name: Quote form 2.1.1 */
+  
+  $quote_form_title = 'FREE FURNITURE <br> INSTALLATION QUOTE';
+  $quote_form_type = "furniture_installation";
+  $quote_form_event = "Furniture_Installation";
+  $quote_form_number = [
+    "dot" => "2.1.1",
+    "underscore" => "2_1_1"
+  ];
+  $quote_form_nonce = [
+    "input_name" => "quote_form",
+    "nonce_value" => "estimateNonce"
+  ];
   $row = 0;
 ?>
 
@@ -16,12 +28,12 @@
 
         <div class="et_builder_inner_content et_pb_gutters3">
 
-          <div id="form_page_background" class="et_pb_section  form_section et_pb_form_section_2_1_1">
+          <div id="form_page_background" class="et_pb_section  form_section et_pb_form_section_<?php echo $quote_form_number['underscore']; ?>">
 
 
             <?php
 
-              $title = 'Free Furniture <br> Installation Quote';
+              $title = $quote_form_title;
 
               echo row_with_title____group_of_single___page_title( $row++, $title);
 
@@ -29,9 +41,9 @@
 
             <form id="quote_form" class="cserv_form">
 
-              <?php wp_nonce_field('quote_form', 'estimateNonce');?>
+              <?php wp_nonce_field($quote_form_nonce['input_name'], $quote_form_nonce['nonce_value']);?>
 
-              <input type="hidden" name="quote_form_type" value="furniture_installation">
+              <input type="hidden" name="quote_form_type" value="<?php echo $quote_form_type; ?>">
 
               <?php
 
@@ -235,22 +247,33 @@
               
               
               <?php 
-
+                //quote_form_object will be js global object
                 $object = [
-                    "gtagFunction" => "function gtagFunction(){ gtag('event', 'Submit-Quote', {'event_category' : 'Free-Estimate', 'event_label' : 'Furniture-Installation'});}",
+                    "gtagFunction" => "function gtagFunction(){".
+                                        "console.log('gtag for ".$quote_form_event."');".
+                                        "gtag('event', 'Submit-Quote', {'event_category' : 'Free-Estimate', 'event_label' : ".wrap_string_to_quotes_for_html( $quote_form_event )."});".
+                                      "}",
+                    "formTItle"  => wrap_string_to_quotes_for_html( $quote_form_title ),
+                    "formEvent" => wrap_string_to_quotes_for_html( $quote_form_event ),
+                    "formAction" => wrap_string_to_quotes_for_html( $quote_form_event .'_Quote' ),
+                    "formType"  => wrap_string_to_quotes_for_html($quote_form_type )
                   ];
               
                 echo java_script_object_in_tag( $object ); 
                 
               ?>
-              
 
-              <div id="wrapper-ajax-loader-full">
-                <div class="cserv-ajax-ripple">
-                  <div></div>
-                  <div></div>
-                </div>
-              </div>
+              <?php
+                
+                $page_loader = [
+                  "id" => "wrapper-ajax-loader-full",
+                  "class" => "cserv-ajax-ripple",
+                  "divs_inside" => 2
+                ];
+
+                echo div_______________wrapper_ajax_loader___default( $page_loader );
+              ?>
+              
 
             </form><!-- .cserv_form -->
 

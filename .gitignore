@@ -2,3 +2,4 @@
 html/
 bg/
 /inc/phpmailer.php
+define_credentials.php

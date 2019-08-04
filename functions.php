@@ -2,7 +2,9 @@
 // Exit if accessed directly
 if (!defined('ABSPATH')) {
     exit;
-}
+} 
+
+require_once get_stylesheet_directory() . '/define_credentials.php';
 
 require_once get_stylesheet_directory() . '/inc/define_messages.php';
 

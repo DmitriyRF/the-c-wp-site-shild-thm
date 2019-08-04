@@ -1,4 +1,16 @@
 <?php /* Template Name: Quote form 2.7.1 */
+  
+  $quote_form_title = 'FREE RECYCLE FURNITURE QUOTE';
+  $quote_form_type = "recycle_furniture_quote";
+  $quote_form_event = "Furniture_Recycle";
+  $quote_form_number = [
+    "dot" => "2.7.1",
+    "underscore" => "2_7_1"
+  ];
+  $quote_form_nonce = [
+    "input_name" => "quote_form",
+    "nonce_value" => "estimateNonce"
+  ];
    $row = 0;
 ?>
 
@@ -16,12 +28,12 @@
 
         <div class="et_builder_inner_content et_pb_gutters3">
 
-          <div id="form_page_background" class="et_pb_section  form_section et_pb_form_section_2_7_1">
+          <div id="form_page_background" class="et_pb_section  form_section et_pb_form_section_<?php echo $quote_form_number['underscore']; ?>">
 
 
             <?php
 
-              $title = 'FREE RECYCLE FURNITURE QUOTE';
+              $title = $quote_form_title;
 
               echo row_with_title____group_of_single___page_title( $row++, $title);
 
@@ -29,9 +41,9 @@
 
             <form id="quote_form" class="cserv_form">
 
-              <?php wp_nonce_field('quote_form', 'estimateNonce');?>
+              <?php wp_nonce_field($quote_form_nonce['input_name'], $quote_form_nonce['nonce_value']);?>
 
-              <input type="hidden" name="quote_form_type" value="recycle_furniture_quote">
+              <input type="hidden" name="quote_form_type" value="<?php echo $quote_form_type; ?>">
 
               <?php
 
@@ -61,13 +73,13 @@
                 $radio_array = [
                   'name' => 'what_do_with_un_needed_furniture',
                   'values' => [
-                    'Recycle',
-                    'Store',
+                    'Recycle' => "[\"#recycle-furniture\"]",
+                    'Store' => "[\"#store-furniture\"]",
                     'Sell'
                     ]
                 ];
 
-                echo row_with_header___group_of_multiple_radioInputs___one_line_2_from_3( $row++, $header, $radio_array);
+                echo row_with_header___group_of_multiple_radioInputs( $row++, $header, $radio_array);
 
               ?>
 
@@ -86,98 +98,106 @@
                   echo row_with_header___group_of_multiple_checkboxInputs_with_text( $row++, $header, $types_of_furniture_to_install );
               ?>
 
-              <?php 
-                  
-                  $header = 'How would you like to recycle your goods?';
+              <div id="recycle-furniture" style="display:none;">
+
+                <?php 
+                    
+                    $header = 'How would you like to recycle your goods?';
+
+                    $radio_array = [
+                      'name' => 'how_recycle_your_goods',
+                      'values' => [
+                        'Donate',
+                        'Dispose (goes to landfill)'
+                        ]
+                    ];
+
+                    echo row_with_header___group_of_multiple_radioInputs( $row++, $header, $radio_array );
+    
+                ?>
+              
+              </div>
+              
+              <div id="store-furniture" style="display:none;">
+              
+                <?php 
+                    
+                    $header = 'WHEN WOULD YOU LIKE TO MOVE YOUR FURNITURE?';
+
+                    $radio_array = [
+                      'name' => 'when_move_your_furniture',
+                      'values' => [
+                        'Don’t have a date',
+                        'As soon as possible'
+                        ]
+                    ];
+
+                    echo row_with_header___group_of_multiple_radioInputs( $row++, $header, $radio_array );
+    
+                ?>
+
+                <?php
+
+                    $radio_item = [
+                      'name' => 'when_remove_your_furniture',
+                      'value' => 'Choose the date',
+                      'placeholder' => 'Pick a date'
+                    ];
+
+                    echo row_______________group_of_single___radioInputs_with_date( $row++, $radio_item );
+
+                ?>  
+
+
+
+                <?php
+
+                  $header = 'HOW LONG DO YOU NEED TO STORE YOUR GOODS?';
 
                   $radio_array = [
-                    'name' => 'how_recycle_your_goods',
+                    'name' => 'how_long_store_your_goods',
                     'values' => [
-                      'Donate',
-                      'Dispose (goes to landfill)'
+                      'Long Term',
+                      'Short Term',
+                      'Don\'t Know'
                       ]
                   ];
 
-                  echo row_with_header___group_of_multiple_radioInputs( $row++, $header, $radio_array );
-  
-              ?>
+                  echo row_with_header___group_of_multiple_radioInputs___one_line_2_from_3( $row++, $header, $radio_array);
 
-              <?php 
-                  
-                  $header = 'WHEN WOULD YOU LIKE TO MOVE YOUR FURNITURE?';
+                ?>
 
-                  $radio_array = [
-                    'name' => 'when_move_your_furniture',
-                    'values' => [
-                      'Don’t have a date',
-                      'As soon as possible'
-                      ]
-                  ];
+                <?php
 
-                  echo row_with_header___group_of_multiple_radioInputs( $row++, $header, $radio_array );
-  
-              ?>
+                  $header = 'SELECT YOUR STORAGE DATES';
 
-              <?php
+                  echo row_with_header___group_of_single___header( $row++, $header );
+                ?>
 
-                  $radio_item = [
-                    'name' => 'when_remove_your_furniture',
-                    'value' => 'Choose the date',
-                    'placeholder' => 'Pick a date'
-                  ];
+                <?php
 
-                  echo row_______________group_of_single___radioInputs_with_date( $row++, $radio_item );
+                    $dataInputData = [
+                      'name' => 'start_date',
+                      'label' => 'Start Date:',
+                      'placeholder' => 'Pick a start date'
+                    ];
 
-              ?>  
+                    echo row_______________group_of_single___dateInput____date( $row++, $dataInputData );
 
+                ?>  
+                <?php
 
+                    $dataInputData = [
+                      'name' => 'end_date',
+                      'label' => 'End Date:',
+                      'placeholder' => 'Pick a end date'
+                    ];
 
-              <?php
+                    echo row_______________group_of_single___dateInput____date( $row++, $dataInputData );
 
-                $header = 'HOW LONG DO YOU NEED TO STORE YOUR GOODS?';
-
-                $radio_array = [
-                  'name' => 'how_long_store_your_goods',
-                  'values' => [
-                    'Long Term',
-                    'Short Term',
-                    'Don\'t Know'
-                    ]
-                ];
-
-                echo row_with_header___group_of_multiple_radioInputs___one_line_2_from_3( $row++, $header, $radio_array);
-
-              ?>
-
-              <?php
-
-                $header = 'SELECT YOUR STORAGE DATES';
-
-                echo row_with_header___group_of_single___header( $row++, $header );
-              ?>
-
-              <?php
-
-                  $dataInputData = [
-                    'name' => 'start_date',
-                    'label' => 'Start Date:',
-                    'placeholder' => 'Pick a start date'
-                  ];
-
-                  echo row_______________group_of_single___dateInput____date( $row++, $dataInputData );
-
-              ?>  
-              <?php
-
-                  $dataInputData = [
-                    'name' => 'end_date',
-                    'label' => 'End Date:',
-                    'placeholder' => 'Pick a end date'
-                  ];
-
-                  echo row_______________group_of_single___dateInput____date( $row++, $dataInputData );
-
-              ?> 
+                ?> 
+              
+              </div>
 
 
               <?php 
@@ -226,21 +246,32 @@
               <?php echo row_______________group_of_single___submitInput____button( $row++ ); ?>
 
               <?php 
-
+                //quote_form_object will be js global object
                 $object = [
-                    "gtagFunction" => "function gtagFunction(){ gtag('event', 'Submit-Quote', {'event_category' : 'Free-Estimate', 'event_label' : 'Furniture-Recycle'});}",
+                    "gtagFunction" => "function gtagFunction(){".
+                                        "console.log('gtag for ".$quote_form_event."');".
+                                        "gtag('event', 'Submit-Quote', {'event_category' : 'Free-Estimate', 'event_label' : ".wrap_string_to_quotes_for_html( $quote_form_event )."});".
+                                      "}",
+                    "formTItle"  => wrap_string_to_quotes_for_html( $quote_form_title ),
+                    "formEvent" => wrap_string_to_quotes_for_html( $quote_form_event ),
+                    "formAction" => wrap_string_to_quotes_for_html( $quote_form_event .'_Quote' ),
+                    "formType"  => wrap_string_to_quotes_for_html($quote_form_type )
                   ];
               
                 echo java_script_object_in_tag( $object ); 
                 
               ?>
 
-              <div id="wrapper-ajax-loader-full">
-                <div class="cserv-ajax-ripple">
-                  <div></div>
-                  <div></div>
-                </div>
-              </div>
+              <?php
+                
+                $page_loader = [
+                  "id" => "wrapper-ajax-loader-full",
+                  "class" => "cserv-ajax-ripple",
+                  "divs_inside" => 2
+                ];
+
+                echo div_______________wrapper_ajax_loader___default( $page_loader );
+              ?>
 
             </form><!-- .cserv_form -->
 

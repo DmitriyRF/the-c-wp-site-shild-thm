@@ -13,7 +13,10 @@ function cservaustin_enqueue_front_scripts()
     //wp_enqueue_script( $handle, $src, $deps, $ver, $in_footer );
     wp_enqueue_script('main-script', get_stylesheet_directory_uri() . '/js/main-c-serv-file.js', array('jquery'), (string)rand(), true);
 
-    // wp_enqueue_script('recaptcha-script', 'https://www.google.com/recaptcha/api.js', array(), null, false);
+    wp_enqueue_script('recaptcha-script', 'https://www.google.com/recaptcha/api.js?render=' . RECAPTCHA_SITE_KEY , array(), null, false);
+    wp_localize_script('recaptcha-script', 'recaptcha', array(
+        'siteKey' => RECAPTCHA_SITE_KEY,
+    ));
 }
 add_action('wp_enqueue_scripts', 'cservaustin_enqueue_front_scripts');
 

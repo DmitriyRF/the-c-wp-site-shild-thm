@@ -5,18 +5,49 @@ add_action('wp_ajax_quote_form', 'quote_form');
 
 function quote_form()
 {
+    $response = array();
+    $error = array();
+
     if (
         empty($_POST['estimateNonce'])
         || !wp_verify_nonce($_POST['estimateNonce'], 'quote_form')
     ) {
-        $error = new WP_Error('No verify nonce', $_POST);
+        $error['nonce_verify'] = new WP_Error('No verify nonce', $_POST);
         wp_send_json_error($error);
     }
 
-    $response = array();
-    $response['post'] = $_POST; //sanitize_text_field
-    $error = array();
+    if ( ! empty($_POST['gRecaptchaResponse']) ) {
 
+        $url = 'https://www.google.com/recaptcha/api/siteverify';
+        $data = array('secret' => RECAPTCHA_SECRET_KEY, 'response' => $_POST['gRecaptchaResponse'] );
+
+            // use key 'http' even if you send the request to https://...
+            $options = array(
+                'http' => array(
+                    'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+                    'method'  => 'POST',
+                    'content' => http_build_query($data)
+                )
+            );
+            $context  = stream_context_create($options);
+
+            $result = file_get_contents($url, false, $context);
+
+            if ($result === FALSE) { 
+                $error['google_recaptcha'] = new WP_Error('No Google recaptcha passed', $_POST);
+                wp_send_json_error($error);
+             }
+             $google_recaptcha_response = json_decode($result);
+             if(! $google_recaptcha_response->success){
+                wp_send_json_error($google_recaptcha_response);
+             }
+             $response['google_recaptcha']=$google_recaptcha_response;
+    }else{
+        $error['google_recaptcha'] = new WP_Error('No Google recaptcha passed', $_POST);
+        wp_send_json_error($error);
+    }
+
+    $response['post'] = $_POST; //sanitize_text_field
 
     if (  isset( $_FILES['estimateFile'] )  &&  !empty( $_FILES['estimateFile'] )  ) {
         $attachments = array();
@@ -161,12 +192,14 @@ function quote_form()
 
     $response['email'] = wp_mail($to, $subject, $body, $headers);
     if($to_copy){
-        $response['wp_mail_response'] = wp_mail( $to_copy, $subject, $body, $headers );
+        $response['marketing'] = wp_mail( $to_copy, $subject, $body, $headers );
     }
     if ( isset( $_POST['contact_email'] ) && !empty( $_POST['contact_email'] ) ){
-        $response['to_contact_email'] = wp_mail( $_POST['contact_email'] , $subject, $body, $headers );
+        $response['customer'] = wp_mail( $_POST['contact_email'] , $subject, $body, $headers );
     }
 
+    // for debug
+    // wp_send_json($response);
 
-    wp_send_json($response);
+    wp_send_json(['success' => $response['email'] && $response['customer'] ]);
 }

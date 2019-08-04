@@ -1,4 +1,16 @@
 <?php /* Template Name: Quote form 2.3.1 */
+  
+  $quote_form_title = 'FREE WORKPLACE <br> MOVING QUOTE';
+  $quote_form_type = "moving_quote";
+  $quote_form_event = "Business_Moving";
+  $quote_form_number = [
+    "dot" => "2.3.1",
+    "underscore" => "2_3_1"
+  ];
+  $quote_form_nonce = [
+    "input_name" => "quote_form",
+    "nonce_value" => "estimateNonce"
+  ];
    $row = 0;
 ?>
 
@@ -16,12 +28,11 @@
 
         <div class="et_builder_inner_content et_pb_gutters3">
 
-          <div id="form_page_background" class="et_pb_section  form_section et_pb_form_section_2_3_1">
-
+          <div id="form_page_background" class="et_pb_section  form_section et_pb_form_section_<?php echo $quote_form_number['underscore']; ?>">
 
             <?php
 
-              $title = 'Free Workplace <br> Moving Quote';
+              $title = $quote_form_title;
 
               echo row_with_title____group_of_single___page_title( $row++, $title);
 
@@ -29,9 +40,9 @@
 
             <form id="quote_form" class="cserv_form">
 
-              <?php wp_nonce_field('quote_form', 'estimateNonce');?>
+              <?php wp_nonce_field($quote_form_nonce['input_name'], $quote_form_nonce['nonce_value']);?>
 
-              <input type="hidden" name="quote_form_type" value="moving_quote">
+              <input type="hidden" name="quote_form_type" value="<?php echo $quote_form_type; ?>">
 
               <?php
 
@@ -252,23 +263,34 @@
               ?>
 
               <?php echo row_______________group_of_single___submitInput____button( $row++ ); ?>
-
+              
               <?php 
-
+                //quote_form_object will be js global object
                 $object = [
-                    "gtagFunction" => "function gtagFunction(){ gtag('event', 'Submit-Quote', {'event_category' : 'Free-Estimate', 'event_label' : 'Business-Moving'});}",
+                    "gtagFunction" => "function gtagFunction(){".
+                                        "console.log('gtag for ".$quote_form_event."');".
+                                        "gtag('event', 'Submit-Quote', {'event_category' : 'Free-Estimate', 'event_label' : ".wrap_string_to_quotes_for_html( $quote_form_event )."});".
+                                      "}",
+                    "formTItle"  => wrap_string_to_quotes_for_html( $quote_form_title ),
+                    "formEvent" => wrap_string_to_quotes_for_html( $quote_form_event ),
+                    "formAction" => wrap_string_to_quotes_for_html( $quote_form_event .'_Quote' ),
+                    "formType"  => wrap_string_to_quotes_for_html($quote_form_type )
                   ];
               
                 echo java_script_object_in_tag( $object ); 
                 
               ?>
 
-              <div id="wrapper-ajax-loader-full">
-                <div class="cserv-ajax-ripple">
-                  <div></div>
-                  <div></div>
-                </div>
-              </div>
+              <?php
+                
+                $page_loader = [
+                  "id" => "wrapper-ajax-loader-full",
+                  "class" => "cserv-ajax-ripple",
+                  "divs_inside" => 2
+                ];
+
+                echo div_______________wrapper_ajax_loader___default( $page_loader );
+              ?>
 
             </form><!-- .cserv_form -->
 

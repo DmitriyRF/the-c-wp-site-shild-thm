@@ -642,8 +642,14 @@ function row_______________group_of_multiple_radioInputs_with_tooltip( $row_numb
     <div class="et_pb_radio_check_tooltips">
       <label class="radio_check-label">
 
-        <input class="radio_check-input" type="radio" name="<?php echo $radio_data['name']; ?>"
-          value="<?php echo $radio_data['value']; ?>" title="<?php echo $radio_data['value']; ?>">
+        <input 
+          class="radio_check-input" 
+          type="radio" 
+          name="<?php echo $radio_data['name']; ?>"
+          value="<?php echo $radio_data['value']; ?>" 
+          title="<?php echo $radio_data['value']; ?>"
+          <?php echo  $radio_data['dynamic'] ? "data-dynamic='" . $radio_data['dynamic'] . "'" : null ?>
+          >
 
         <div class="radio_check_tooltip_wrapper">
           <div class="centralize_content">
@@ -908,6 +914,16 @@ function row_______________group_of_single___radioInputs_with_date( $row_number,
   return $innerHTML;
 }
 
+
+$radio_array = [
+  'name' => '',
+  'values' => [
+    '',
+    '',
+    '' => '["#", "#"]'
+    ]
+];
+
 function row_with_header___group_of_multiple_radioInputs( $row_number, $header, $radio_array ) {
 
   ob_start();
@@ -921,20 +937,37 @@ function row_with_header___group_of_multiple_radioInputs( $row_number, $header, 
   <?php echo __________________group_of_single___header( $header ); ?>
 
   <?php 
-          foreach ($radio_array['values'] as $value ){
+          foreach ($radio_array['values'] as $key => $value ){
+
+              switch (gettype($key)) {
+                case 'string':
+                  $name = $key;
+                  $data_dynamic = $value;
+                  break;
+
+                case 'integer':
+                  $name = $value;
+                  $data_dynamic = null;
+                  break;
+              }
             ?>
 
   <div class="et_pb_column et_pb_column_1_2 <?php echo  $count++%2 ? ' et-last-child': '' ?>">
     <div class="et_pb_radio_check_multiple_choice">
-      <label class="radio_check-label" title="<?php echo $value; ?>">
+      <label class="radio_check-label" title="<?php echo $name; ?>">
 
-        <input class="radio_check-input" type="radio" name="<?php echo $radio_array['name']; ?>"
-          value="<?php echo $value; ?>">
+        <input 
+          class="radio_check-input" 
+          type="radio" 
+          name="<?php echo $radio_array['name']; ?>"
+          value="<?php echo $name; ?>" 
+          <?php echo  $data_dynamic ? "data-dynamic='" . $data_dynamic . "'" : null ?>
+        >
 
         <div class="radio_check_tooltip_wrapper">
           <div class="centralize_content">
             <span type="button" class="radio_check_checkmark"></span>
-            <span class="radio_check-label_text"><?php echo $value; ?></span>
+            <span class="radio_check-label_text"><?php echo $name; ?></span>
           </div>
         </div>
 
@@ -1045,7 +1078,7 @@ function java_script_object_in_tag( $object ) {
   $object_to_html;
 
   foreach ($object as $key => $value ){
-    $object_to_html .= $key.":". $value.",";
+    $object_to_html .= $key.":". $value.",\n";
   }
 
     ?>
@@ -1065,6 +1098,34 @@ function java_script_object_in_tag( $object ) {
   return $innerHTML;
 }
 
+
+function wrap_string_to_quotes_for_html($string){
+  return '"'. $string .'"';
+}
+
+
+// $page_loader = [
+//   "id" => "",
+//   "class" => "",
+//   "divs_inside" => 2
+// ];
+
+function div_______________wrapper_ajax_loader___default( $page_loader ) {
+  ob_start();
+    ?>
+      <div id="<?php echo $page_loader['id']; ?>">
+        <div class="<?php echo $page_loader['class']; ?>">
+          <?php 
+            for ($divs_number=0; $divs_number < $page_loader['divs_inside']; $divs_number++) { 
+            echo '<div></div>';
+          } ?>
+        </div>
+      </div>
+    <?php
+  $innerHTML = ob_get_contents();
+  ob_end_clean();
+  return $innerHTML;
+}
 
 
 // row_______________group_of_

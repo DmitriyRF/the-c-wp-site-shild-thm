@@ -155,7 +155,7 @@ function make_body_2_4_1($POST)
 
     $body .= row_with_header___group_of_multiple_radioInputs($POST, $header, $radio_array);
 
-    $header = 'INSTALLATION ADDRESS';
+    $header = 'BILLING ADDRESS';
 
     $array_of_fields = [
         'address' => [

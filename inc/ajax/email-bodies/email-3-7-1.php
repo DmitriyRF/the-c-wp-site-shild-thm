@@ -49,13 +49,15 @@ function make_body_3_7_1($POST)
         'name' => 'required_service_type',
         'label' => 'GOVERNMENT FURNITURE INSTALLATION',
         'value' => 'GOVERNMENT FURNITURE INSTALLATION',
-        'tooltip' => null
+        'tooltip' => null,
+        'dynamic' => "[\"#furniture-installation\"]"
       ],
       [
         'name' => 'required_service_type',
         'label' => 'GOVERNMENT FACILITIES MOVING',
         'value' => 'GOVERNMENT FACILITIES MOVING',
-        'tooltip' => null
+        'tooltip' => null,
+        'dynamic' => "[\"#facilities-moving\"]"
       ],
     ];
 
@@ -108,7 +110,7 @@ function make_body_3_7_1($POST)
 
     $body .= row_______________group_of_multiple_radioInputs_with_tooltip( $POST, $header, $radio_array_with_tooltip );
     
-    $header = 'When would you like to move';
+    $header = 'WHEN WOULD YOU LIKE TO RECEIVE THE SERVICE?';
 
     $radio_array = [
       'name' => 'when_you_like_move',

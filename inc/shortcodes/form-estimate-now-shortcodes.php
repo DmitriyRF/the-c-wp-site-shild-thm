@@ -59,7 +59,6 @@ function cservaustin__shortcodes_form_estimate($atts, $content)
       </div>
     </div>
 
-    <?php echo recaptcha_HTML(); ?>
 
     <div id="wrapper-ajax-loader">
       <div class="cserv-ajax-ripple">

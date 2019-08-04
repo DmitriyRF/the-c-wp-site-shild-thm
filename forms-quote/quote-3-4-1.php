@@ -1,4 +1,16 @@
 <?php /* Template Name: Quote form 3.4.1 */
+  
+  $quote_form_title = 'FREE LAB FURNITURE<br> SERVICES QUOTE';
+  $quote_form_type = "lab_furniture_services_quote";
+  $quote_form_event = "Lab_Furniture'";
+  $quote_form_number = [
+    "dot" => "3.4.1",
+    "underscore" => "3_4_1"
+  ];
+  $quote_form_nonce = [
+    "input_name" => "quote_form",
+    "nonce_value" => "estimateNonce"
+  ];
    $row = 0;
 ?>
 
@@ -16,12 +28,11 @@
 
         <div class="et_builder_inner_content et_pb_gutters3">
 
-          <div id="form_page_background" class="et_pb_section  form_section et_pb_form_section_3_4_1">
-
+          <div id="form_page_background" class="et_pb_section  form_section et_pb_form_section_<?php echo $quote_form_number['underscore']; ?>">
 
             <?php
 
-              $title = 'FREE LAB FURNITURE SERVICES QUOTE';
+              $title = $quote_form_title;
 
               echo row_with_title____group_of_single___page_title( $row++, $title);
 
@@ -29,9 +40,9 @@
 
             <form id="quote_form" class="cserv_form">
 
-              <?php wp_nonce_field('quote_form', 'estimateNonce');?>
+              <?php wp_nonce_field($quote_form_nonce['input_name'], $quote_form_nonce['nonce_value']);?>
 
-              <input type="hidden" name="quote_form_type" value="lab_furniture_services_quote">
+              <input type="hidden" name="quote_form_type" value="<?php echo $quote_form_type; ?>">
 
               <?php
 
@@ -75,40 +86,45 @@
                 $radio_array = [
                   'name' => 'need_move_laboratory_facilities',
                   'values' => [
-                    'YES',
+                    'YES' => "[\"#moving-services\"]",
                     'NO'
                     ]
                 ];
 
-                echo row_with_header___group_of_multiple_radioInputs___one_line_2_from_3( $row++, $header, $radio_array);
+                echo row_with_header___group_of_multiple_radioInputs( $row++, $header, $radio_array);
 
               ?>
 
-              <?php 
+              <div id="moving-services" style="display:none;">
 
-                  $header = 'TYPE OF MOVING SERVICES NEEDED';
+                <?php 
 
-                  $radio_array_with_tooltip = [
-                    [
-                      'name' => 'moving_services_needed',
-                      'label' => 'MOVING TO A NEW LOCATION',
-                      'value' => 'MOVING TO A NEW LOCATION',
-                      'tooltip' => 'C-Serv’s Standard Moving Plan supplies a labor-only 
-                        commercial services team. Additional services, such as RDI,
-                        can be requested during quote stage.' 
-                    ],
-                    [
-                      'name' => 'moving_services_needed',
-                      'label' => 'MOVING WITHIN CAMPUS',
-                      'value' => 'MOVING WITHIN CAMPUS',
-                      'tooltip' => 'Our Turnkey Moving Services handles all details for your 
-                        in-campus move – to another building, up three flights,
-                        or down the hall – so your relocation is painless and smooth.'
-                    ],
-                  ];
+                    $header = 'TYPE OF MOVING SERVICES NEEDED';
 
-                  echo row_______________group_of_multiple_radioInputs_with_tooltip( $row++, $header, $radio_array_with_tooltip );
-              ?>
+                    $radio_array_with_tooltip = [
+                      [
+                        'name' => 'moving_services_needed',
+                        'label' => 'MOVING TO A NEW LOCATION',
+                        'value' => 'MOVING TO A NEW LOCATION',
+                        'tooltip' => 'C-Serv’s Standard Moving Plan supplies a labor-only 
+                          commercial services team. Additional services, such as RDI,
+                          can be requested during quote stage.' 
+                      ],
+                      [
+                        'name' => 'moving_services_needed',
+                        'label' => 'MOVING WITHIN CAMPUS',
+                        'value' => 'MOVING WITHIN CAMPUS',
+                        'tooltip' => 'Our Turnkey Moving Services handles all details for your 
+                          in-campus move – to another building, up three flights,
+                          or down the hall – so your relocation is painless and smooth.'
+                      ],
+                    ];
+
+                    echo row_______________group_of_multiple_radioInputs_with_tooltip( $row++, $header, $radio_array_with_tooltip );
+                ?>
+
+              </div>
+
               <?php 
                   
                   $header = 'When would you like to get service?';
@@ -179,21 +195,32 @@
               <?php echo row_______________group_of_single___submitInput____button( $row++ ); ?>
 
               <?php 
-
+                //quote_form_object will be js global object
                 $object = [
-                    "gtagFunction" => "function gtagFunction(){ gtag('event', 'Submit-Quote', {'event_category' : 'Free-Estimate', 'event_label' : 'Lab-Furniture'});}",
+                    "gtagFunction" => "function gtagFunction(){".
+                                        "console.log('gtag for ".$quote_form_event."');".
+                                        "gtag('event', 'Submit-Quote', {'event_category' : 'Free-Estimate', 'event_label' : ".wrap_string_to_quotes_for_html( $quote_form_event )."});".
+                                      "}",
+                    "formTItle"  => wrap_string_to_quotes_for_html( $quote_form_title ),
+                    "formEvent" => wrap_string_to_quotes_for_html( $quote_form_event ),
+                    "formAction" => wrap_string_to_quotes_for_html( $quote_form_event .'_Quote' ),
+                    "formType"  => wrap_string_to_quotes_for_html($quote_form_type )
                   ];
               
                 echo java_script_object_in_tag( $object ); 
                 
               ?>
 
-              <div id="wrapper-ajax-loader-full">
-                <div class="cserv-ajax-ripple">
-                  <div></div>
-                  <div></div>
-                </div>
-              </div>
+              <?php
+                
+                $page_loader = [
+                  "id" => "wrapper-ajax-loader-full",
+                  "class" => "cserv-ajax-ripple",
+                  "divs_inside" => 2
+                ];
+
+                echo div_______________wrapper_ajax_loader___default( $page_loader );
+              ?>
 
             </form><!-- .cserv_form -->
 
@@ -214,7 +241,7 @@
     "message" => "One of C-Serv Project Managers will contact you with the pricing within two business days!"
   ];
 
-  echo section_for_thank_you_message( $content ) 
+  echo section_for_thank_you_message( $content );
   
 ?>
 

@@ -1,12 +1,10 @@
 <?php 
 
-function recaptcha_HTML () {
+function utilite () {
 
   ob_start();
 
   ?>
-
-  <div id='recaptcha' class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" data-size="invisible"></div>
 
   <?php
 

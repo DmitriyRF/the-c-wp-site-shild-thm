@@ -1,4 +1,15 @@
 <?php /* Template Name: Quote form 2.6.1 */
+  $quote_form_title = 'FREE FURNITURE<br>STEAM CLEANING QUOTE';
+  $quote_form_type = "furniture_steam_cleaning_quote";
+  $quote_form_event = "Furniture_Cleaning";
+  $quote_form_number = [
+    "dot" => "2.6.1",
+    "underscore" => "2_6_1"
+  ];
+  $quote_form_nonce = [
+    "input_name" => "quote_form",
+    "nonce_value" => "estimateNonce"
+  ];
    $row = 0;
 ?>
 
@@ -16,12 +27,12 @@
 
         <div class="et_builder_inner_content et_pb_gutters3">
 
-          <div id="form_page_background" class="et_pb_section  form_section et_pb_form_section_2_6_1">
+          <div id="form_page_background" class="et_pb_section  form_section et_pb_form_section_<?php echo $quote_form_number['underscore']; ?>">
 
 
             <?php
 
-              $title = 'FREE FURNITURE STEAM CLEANING QUOTE';
+              $title = $quote_form_title;
 
               echo row_with_title____group_of_single___page_title( $row++, $title);
 
@@ -29,9 +40,9 @@
 
             <form id="quote_form" class="cserv_form">
 
-              <?php wp_nonce_field('quote_form', 'estimateNonce');?>
+              <?php wp_nonce_field($quote_form_nonce['input_name'], $quote_form_nonce['nonce_value']);?>
 
-              <input type="hidden" name="quote_form_type" value="furniture_steam_cleaning_quote">
+              <input type="hidden" name="quote_form_type" value="<?php echo $quote_form_type; ?>">
 
               <?php
 
@@ -95,7 +106,7 @@
 
               <?php 
                   
-                  $header = 'When would you like the furniture assembled?';
+                  $header = 'WHEN WOULD YOU LIKE THE FURNITURE TO BE STEAM CLEANED?';
 
                   $radio_array = [
                     'name' => 'when_furniture_assembled',
@@ -121,9 +132,37 @@
 
               ?>  
 
+              <?php
+
+              $header = "SELECT SERVICE FREQUENCY";
+
+              $radio_array = [
+                'name' => 'select_service_frequency',
+                'values' => [
+                  'One-time',
+                  'Bi-weekly',
+                  'Once a month',
+                  'Once a quarter',
+                  'Every 6 months',
+                  'Once a year'
+                  ]
+              ];
+
+              $radio_item = [
+                'name' => 'select_service_frequency',
+                'value' => 'Other',
+                'placeholder' => 'Describe frequency'
+              ];
+
+              echo row_with_header___group_of_multiple_radioInputs( $row++, $header, $radio_array );
+
+              echo row_with_header___group_of_single___radioInputs_with_text( $row++, null, $radio_item );
+
+              ?>
+
               <?php 
 
-                $header = 'INSTALLATION ADDRESS';
+                $header = 'SERVICE ADDRESS';
 
                 $array_of_fields = [
                   'address' => [
@@ -168,21 +207,32 @@
 
 
               <?php 
-
+                //quote_form_object will be js global object
                 $object = [
-                    "gtagFunction" => "function gtagFunction(){ gtag('event', 'Submit-Quote', {'event_category' : 'Free-Estimate', 'event_label' : 'Furniture-Cleaning'});}",
+                    "gtagFunction" => "function gtagFunction(){".
+                                        "console.log('gtag for ".$quote_form_event."');".
+                                        "gtag('event', 'Submit-Quote', {'event_category' : 'Free-Estimate', 'event_label' : ".wrap_string_to_quotes_for_html( $quote_form_event )."});".
+                                      "}",
+                    "formTItle"  => wrap_string_to_quotes_for_html( $quote_form_title ),
+                    "formEvent" => wrap_string_to_quotes_for_html( $quote_form_event ),
+                    "formAction" => wrap_string_to_quotes_for_html( $quote_form_event .'_Quote' ),
+                    "formType"  => wrap_string_to_quotes_for_html($quote_form_type )
                   ];
               
                 echo java_script_object_in_tag( $object ); 
                 
               ?>
 
-              <div id="wrapper-ajax-loader-full">
-                <div class="cserv-ajax-ripple">
-                  <div></div>
-                  <div></div>
-                </div>
-              </div>
+              <?php
+                
+                $page_loader = [
+                  "id" => "wrapper-ajax-loader-full",
+                  "class" => "cserv-ajax-ripple",
+                  "divs_inside" => 2
+                ];
+
+                echo div_______________wrapper_ajax_loader___default( $page_loader );
+              ?>
 
             </form><!-- .cserv_form -->
 
